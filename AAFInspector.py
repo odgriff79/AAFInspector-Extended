@@ -654,7 +654,7 @@ class Window(QtWidgets.QTreeView):
                 print("Setting model to None as root_data is None.")
 
 
-            self.setWindowTitle(f"{os.path.basename(file_path)} - AAF Viewer")
+            self.setWindowTitle(f"{os.path.basename(file_path)} - AAFInspector")
 
             # Adjust column widths after model is potentially set or cleared
             self.resizeColumnToContents(0) # Name
@@ -669,7 +669,7 @@ class Window(QtWidgets.QTreeView):
 
         except FileNotFoundError:
              QtWidgets.QMessageBox.critical(self, "Error", f"File not found:\n{file_path}")
-             self.setWindowTitle("AAF Viewer - File Not Found")
+             self.setWindowTitle("AAFInspector - File Not Found")
              self.setModel(None)
              self.aaf_file = None # Ensure file handle is cleared
              self.current_file_path = None # Clear current path on failure
@@ -679,7 +679,7 @@ class Window(QtWidgets.QTreeView):
             # Catch other potential errors during aaf2.open or data access
             print(f"An unexpected error occurred during loading: {e}")
             QtWidgets.QMessageBox.critical(self, "Error Loading File", f"Could not process AAF file:\n{file_path}\n\nError: {str(e)}")
-            self.setWindowTitle(f"AAF Viewer - Error loading {os.path.basename(file_path)}")
+            self.setWindowTitle(f"AAFInspector - Error loading {os.path.basename(file_path)}")
             self.setModel(None)
             if self.aaf_file: # Try to close if opened partially before error
                 try: self.aaf_file.close()
