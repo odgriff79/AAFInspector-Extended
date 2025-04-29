@@ -566,7 +566,7 @@ class Window(QtWidgets.QTreeView):
              print("Error: Missing file path or options for loading.")
              # Clear the view if inputs are invalid
              self.setModel(None)
-             self.setWindowTitle("AAF Viewer")
+             self.setWindowTitle("AAFInspector")
              self.current_file_path = None
              self.current_options = {}
              if self.aaf_file:
