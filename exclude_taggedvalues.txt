@@ -1,0 +1,75 @@
+manufacturer
+model
+product_version
+color_primaries
+transfer_characteristic
+coding_equations
+component_depth
+compression
+ISO
+GainRed
+GainGreen
+GainBlue
+White X
+White Y
+Black X
+Black Y
+Toe X
+Toe Y
+Mid X
+Mid Y
+Knee X
+Knee Y
+Kelvin
+Tint
+DRX
+ColorSpace
+GammaSpace
+Debayer detail
+OLPF
+Chroma Denoise
+FLUT
+Shadow
+LGG Red Lift
+LGG Red Gamma
+LGG Red Gain
+LGG Green Lift
+LGG Green Gamma
+LGG Green Gain
+LGG Blue Lift
+LGG Blue Gamma
+LGG Blue Gain
+Red Black X
+Red Black Y
+Red Toe X
+Red Toe Y
+Red Mid X
+Red Mid Y
+Red Knee X
+Red Knee Y
+Red White X
+Red White Y
+Green Black X
+Green Black Y
+Green Toe X
+Green Toe Y
+Green Mid X
+Green Mid Y
+Green Knee X
+Green Knee Y
+Green White X
+Green White Y
+Blue Black X
+Blue Black Y
+Blue Toe X
+Blue Toe Y
+Blue Mid X
+Blue Mid Y
+Blue Knee X
+Blue Knee Y
+Blue White X
+Blue White Y
+Brightness
+Contrast
+Exposure
+Saturation
