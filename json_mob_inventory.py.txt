@@ -1,0 +1,290 @@
+import sys
+import json
+from PySide6.QtWidgets import (
+    QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
+    QPushButton, QLineEdit, QTableWidget, QTableWidgetItem, QHeaderView,
+    QFileDialog, QTextEdit, QLabel, QSplitter
+)
+from PySide6.QtCore import Qt
+
+class AAFParserGUI(QMainWindow):
+    """
+    A GUI application to parse compressed AAF JSON exports, identify sequences,
+    and display detailed timeline and source information.
+    """
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("AAF Sequence Inspector")
+        self.setGeometry(100, 100, 1500, 800)
+
+        # --- Main Widget and Layout ---
+        main_widget = QWidget()
+        self.setCentralWidget(main_widget)
+        main_layout = QVBoxLayout(main_widget)
+
+        # --- File Selection Layout ---
+        file_layout = QHBoxLayout()
+        self.json_path_edit = QLineEdit()
+        self.json_path_edit.setPlaceholderText("Select AAF JSON file...")
+        self.json_path_edit.setReadOnly(True)
+        browse_button = QPushButton("Browse...")
+        browse_button.clicked.connect(self.select_json_file)
+        file_layout.addWidget(QLabel("JSON File:"))
+        file_layout.addWidget(self.json_path_edit)
+        file_layout.addWidget(browse_button)
+        main_layout.addLayout(file_layout)
+
+        # --- Sequence Name Layout ---
+        sequence_layout = QHBoxLayout()
+        self.sequence_name_edit = QLineEdit()
+        self.sequence_name_edit.setPlaceholderText("Enter sequence name to find (e.g., selectWWD_SIMPLE.Exported.01)")
+        parse_button = QPushButton("Parse Sequence")
+        parse_button.clicked.connect(self.run_analysis)
+        sequence_layout.addWidget(QLabel("Sequence Name:"))
+        sequence_layout.addWidget(self.sequence_name_edit)
+        sequence_layout.addWidget(parse_button)
+        main_layout.addLayout(sequence_layout)
+
+        # --- Splitter for Table and Log ---
+        splitter = QSplitter(Qt.Vertical)
+
+        # --- Results Table ---
+        self.results_table = QTableWidget()
+        self.results_table.setColumnCount(6)
+        self.results_table.setHorizontalHeaderLabels([
+            "Event", "Clip Name", "Record TC Start", "Record TC End",
+            "Duration (frames)", "Source File Path"
+        ])
+        header = self.results_table.horizontalHeader()
+        header.setSectionResizeMode(QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(5, QHeaderView.Stretch) # Stretch last column
+        self.results_table.setWordWrap(True)
+        self.results_table.setAlternatingRowColors(True)
+        splitter.addWidget(self.results_table)
+
+        # --- Log/Debug View ---
+        self.log_edit = QTextEdit()
+        self.log_edit.setReadOnly(True)
+        self.log_edit.setPlaceholderText("Debug logs will appear here...")
+        splitter.addWidget(self.log_edit)
+
+        # Adjust splitter sizes
+        splitter.setSizes([500, 300])
+        main_layout.addWidget(splitter)
+
+        self.json_data = None
+        self.all_mobs = {}
+
+    def log(self, message):
+        """Appends a message to the log view."""
+        self.log_edit.append(message)
+        QApplication.processEvents() # Force UI update
+
+    def select_json_file(self):
+        """Opens a file dialog to select the JSON file."""
+        file_path, _ = QFileDialog.getOpenFileName(self, "Open AAF JSON File", "", "JSON Files (*.json)")
+        if file_path:
+            self.json_path_edit.setText(file_path)
+            filename = file_path.split('/')[-1]
+            if '_comp.json' in filename:
+                seq_name = filename.replace('_comp.json', '.Exported.01')
+                self.sequence_name_edit.setText(seq_name)
+                self.log(f"Auto-populated sequence name: {seq_name}")
+
+    def find_nested_item(self, data, name):
+        """Recursively finds a named item in the nested list structure."""
+        if isinstance(data, list):
+            # Check if the current list is a named object that matches
+            if len(data) > 1 and data[0] == name:
+                return data
+            # If not, recurse into the elements of the list
+            for item in data:
+                result = self.find_nested_item(item, name)
+                if result is not None:
+                    return result
+        return None
+
+    def run_analysis(self):
+        """Main function to load, parse, and display sequence data."""
+        self.results_table.setRowCount(0)
+        self.log_edit.clear()
+
+        json_path = self.json_path_edit.text()
+        sequence_name = self.sequence_name_edit.text()
+
+        if not json_path or not sequence_name:
+            self.log("❌ Error: Please select a JSON file and specify a sequence name.")
+            return
+
+        self.log(f"▶️ Starting analysis for sequence: '{sequence_name}'")
+        try:
+            with open(json_path, 'r', encoding='utf-8') as f:
+                self.json_data = json.load(f)
+            self.log("✅ JSON file loaded successfully.")
+        except Exception as e:
+            self.log(f"❌ Error loading JSON file: {e}")
+            return
+
+        # **FIX:** Recursively search for 'ContentStorage' instead of using a hardcoded path.
+        self.log("🔎 Searching for 'ContentStorage' object...")
+        content_storage = self.find_nested_item(self.json_data, "ContentStorage")
+
+        if not content_storage:
+            self.log("❌ Error: Could not find 'ContentStorage' in the JSON file. The structure may be unexpected.")
+            return
+        
+        self.log("✅ Found 'ContentStorage'.")
+        
+        try:
+            mobs_list = self.get_property(content_storage, "Mobs")[2]
+            self.all_mobs = {item[0]: item for item in mobs_list}
+            self.log(f"✅ Found and indexed {len(self.all_mobs)} Mobs.")
+        except (IndexError, TypeError) as e:
+            self.log(f"❌ Error finding Mobs list within ContentStorage: {e}")
+            return
+
+        sequence_mob = self.all_mobs.get(sequence_name)
+        if not sequence_mob:
+            self.log(f"❌ Could not find top-level CompositionMob named '{sequence_name}'. Please check the name.")
+            return
+
+        self.log(f"✅ Found CompositionMob: '{sequence_name}'")
+        self.parse_sequence(sequence_mob)
+
+    def get_property(self, data_list, prop_name):
+        """Safely retrieves a property from a Mob's data list by its name."""
+        if not isinstance(data_list, list) or len(data_list) < 4:
+            return None
+        
+        children = data_list[3]
+        if not isinstance(children, list):
+            return None
+
+        for item in children:
+            if isinstance(item, list) and len(item) > 1 and item[0] == prop_name:
+                return item
+        return None
+
+    def find_mob_by_id(self, target_mob_id):
+        """Finds a mob by its MobID."""
+        for mob_name, mob_data in self.all_mobs.items():
+            mob_id_prop = self.get_property(mob_data, "MobID")
+            if mob_id_prop and len(mob_id_prop) > 2 and mob_id_prop[2] == target_mob_id:
+                return mob_data
+        return None
+
+    def trace_source_path(self, source_mob):
+        """Traces from a SourceMob to find the original file path (URLString)."""
+        if not source_mob:
+            return "Path not found"
+        
+        # Source mobs can have their path in an ImportDescriptor or TapeDescriptor
+        essence_desc = self.get_property(source_mob, "EssenceDescription")
+        if not essence_desc:
+            return "EssenceDescription not found"
+        
+        # Most common case: ImportDescriptor
+        import_desc = essence_desc[3][0] # Assumes first child is the descriptor
+        if import_desc[0] == "ImportDescriptor":
+            locators = self.get_property(import_desc, "Locator")
+            if locators and locators[2]:
+                network_locator = locators[2][0]
+                if network_locator[0] == "NetworkLocator":
+                    url_string_prop = self.get_property(network_locator, "URLString")
+                    if url_string_prop:
+                        return url_string_prop[2]
+        return "URLString not found in Locator"
+    
+    def parse_sequence(self, sequence_mob):
+        """Parses the slots and segments of the main sequence CompositionMob."""
+        slots = self.get_property(sequence_mob, "Slots")
+        if not slots or not slots[2]:
+            self.log("❌ No 'Slots' found in the sequence.")
+            return
+
+        start_frame, edit_rate = 0, 25
+        for slot_data in slots[2]:
+            if slot_data[1] == "TimelineMobSlot" and self.get_property(slot_data, "Segment")[3][0][1] == "Timecode":
+                tc_data = self.get_property(slot_data, "Segment")[3][0]
+                rate_prop = self.get_property(slot_data, "EditRate")
+                start_prop = self.get_property(tc_data, "Start")
+                if rate_prop: edit_rate = int(rate_prop[2])
+                if start_prop: start_frame = int(start_prop[2])
+                self.log(f"Found sequence start TC: {self.format_timecode(start_frame, edit_rate)} ({start_frame}f) at {edit_rate}fps.")
+                break
+        
+        video_slot = next((s for s in slots[2] if self.get_property(s, "SlotName") and self.get_property(s, "SlotName")[2] == "FOR CONFORM"), None)
+        
+        if not video_slot:
+            self.log("⚠️ Could not find a 'FOR CONFORM' track. Analysis may fail or be incomplete.")
+            return
+
+        sequence = self.get_property(video_slot, "Segment")[3][0]
+        components = self.get_property(sequence, "Components")[2]
+
+        self.log(f"Parsing {len(components)} components on track 'FOR CONFORM'.")
+        
+        current_frame, event_count = start_frame, 0
+        for component in components:
+            length_prop = self.get_property(component, "Length")
+            if not length_prop: continue
+            
+            length_frames = length_prop[2]
+            
+            source_clip = None
+            if component[1] == "SourceClip":
+                source_clip = component
+            elif component[1] == "OperationGroup":
+                inputs = self.get_property(component, "InputSegments")
+                if inputs and inputs[2]:
+                    # Recurse down to find the first source clip in the effect group
+                    nested_seq = inputs[2][0]
+                    nested_comps = self.get_property(nested_seq, "Components")[2]
+                    source_clip = next((c for c in nested_comps if c[1] == "SourceClip"), None)
+            
+            if source_clip:
+                event_count += 1
+                source_id = self.get_property(source_clip, "SourceID")[2]
+                
+                clip_name, source_path = "N/A", "N/A"
+                
+                ref_mob = self.find_mob_by_id(source_id)
+                if ref_mob:
+                    clip_name = self.get_property(ref_mob, "Name")[2]
+                    final_source_ref = self.get_property(self.get_property(self.get_property(ref_mob, "Slots")[2][0], "Segment")[3][0], "Components")[2][0]
+                    original_source_mob_ref = self.get_property(final_source_ref, "Source Mob Ref")
+                    if original_source_mob_ref and original_source_mob_ref[3]:
+                        source_path = self.trace_source_path(original_source_mob_ref[3][0])
+
+                row = self.results_table.rowCount()
+                self.results_table.insertRow(row)
+                self.results_table.setItem(row, 0, QTableWidgetItem(f"{event_count:03d}"))
+                self.results_table.setItem(row, 1, QTableWidgetItem(clip_name))
+                self.results_table.setItem(row, 2, QTableWidgetItem(self.format_timecode(current_frame, edit_rate)))
+                self.results_table.setItem(row, 3, QTableWidgetItem(self.format_timecode(current_frame + length_frames, edit_rate)))
+                self.results_table.setItem(row, 4, QTableWidgetItem(str(length_frames)))
+                self.results_table.setItem(row, 5, QTableWidgetItem(source_path))
+
+            current_frame += length_frames
+
+        self.log(f"✅ Analysis complete. Found {event_count} clips on the timeline.")
+        self.results_table.resizeRowsToContents()
+
+    def format_timecode(self, frames, fps):
+        """Converts a frame count to HH:MM:SS:FF format."""
+        if fps == 0: return "00:00:00:00"
+        
+        total_seconds = frames // fps
+        frames_part = frames % fps
+        
+        hours = total_seconds // 3600
+        minutes = (total_seconds % 3600) // 60
+        seconds = total_seconds % 60
+        
+        return f"{hours:02}:{minutes:02}:{seconds:02}:{frames_part:02}"
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    window = AAFParserGUI()
+    window.show()
+    sys.exit(app.exec())

@@ -1,0 +1,878 @@
+✅ Loaded JSON: C:/Users/o_gri/Desktop/combined/selectWWD_SIMPLE_comp.json
+✅ JSON loaded successfully.
+
+=== Scanning recursively for Mobs ===
+
+
+✅ Found 290 Mobs matching target classes.
+
+[0] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[1] WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13000000.060e2b34.7f7f2a80.68623fbb.fc4a12d7
+     Slots: 3 slots
+[2] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[3] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[4] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[5] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[6] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[7] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[8] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[9] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[10] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[11] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[12] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[13] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[14] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[15] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[16] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[17] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[18] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[19] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[20] A004_C020_0430NW (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.d6c5743a.7327f011.92602cb6.9d044aba
+     Slots: 3 slots
+[21] A004_C024_04303O (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.22312469.7427f011.92602cb6.9d044aba
+     Slots: 3 slots
+[22] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[23] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[24] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[25] A004_C024_04303O.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0e58932b.07968006.51025065.f31b9dcf
+     Slots: 1 slots
+[26] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[27] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0e589fe7.07968006.47685065.f31b9dcf
+     Slots: 1 slots
+[28] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[29] A004_C024_04303O (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.22312469.7427f011.92602cb6.9d044aba
+     Slots: 3 slots
+[30] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[31] A004_C024_04303O (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.22312469.7427f011.92602cb6.9d044aba
+     Slots: 3 slots
+[32] selectWWD_SIMPLE.Exported.01 (CompositionMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.a8b9ae40.08568006.772ef8f2.1e3b0548
+     Slots: 10 slots
+[33] Source Mob Ref (MasterMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[34] A004_C020_0430NW.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.edad5e92.07968006.75215065.f31b9dcf
+     Slots: 1 slots
+[35] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[36] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.edad63e9.07968006.8c7a5065.f31b9dcf
+     Slots: 1 slots
+[37] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[38] A004_C020_0430NW (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.d6c5743a.7327f011.92602cb6.9d044aba
+     Slots: 3 slots
+[39] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[40] A004_C020_0430NW (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.d6c5743a.7327f011.92602cb6.9d044aba
+     Slots: 3 slots
+[41] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[42] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.edad63e9.07968006.8c7a5065.f31b9dcf
+     Slots: 1 slots
+[43] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[44] A004_C020_0430NW (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.d6c5743a.7327f011.92602cb6.9d044aba
+     Slots: 3 slots
+[45] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[46] A004_C020_0430NW (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.d6c5743a.7327f011.92602cb6.9d044aba
+     Slots: 3 slots
+[47] Source Mob Ref (MasterMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[48] A004_C024_04303O.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0e58932b.07968006.51025065.f31b9dcf
+     Slots: 1 slots
+[49] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[50] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0e589fe7.07968006.47685065.f31b9dcf
+     Slots: 1 slots
+[51] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[52] A004_C024_04303O (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.22312469.7427f011.92602cb6.9d044aba
+     Slots: 3 slots
+[53] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[54] A004_C024_04303O (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.22312469.7427f011.92602cb6.9d044aba
+     Slots: 3 slots
+[55] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[56] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0e589fe7.07968006.47685065.f31b9dcf
+     Slots: 1 slots
+[57] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[58] A004_C024_04303O (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.22312469.7427f011.92602cb6.9d044aba
+     Slots: 3 slots
+[59] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[60] A004_C024_04303O (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.22312469.7427f011.92602cb6.9d044aba
+     Slots: 3 slots
+[61] Source Mob Ref (MasterMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[62] WW2D_ARC_966_M_GETTY_537133695.jpg (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f754550.07688006.80623013.8bebd03f
+     Slots: 1 slots
+[63] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[64] WW2D_ARC_966_M_GETTY_537133695.jpg.PHYS (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545ce.07688006.85893013.8bebd03f
+     Slots: 1 slots
+[65] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[66] WW2D_ARC_966_M_GETTY_537133695.jpg (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545d0.07688006.57a53013.8bebd03f
+     Slots: 2 slots
+[67] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[68] WW2D_ARC_966_M_GETTY_537133695.jpg (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545d0.07688006.57a53013.8bebd03f
+     Slots: 2 slots
+[69] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[70] WW2D_ARC_966_M_GETTY_537133695.jpg.PHYS (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545ce.07688006.85893013.8bebd03f
+     Slots: 1 slots
+[71] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[72] WW2D_ARC_966_M_GETTY_537133695.jpg (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545d0.07688006.57a53013.8bebd03f
+     Slots: 2 slots
+[73] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[74] WW2D_ARC_966_M_GETTY_537133695.jpg (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545d0.07688006.57a53013.8bebd03f
+     Slots: 2 slots
+[75] Source Mob Ref (CompositionMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[76] WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 (CompositionMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff887.05918006.2c8478ac.c03c8af9
+     Slots: 4 slots
+[77] Source Mob Ref (MasterMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[78] WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13000000.060e2b34.7f7f2a80.68623fbb.fc4a12d7
+     Slots: 3 slots
+[79] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[80] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[81] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[82] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[83] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[84] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[85] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[86] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[87] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[88] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[89] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[90] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[91] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[92] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[93] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[94] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[95] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[96] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[97] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[98] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[99] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[100] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[101] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[102] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[103] Source Mob Ref (MasterMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[104] WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13000000.060e2b34.7f7f2a80.68623fbb.fc4a12d7
+     Slots: 3 slots
+[105] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[106] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[107] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[108] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[109] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[110] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[111] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[112] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[113] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[114] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[115] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[116] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[117] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[118] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[119] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[120] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[121] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[122] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[123] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[124] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[125] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[126] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[127] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[128] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[129] Source Mob Ref (MasterMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[130] WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13000000.060e2b34.7f7f2a80.68623fbb.fc4a12d7
+     Slots: 3 slots
+[131] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[132] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[133] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[134] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[135] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[136] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[137] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[138] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[139] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[140] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[141] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[142] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[143] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[144] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[145] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[146] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[147] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[148] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[149] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[150] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[151] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[152] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[153] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[154] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[155] Source Mob Ref (MasterMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[156] WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13000000.060e2b34.7f7f2a80.68623fbb.fc4a12d7
+     Slots: 3 slots
+[157] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[158] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[159] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[160] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[161] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[162] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[163] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[164] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[165] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[166] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[167] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[168] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[169] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[170] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[171] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[172] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[173] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[174] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[175] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[176] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[177] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[178] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[179] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[180] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[181] WW2D_ARC_966_M_GETTY_537133695.jpg (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f754550.07688006.80623013.8bebd03f
+     Slots: 1 slots
+[182] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[183] WW2D_ARC_966_M_GETTY_537133695.jpg.PHYS (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545ce.07688006.85893013.8bebd03f
+     Slots: 1 slots
+[184] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[185] WW2D_ARC_966_M_GETTY_537133695.jpg (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545d0.07688006.57a53013.8bebd03f
+     Slots: 2 slots
+[186] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[187] WW2D_ARC_966_M_GETTY_537133695.jpg (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545d0.07688006.57a53013.8bebd03f
+     Slots: 2 slots
+[188] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[189] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[190] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[191] WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 (CompositionMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff887.05918006.2c8478ac.c03c8af9
+     Slots: 4 slots
+[192] Source Mob Ref (MasterMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[193] WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13000000.060e2b34.7f7f2a80.68623fbb.fc4a12d7
+     Slots: 3 slots
+[194] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[195] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[196] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[197] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[198] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[199] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[200] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[201] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[202] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[203] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[204] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[205] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[206] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[207] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[208] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[209] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[210] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[211] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[212] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[213] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[214] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[215] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[216] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[217] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[218] Source Mob Ref (MasterMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[219] WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13000000.060e2b34.7f7f2a80.68623fbb.fc4a12d7
+     Slots: 3 slots
+[220] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[221] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[222] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[223] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[224] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[225] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[226] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[227] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[228] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[229] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[230] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[231] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[232] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[233] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[234] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[235] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[236] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[237] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[238] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[239] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[240] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[241] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[242] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[243] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[244] Source Mob Ref (MasterMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[245] WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13000000.060e2b34.7f7f2a80.68623fbb.fc4a12d7
+     Slots: 3 slots
+[246] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[247] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[248] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[249] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[250] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[251] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[252] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[253] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff909.05918006.34d078ac.c03c8af9
+     Slots: 1 slots
+[254] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[255] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[256] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[257] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[258] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[259] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[260] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[261] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[262] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[263] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[264] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[265] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff960.05918006.a20a78ac.c03c8af9
+     Slots: 1 slots
+[266] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[267] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[268] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[269] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[270] A004_C020_0430NW.new.01 (MasterMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.edad5e92.07968006.75215065.f31b9dcf
+     Slots: 1 slots
+[271] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[272] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.edad63e9.07968006.8c7a5065.f31b9dcf
+     Slots: 1 slots
+[273] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[274] A004_C020_0430NW (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.d6c5743a.7327f011.92602cb6.9d044aba
+     Slots: 3 slots
+[275] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[276] A004_C020_0430NW (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.d6c5743a.7327f011.92602cb6.9d044aba
+     Slots: 3 slots
+[277] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff8a8.05918006.606478ac.c03c8af9
+     Slots: 1 slots
+[278] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[279] WW2D_ARC_295_S_AP-MOVIETONE_BM64877 (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010100.01010f00.13000000.90ece3cc.9f5a9113.19e45428.0af7abf7
+     Slots: 4 slots
+[280] WW2D_ARC_966_M_GETTY_537133695.jpg.PHYS (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545ce.07688006.85893013.8bebd03f
+     Slots: 1 slots
+[281] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[282] WW2D_ARC_966_M_GETTY_537133695.jpg (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545d0.07688006.57a53013.8bebd03f
+     Slots: 2 slots
+[283] WW2D_ARC_966_M_GETTY_537133695.jpg (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f7545d0.07688006.57a53013.8bebd03f
+     Slots: 2 slots
+[284] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0e589fe7.07968006.47685065.f31b9dcf
+     Slots: 1 slots
+[285] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[286] A004_C024_04303O (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.22312469.7427f011.92602cb6.9d044aba
+     Slots: 3 slots
+[287] SourceMob (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.edad63e9.07968006.8c7a5065.f31b9dcf
+     Slots: 1 slots
+[288] Source Mob Ref (SourceMob)
+     MobID: (no MobID)
+     Slots: 0 slots
+[289] A004_C020_0430NW (SourceMob)
+     MobID: urn:smpte:umid:060a2b34.01010101.01010f00.13a10000.d6c5743a.7327f011.92602cb6.9d044aba
+     Slots: 3 slots
