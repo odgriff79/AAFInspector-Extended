@@ -1,0 +1,20 @@
+Event: 1 | Clip Name: A004_C020_0430NW_001.R3D
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.edad5e92.07968006.75215065.f31b9dcf
+Found Start Values (frames): [0, 142109, 1490762]
+Selected Value (Max): 1490762
+--------------------------------------------------
+Event: 2 | Clip Name: A004_C024_04303O_001.R3D
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0e58932b.07968006.51025065.f31b9dcf
+Found Start Values (frames): [0, 155788, 1503458]
+Selected Value (Max): 1503458
+--------------------------------------------------
+Event: 3 | Clip Name: WW2D_ARC_966_M_GETTY_537133695.jpg
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.9f754550.07688006.80623013.8bebd03f
+Found Start Values (frames): [0, 90000]
+Selected Value (Max): 90000
+--------------------------------------------------
+Event: 4 | Clip Name: WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.363ff887.05918006.2c8478ac.c03c8af9
+Found Start Values (frames): [0, 2, 2159998]
+Selected Value (Max): 2159998
+--------------------------------------------------

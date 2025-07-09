@@ -1,5 +1,0 @@
-Event,MobID,DiskLabel,TapeID,URLString,EditRate,TimelineStartFrame,TimelineInTC,TimelineOutTC,SourceStartFrameOffset,SourceStartOffsetTC,SourceAbsoluteTC,Length
-1,,,,,25.0,0,00:00:00:00,00:00:00:00,0,00:00:00:00,UNKNOWN,0
-2,,,,,25.0,0,00:00:00:00,00:00:00:00,0,00:00:00:00,UNKNOWN,0
-3,,,,,25.0,0,00:00:00:00,00:00:00:00,0,00:00:00:00,UNKNOWN,0
-4,,,,,25.0,0,00:00:00:00,00:00:00:00,0,00:00:00:00,UNKNOWN,0
