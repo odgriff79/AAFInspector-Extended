@@ -1,0 +1,215 @@
+Event: 1 | Clip Name: WW2D_News_08_HITLER'S SON_v01.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.fc39443c.08428006.db3c705a.0f36c137
+Found Start Values (frames): [0]
+Selected Value (Max): 0
+--------------------------------------------------
+Event: 2 | Clip Name: A002_C006_0425ZB_001.R3D
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.d6e0c6a4.07918006.01acecb1.d742a090
+Found Start Values (frames): [0, 96408, 1695881]
+Selected Value (Max): 1695881
+--------------------------------------------------
+Event: 3 | Clip Name: WW2D_ARC_176_M_SHUTTERSTOCK_12106599A_EVA-BRAUN-SOFA-FUHRERBUNKER-1945_HITPAW.jpg
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.3da4faf6.05788006.e3ee0060.dd4780cb
+Found Start Values (frames): [0]
+Selected Value (Max): 0
+--------------------------------------------------
+Event: 4 | Clip Name: WW2D_ARC_1339_M_POND5_120335840.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.6d84f8ff.08398006.9b4a6451.0657b63d
+Found Start Values (frames): [0]
+Selected Value (Max): 0
+--------------------------------------------------
+Event: 5 | Clip Name: BOD_0689.MXF
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.14bf5697.07518006.fa9becb1.d733330a
+Found Start Values (frames): [0, 960163]
+Selected Value (Max): 960163
+--------------------------------------------------
+Event: 6 | Clip Name: A006_C005_0129CW_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.2e256f81.07058006.0d41dc4a.3e8bff6f
+Found Start Values (frames): [0, 1395261]
+Selected Value (Max): 1395261
+--------------------------------------------------
+Event: 7 | Clip Name: A005_C012_0129TP_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.5647495a.07068006.aa13dc4a.3e8bff6f
+Found Start Values (frames): [0, 1231549]
+Selected Value (Max): 1231549
+--------------------------------------------------
+Event: 8 | Clip Name: B005_C006_0314E3_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.161d04ca.07518006.3511ecb1.d742a090
+Found Start Values (frames): [0, 959858]
+Selected Value (Max): 959858
+--------------------------------------------------
+Event: 9 | Clip Name: A005_C006_0314DC_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.a65643f5.07528006.b5edecb1.d742a090
+Found Start Values (frames): [0, 959816]
+Selected Value (Max): 959816
+--------------------------------------------------
+Event: 10 | Clip Name: BOD_0689.MXF
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.14bf5697.07518006.fa9becb1.d733330a
+Found Start Values (frames): [0, 960163]
+Selected Value (Max): 960163
+--------------------------------------------------
+Event: 11 | Clip Name: BOD_0689.MXF
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.14bf5697.07518006.fa9becb1.d733330a
+Found Start Values (frames): [0, 960163]
+Selected Value (Max): 960163
+--------------------------------------------------
+Event: 12 | Clip Name: A005_C016_03141W_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.ac69c1b7.07528006.1675ecb1.d742a090
+Found Start Values (frames): [0, 1013661]
+Selected Value (Max): 1013661
+--------------------------------------------------
+Event: 13 | Clip Name: A006_C005_0129CW_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.2e256f81.07058006.0d41dc4a.3e8bff6f
+Found Start Values (frames): [0, 1395261]
+Selected Value (Max): 1395261
+--------------------------------------------------
+Event: 14 | Clip Name: B002_C001_03189X_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.962d17c8.07538006.ec86a8a1.59020ae0
+Found Start Values (frames): [0, 1088273]
+Selected Value (Max): 1088273
+--------------------------------------------------
+Event: 15 | Clip Name: A005_C003_0314BN_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.99545421.07528006.3c9decb1.d742a090
+Found Start Values (frames): [0, 947023]
+Selected Value (Max): 947023
+--------------------------------------------------
+Event: 16 | Clip Name: B005_C020_0314UT_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.104b2ba4.07518006.b633ecb1.d742a090
+Found Start Values (frames): [0, 1019820]
+Selected Value (Max): 1019820
+--------------------------------------------------
+Event: 17 | Clip Name: B005_C025_0314XK_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0f8cf206.07518006.5c9aecb1.d742a090
+Found Start Values (frames): [0, 1052628]
+Selected Value (Max): 1052628
+--------------------------------------------------
+Event: 18 | Clip Name: WW2D_ARC_214_S_NARA_EvaBraun_colourised_242-2-r2_1_HITPAW.mp4
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.5a25c5ab.08298006.f65f644e.d7ca5741
+Found Start Values (frames): [0]
+Selected Value (Max): 0
+--------------------------------------------------
+Event: 19 | Clip Name: WW2D_ARC_214_S_NARA_EvaBraun_colourised_242-2-r2_3_HITPAW.mp4
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.5a2c4eba.08298006.edd3644e.d7ca5741
+Found Start Values (frames): [0]
+Selected Value (Max): 0
+--------------------------------------------------
+Event: 20 | Clip Name: WW2D_ARC_214_S_NARA_EvaBraun_colourised_242-2-r2_4_HITPAW.mp4
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.5a252e91.08298006.52e4644e.d7ca5741
+Found Start Values (frames): [0]
+Selected Value (Max): 0
+--------------------------------------------------
+Event: 21 | Clip Name: A004_C003_0129X5_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.3997059e.07058006.2678dc4a.3e8bff6f
+Found Start Values (frames): [0, 975488]
+Selected Value (Max): 975488
+--------------------------------------------------
+Event: 22 | Clip Name: B004_C004_0129EH_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.2958512e.07058006.daa2dc4a.3e8bff6f
+Found Start Values (frames): [0, 978747]
+Selected Value (Max): 978747
+--------------------------------------------------
+Event: 23 | Clip Name: WW2D_GFX_CHROMOSOME_MATCH_v01_viewing.mp4
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.95d79471.08078006.eade3013.8bebd03f
+Found Start Values (frames): [0, 2, 2159998]
+Selected Value (Max): 2159998
+--------------------------------------------------
+Event: 24 | Clip Name: WW2D_ARC_129_M_NARA_242-HF-0160_001_Portrait-Adolf-Hitler-UNDATED.jpg
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.3da0daf8.05788006.a5060060.dd4780cb
+Found Start Values (frames): [0]
+Selected Value (Max): 0
+--------------------------------------------------
+Event: 25 | Clip Name: WW2D_ARC_856_M_POND5_71606516.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.640cfe2a.07888006.78e93013.8bebd03f
+Found Start Values (frames): [0]
+Selected Value (Max): 0
+--------------------------------------------------
+Event: 26 | Clip Name: WW2D_DNA_SCAN_TOP_v01.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.c540ba20.08158006.570b3013.8bebd03f
+Found Start Values (frames): [0]
+Selected Value (Max): 0
+--------------------------------------------------
+Event: 27 | Clip Name: FX60127.MXF
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.08811f5e.05348006.33d1705a.0f36c12f
+Found Start Values (frames): [0, 979418]
+Selected Value (Max): 979418
+--------------------------------------------------
+Event: 28 | Clip Name: WW2D_240711_FX3_Bcam_008_C0061.MP4
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.fb0b8fa3.05348006.37b0705a.0f36c12f
+Found Start Values (frames): [0, 348984, 1051387]
+Selected Value (Max): 1051387
+--------------------------------------------------
+Event: 29 | Clip Name: B001_C008_0318EU_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.962d1895.07538006.03c8a8a1.59020ae0
+Found Start Values (frames): [0, 1070926]
+Selected Value (Max): 1070926
+--------------------------------------------------
+Event: 30 | Clip Name: WW2D_240711_FX3_Bcam_008_C0061.MP4
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.fb0b8fa3.05348006.37b0705a.0f36c12f
+Found Start Values (frames): [0, 348984, 1051387]
+Selected Value (Max): 1051387
+--------------------------------------------------
+Event: 31 | Clip Name: WW2D_240711_FX3_Bcam_008_C0061.MP4
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.fb0b8fa3.05348006.37b0705a.0f36c12f
+Found Start Values (frames): [0, 348984, 1051387]
+Selected Value (Max): 1051387
+--------------------------------------------------
+Event: 32 | Clip Name: WW2D_240711_FX3_Bcam_008_C0061.MP4
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.fb0b8fa3.05348006.37b0705a.0f36c12f
+Found Start Values (frames): [0, 348984, 1051387]
+Selected Value (Max): 1051387
+--------------------------------------------------
+Event: 33 | Clip Name: WW2D_DNA_SCAN_v05.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.266fae36.08448006.1a4410e7.c61bfb30
+Found Start Values (frames): [0, 25]
+Selected Value (Max): 25
+--------------------------------------------------
+Event: 34 | Clip Name: WW2D_DNA_SCAN_TOP_v01.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.c540ba20.08158006.570b3013.8bebd03f
+Found Start Values (frames): [0]
+Selected Value (Max): 0
+--------------------------------------------------
+Event: 35 | Clip Name: A001_C009_0318FE_001.mov
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.bf065a9f.07538006.8f39dc4a.3e67ff58
+Found Start Values (frames): [0, 1075387]
+Selected Value (Max): 1075387
+--------------------------------------------------
+Event: 36 | Clip Name: B003_C015_0425VT_001.R3D
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.25d7ea2a.07918006.d421dc4a.3e67ff58
+Found Start Values (frames): [0, 106700, 1846481]
+Selected Value (Max): 1846481
+--------------------------------------------------
+Event: 37 | Clip Name: A003_C017_0425Z8_001.R3D
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.d2ce97a4.07918006.62a4ecb1.d742a090
+Found Start Values (frames): [0, 117631, 1856561]
+Selected Value (Max): 1856561
+--------------------------------------------------
+Event: 38 | Clip Name: A003_C016_0425O9_001.R3D
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0b2e2e1c.07928006.f55fecb1.d742a090
+Found Start Values (frames): [0, 109124, 1851495]
+Selected Value (Max): 1851495
+--------------------------------------------------
+Event: 39 | Clip Name: FX60132.MXF
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0e2c2c2d.05348006.9636705a.0f36c12f
+Found Start Values (frames): [0, 1017419]
+Selected Value (Max): 1017419
+--------------------------------------------------
+Event: 40 | Clip Name: FX60128.MXF
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.09f0ced6.05348006.1999705a.0f36c12f
+Found Start Values (frames): [0, 998802]
+Selected Value (Max): 998802
+--------------------------------------------------
+Event: 41 | Clip Name: FX60130.MXF
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.0cb0ed47.05348006.ada1705a.0f36c12f
+Found Start Values (frames): [0, 1004927]
+Selected Value (Max): 1004927
+--------------------------------------------------
+Event: 42 | Clip Name: WW2D_240711_FX3_Bcam_008_C0053.MP4
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.f368ecd6.05348006.52f0705a.0f36c12f
+Found Start Values (frames): [0, 277572, 979974]
+Selected Value (Max): 979974
+--------------------------------------------------
+Event: 43 | Clip Name: WW2D_ARC_1456_M_BSB_HOFF-25543.jpg
+MobID: urn:smpte:umid:060a2b34.01010105.01010f10.13000000.b1d860fc.08448006.8b27644e.d7ca5741
+Found Start Values (frames): [0, 90000]
+Selected Value (Max): 90000
+--------------------------------------------------
