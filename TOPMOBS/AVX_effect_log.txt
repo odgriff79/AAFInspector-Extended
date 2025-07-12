@@ -1,0 +1,33 @@
+🔹 Path: root/selectWWD_ORIGINAL.Exported.01/Slots/FOR CONFORM/Segment/Sequence/Components/OperationGroup/ComponentAttributeList
+  Type: AVX2
+  Name: Resize
+  Class: AVX2 Effect
+  Attributes:
+    - _BORDER_FIXED: 1
+    - _EFFECT_PLUGIN_TYPE: AVX2
+    - _EFFECT_PLUGIN_NAME: Resize
+    - _EFFECT_PLUGIN_CLASS: AVX2 Effect
+    - _EFFECT_PLUGIN_MANUFACTURER_ID: 3d780682-77e9-11d6-94d9-00306542a024
+    - _EFFECT_PLUGIN_MANUFACTURER_NAME: Avid
+    - _EFFECT_PLUGIN_PRODUCT_ID: 1cf8c0c4-8536-45ab-aace-02abfeed5fdd
+    - _EFFECT_PLUGIN_PRODUCT_NAME: 
+    - _EFFECT_PLUGIN_VERSION: 1.0
+    - _EFFECT_PLUGIN_SKU: 
+    - _IGNORE_TRACKING: 0
+
+🔹 Path: root/selectWWD_ORIGINAL.Exported.01/Slots/FOR CONFORM/Segment/Sequence/Components/OperationGroup/ComponentAttributeList
+  Type: AVX2
+  Name: 3DWarp
+  Class: AVX2 Effect
+  Attributes:
+    - _BORDER_FIXED: 0
+    - _EFFECT_PLUGIN_TYPE: AVX2
+    - _EFFECT_PLUGIN_NAME: 3DWarp
+    - _EFFECT_PLUGIN_CLASS: AVX2 Effect
+    - _EFFECT_PLUGIN_MANUFACTURER_ID: 3d780682-77e9-11d6-94d9-00306542a024
+    - _EFFECT_PLUGIN_MANUFACTURER_NAME: Avid
+    - _EFFECT_PLUGIN_PRODUCT_ID: 1cf8c0c4-8536-45ab-aace-02abfeed5fdd
+    - _EFFECT_PLUGIN_PRODUCT_NAME: 
+    - _EFFECT_PLUGIN_VERSION: 1.0
+    - _EFFECT_PLUGIN_SKU: 
+    - _IGNORE_TRACKING: 0

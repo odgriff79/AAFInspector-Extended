@@ -1,0 +1,303 @@
+==================================================
+Found OperationGroup. Dumping Parameters:
+  - AFX_SPATIAL_SOURCE_WID_DEN: None
+  - AFX_SPATIAL_FRAMING_HEI_NUM: None
+  - AFX_SPATIAL_VALID_POSY_DEN: None
+  - AFX_SPATIAL_VALID_POSY_NUM: None
+  - AFX_SPATIAL_FRAMING_WID_DEN: None
+  - AFX_SPATIAL_FRAMING_POSY_NUM: None
+  - AFX_SPATIAL_FRAMING_POSX_DEN: None
+  - AFX_SPATIAL_DVE_ROT_DEFAULT: None
+  - AFX_SPATIAL_VALID_HEI_DEN: None
+  - AFX_SPATIAL_FRAMING_POSX_NUM: None
+  - AFX_SPATIAL_ESSENCE_POSY_NUM: None
+  - AFX_SPATIAL_ESSENCE_HEI_NUM: None
+  - AFX_SPATIAL_SOURCE_WID_NUM: None
+  - AFX_SPATIAL_SOURCE_HEI_DEN: None
+  - AFX_SPATIAL_ESSENCE_WID_NUM: None
+  - AFX_SPATIAL_VALID_WID_NUM: None
+  - AFX_SPATIAL_REFORMAT: None
+  - AFX_SPATIAL_VALID_HEI_NUM: None
+  - AvidParameterByteOrder: None
+  - AFX_SPATIAL_VALID_POSX_NUM: None
+  - AFX_SPATIAL_ESSENCE_POSX_NUM: None
+  - AFX_SPATIAL_SOURCE_POSX_NUM: None
+  - AFX_SPATIAL_FRAMING_WID_NUM: None
+  - AFX_SPATIAL_VALID_POSX_DEN: None
+  - AFX_SPATIAL_SOURCE_HEI_NUM: None
+  - AFX_SPATIAL_ESSENCE_WID_DEN: None
+  - AFX_SPATIAL_FRAMING_HEI_DEN: None
+  - AFX_SPATIAL_VALID_WID_DEN: None
+  - AFX_SPATIAL_ESSENCE_POSY_DEN: None
+  - AFX_SPATIAL_SOURCE_POSX_DEN: None
+  - AFX_SPATIAL_FRAMING_POSY_DEN: None
+  - AvidEffectID: None
+  - MC AVX2 EFFECT VERSION: None
+  - AFX_SPATIAL_SOURCE_POSY_NUM: None
+  - AFX_SPATIAL_ESSENCE_HEI_DEN: None
+  - AFX_SPATIAL_ESSENCE_POSX_DEN: None
+  - AFX_SPATIAL_SOURCE_POSY_DEN: None
+==================================================
+
+==================================================
+Found OperationGroup. Dumping Parameters:
+  - AFX_SPATIAL_SOURCE_WID_DEN: None
+  - AFX_SPATIAL_FRAMING_HEI_NUM: None
+  - AFX_SPATIAL_VALID_POSY_DEN: None
+  - AFX_SPATIAL_VALID_POSY_NUM: None
+  - AFX_SPATIAL_FRAMING_WID_DEN: None
+  - AFX_SPATIAL_FRAMING_POSY_NUM: None
+  - AFX_SPATIAL_FRAMING_POSX_DEN: None
+  - AFX_SPATIAL_DVE_ROT_DEFAULT: None
+  - AFX_SPATIAL_VALID_HEI_DEN: None
+  - AFX_SPATIAL_FRAMING_POSX_NUM: None
+  - AFX_SPATIAL_ESSENCE_POSY_NUM: None
+  - AFX_SPATIAL_ESSENCE_HEI_NUM: None
+  - AFX_SPATIAL_SOURCE_WID_NUM: None
+  - AFX_SPATIAL_SOURCE_HEI_DEN: None
+  - AFX_SPATIAL_ESSENCE_WID_NUM: None
+  - AFX_SPATIAL_VALID_WID_NUM: None
+  - AFX_SPATIAL_REFORMAT: None
+  - AFX_SPATIAL_VALID_HEI_NUM: None
+  - AvidParameterByteOrder: None
+  - AFX_SPATIAL_VALID_POSX_NUM: None
+  - AFX_SPATIAL_ESSENCE_POSX_NUM: None
+  - AFX_SPATIAL_SOURCE_POSX_NUM: None
+  - AFX_SPATIAL_FRAMING_WID_NUM: None
+  - AFX_SPATIAL_VALID_POSX_DEN: None
+  - AFX_SPATIAL_SOURCE_HEI_NUM: None
+  - AFX_SPATIAL_ESSENCE_WID_DEN: None
+  - AFX_SPATIAL_FRAMING_HEI_DEN: None
+  - AFX_SPATIAL_VALID_WID_DEN: None
+  - AFX_SPATIAL_ESSENCE_POSY_DEN: None
+  - AFX_SPATIAL_SOURCE_POSX_DEN: None
+  - AFX_SPATIAL_FRAMING_POSY_DEN: None
+  - AvidEffectID: None
+  - MC AVX2 EFFECT VERSION: None
+  - AFX_SPATIAL_SOURCE_POSY_NUM: None
+  - AFX_SPATIAL_ESSENCE_HEI_DEN: None
+  - AFX_SPATIAL_ESSENCE_POSX_DEN: None
+  - AFX_SPATIAL_SOURCE_POSY_DEN: None
+==================================================
+
+==================================================
+Found OperationGroup. Dumping Parameters:
+  - AFX_POS_X_U: None
+  - AFX_POS_Y_U: None
+  - AFX_SCALE_X_U: None
+  - AFX_SCALE_Y_U: None
+  - AFX_FIXED_ASPECT_U: None
+  - AFX_CROP_LEFT_U: None
+  - AFX_CROP_RIGHT_U: None
+  - AFX_CROP_TOP_U: None
+  - AFX_CROP_BOTTOM_U: None
+  - AFX_BG_H_U: None
+  - AFX_BG_S_U: None
+  - AFX_BG_L_U: None
+  - AFX_FG_KEY2_ENABLED_U: None
+  - AFX_FG_KEY_SS_ENABLED_U: None
+  - AvidParameterByteOrder: None
+  - AvidEffectID: None
+==================================================
+
+==================================================
+Found OperationGroup. Dumping Parameters:
+  - DVE_FG_KEY_LUM_RANGE_U: None
+  - DVE_FG_KEY_SS_GAIN_U: None
+  - DVE_FG_KEY_SS_SOFT_U: None
+  - DVE_BG_H_U: None
+  - DVE_BG_S_U: None
+  - AFX_YCKEY_FILTERLEVEL: None
+  - DVE_BG_L_U: None
+  - DVE_CORNER_PIN_X0_U: None
+  - DVE_CORNER_PIN_Y0_U: None
+  - DVE_CORNER_PIN_X1_U: None
+  - DVE_CORNER_PIN_Y1_U: None
+  - DVE_CORNER_PIN_X2_U: None
+  - DVE_CORNER_PIN_Y2_U: None
+  - DVE_CORNER_PIN_X3_U: None
+  - DVE_CORNER_PIN_Y3_U: None
+  - AFX_YCKEY_SAT: None
+  - DVE_DEFOCUS_MODE_U: None
+  - DVE_DEEP_DEFOCUS_HORIZONTAL_FG_U: None
+  - DVE_DEEP_DEFOCUS_VERTICAL_FG_U: None
+  - DVE_DEEP_DEFOCUS_HORIZONTAL_KEY_U: None
+  - DVE_DEEP_DEFOCUS_VERTICAL_KEY_U: None
+  - DVE_CUSTOM_HIGHLIGHT_H_U: None
+  - DVE_CUSTOM_HIGHLIGHT_S_U: None
+  - DVE_CUSTOM_HIGHLIGHT_L_U: None
+  - DVE_CUSTOM_LOWLIGHT_H_U: None
+  - DVE_CUSTOM_LOWLIGHT_S_U: None
+  - DVE_CUSTOM_LOWLIGHT_L_U: None
+  - AFX_FIXED_ASPECT_U: None
+  - AFX_YCKEY_SPILLSAT: None
+  - Vergence: None
+  - AFX_YCKEY_SUPPRESSSHADOW: None
+  - AFX_YCKEY_LUMALUT: None
+  - AFX_YCKEY_SATLINE: None
+  - AvidParameterByteOrder: None
+  - AFX_YCKEY_OFFSET: None
+  - AFX_YCKEY_SPILLANGLE: None
+  - DVE_TRACKING_POS_U: None
+  - DVE_WARP_RADIUS_U: None
+  - DVE_WARP_OFFSET_U: None
+  - DVE_WARP_AXIS_ANGLE_U: None
+  - DVE_WARP_X_U: None
+  - DVE_WARP_Y_U: None
+  - DVE_WARP_ASPECT_U: None
+  - DVE_WARP_FREQ_U: None
+  - DVE_WARP_AMPLT_U: None
+  - DVE_WARP_CURVE_U: None
+  - AFX_YCKEY_HUEANGLE: None
+  - DVE_WARP_SKEW_ANGLE_U: None
+  - DVE_WARP_SKEW_AMPLT_U: None
+  - DVE_POS_ENABLED_U: None
+  - DVE_POS_X_U: None
+  - DVE_POS_Y_U: None
+  - DVE_POS_Z_U: None
+  - AFX_YCKEY_ALPHASOFT: None
+  - DVE_SCALE_ENABLED_U: None
+  - DVE_SCALE_X_U: None
+  - DVE_SCALE_Y_U: None
+  - AFX_YCKEY_SWATCHLUMA: None
+  - DVE_ROT_X_U: None
+  - DVE_ROT_Y_U: None
+  - DVE_ROT_Z_U: None
+  - DVE_AXIS_X_U: None
+  - DVE_AXIS_Y_U: None
+  - AFX_YCKEY_PEAKALPHA: None
+  - DVE_AXIS_Z_U: None
+  - DVE_TRGT_X_U: None
+  - DVE_TRGT_Y_U: None
+  - DVE_TRGT_SZE_U: None
+  - DVE_PRSP_X_U: None
+  - DVE_PRSP_Y_U: None
+  - DVE_PRSP_Z_U: None
+  - DVE_SKEW_X_U: None
+  - DVE_SKEW_Y_U: None
+  - DVE_CROP_LEFT_U: None
+  - DVE_CROP_RIGHT_U: None
+  - DVE_CROP_TOP_U: None
+  - DVE_CROP_BOTTOM_U: None
+  - DVE_BORDER_ENABLED_U: None
+  - DVE_BORDER_WIDTH_U: None
+  - DVE_BORDER_SOFT_U: None
+  - DVE_BORDER_H_U: None
+  - DVE_BORDER_S_U: None
+  - AvidEffectID: None
+  - DVE_BORDER_L_U: None
+  - DVE_HLTE_RADIUS_U: None
+  - DVE_HLTE_INTSTY_U: None
+  - DVE_HLTE_AXIS_ANGLE_U: None
+  - DVE_HLTE_ASPECT_U: None
+  - DVE_HLTE_X_U: None
+  - DVE_HLTE_Y_U: None
+  - DVE_HLTE_SOFT_U: None
+  - DVE_DFCS_HORIZ_U: None
+  - DVE_DFCS_VERT_U: None
+  - DVE_SHDW_X_U: None
+  - DVE_SHDW_Y_U: None
+  - DVE_SHDW_OPACITY_U: None
+  - DVE_TRAIL_DECAY_U: None
+  - DVE_TRAIL_SPKL_ENABLED_U: None
+  - DVE_MT_PRIORITY_U: None
+  - DVE_MT_WARP_FOREGROUND_U: None
+  - DVE_MT_KEY_OPACITY_U: None
+  - DVE_WARP_BACKGROUND_LIMIT_TO_VIDEO_LEVELS: None
+  - DVE_MT_STAMP_U: None
+  - DVE_MT_CLEAR_U: None
+  - DVE_FG_KEY_OPACITY_U: None
+  - DVE_FG_KEY_HUE_ANGLE_U: None
+  - DVE_FG_KEY_SAT_U: None
+  - DVE_FG_KEY_LUM_U: None
+  - DVE_FG_KEY_HIGH_SAT_U: None
+  - DVE_FG_KEY_LUM_THRESH_U: None
+  - DVE_FG_KEY_LUM_SOFT_U: None
+==================================================
+
+==================================================
+Found OperationGroup. Dumping Parameters:
+  - AFX_SPATIAL_SOURCE_WID_DEN: None
+  - AFX_SPATIAL_FRAMING_HEI_NUM: None
+  - AFX_SPATIAL_VALID_POSY_DEN: None
+  - AFX_SPATIAL_VALID_POSY_NUM: None
+  - AFX_SPATIAL_FRAMING_WID_DEN: None
+  - AFX_SPATIAL_FRAMING_POSY_NUM: None
+  - AFX_SPATIAL_FRAMING_POSX_DEN: None
+  - AFX_SPATIAL_DVE_ROT_DEFAULT: None
+  - AFX_SPATIAL_VALID_HEI_DEN: None
+  - AFX_SPATIAL_FRAMING_POSX_NUM: None
+  - AFX_SPATIAL_ESSENCE_POSY_NUM: None
+  - AFX_SPATIAL_ESSENCE_HEI_NUM: None
+  - AFX_SPATIAL_SOURCE_WID_NUM: None
+  - AFX_SPATIAL_SOURCE_HEI_DEN: None
+  - AFX_SPATIAL_ESSENCE_WID_NUM: None
+  - AFX_SPATIAL_VALID_WID_NUM: None
+  - AFX_SPATIAL_REFORMAT: None
+  - AFX_SPATIAL_VALID_HEI_NUM: None
+  - AvidParameterByteOrder: None
+  - AFX_SPATIAL_VALID_POSX_NUM: None
+  - AFX_SPATIAL_ESSENCE_POSX_NUM: None
+  - AFX_SPATIAL_SOURCE_POSX_NUM: None
+  - AFX_SPATIAL_FRAMING_WID_NUM: None
+  - AFX_SPATIAL_VALID_POSX_DEN: None
+  - AFX_SPATIAL_SOURCE_HEI_NUM: None
+  - AFX_SPATIAL_ESSENCE_WID_DEN: None
+  - AFX_SPATIAL_FRAMING_HEI_DEN: None
+  - AFX_SPATIAL_VALID_WID_DEN: None
+  - AFX_SPATIAL_ESSENCE_POSY_DEN: None
+  - AFX_SPATIAL_SOURCE_POSX_DEN: None
+  - AFX_SPATIAL_FRAMING_POSY_DEN: None
+  - AvidEffectID: None
+  - MC AVX2 EFFECT VERSION: None
+  - AFX_SPATIAL_SOURCE_POSY_NUM: None
+  - AFX_SPATIAL_ESSENCE_HEI_DEN: None
+  - AFX_SPATIAL_ESSENCE_POSX_DEN: None
+  - AFX_SPATIAL_SOURCE_POSY_DEN: None
+==================================================
+
+==================================================
+Found OperationGroup. Dumping Parameters:
+  - AvidLFEGain: None
+  - Pan: None
+  - AvidCh1DivergenceFront: None
+  - AvidCh1PositionRear: None
+  - AvidCh1DivergenceFrontRear: None
+  - AvidCh1PositionFrontRear: None
+  - AvidCh1FrontCenterPercent: None
+  - AvidCh1SideCenterPercent: None
+  - AvidCh1DivergenceRear: None
+  - AvidPannerKind: None
+==================================================
+
+==================================================
+Found OperationGroup. Dumping Parameters:
+  - Amplitude: None
+  - PanVol_IsTrimGainEffect: None
+==================================================
+
+==================================================
+Found OperationGroup. Dumping Parameters:
+  - AvidLFEGain: None
+  - Pan: None
+  - AvidCh1DivergenceFront: None
+  - AvidCh1PositionRear: None
+  - AvidCh1DivergenceFrontRear: None
+  - AvidCh1PositionFrontRear: None
+  - AvidCh1FrontCenterPercent: None
+  - AvidCh1SideCenterPercent: None
+  - AvidCh1DivergenceRear: None
+  - AvidPannerKind: None
+==================================================
+
+==================================================
+Found OperationGroup. Dumping Parameters:
+  - Amplitude: None
+  - PanVol_IsTrimGainEffect: None
+==================================================
+
+==================================================
+Found OperationGroup. Dumping Parameters:
+  - AvidControlClipRatio: None
+  - PanVol_IsTrimGainEffect: None
+==================================================

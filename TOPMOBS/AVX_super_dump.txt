@@ -1,0 +1,25 @@
+🔹 AVX Effect Detected: Resize
+  Path: root/selectWWD_ORIGINAL.Exported.01/Slots/FOR CONFORM/Segment/Sequence/Components/OperationGroup/ComponentAttributeList
+  Type: AVX2
+  Class: AVX2 Effect
+  ➤ Dumping Full Context:
+  OperationGroup
+  ClassDefinition
+  None
+  Item:
+    Length
+    Property
+    367
+
+🔹 AVX Effect Detected: 3DWarp
+  Path: root/selectWWD_ORIGINAL.Exported.01/Slots/FOR CONFORM/Segment/Sequence/Components/OperationGroup/ComponentAttributeList
+  Type: AVX2
+  Class: AVX2 Effect
+  ➤ Dumping Full Context:
+  OperationGroup
+  ClassDefinition
+  None
+  Item:
+    Length
+    Property
+    213

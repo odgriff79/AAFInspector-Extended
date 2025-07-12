@@ -1,0 +1,8 @@
+🔹 Effect Block @ root/selectWWD_ORIGINAL.Exported.01/Slots/FOR CONFORM/Segment/Sequence/Components/OperationGroup/ComponentAttributeList
+  Type: AVX2
+  Name: Resize
+  Class: AVX2 Effect
+🔹 Effect Block @ root/selectWWD_ORIGINAL.Exported.01/Slots/FOR CONFORM/Segment/Sequence/Components/OperationGroup/ComponentAttributeList
+  Type: AVX2
+  Name: 3DWarp
+  Class: AVX2 Effect
