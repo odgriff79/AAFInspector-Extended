@@ -1,0 +1,445 @@
+--- EVENT #3: WW2D_ARC_966_M_GETTY_537133695.jpg ---
+Effect: Resize
+Parameter: AFX_POS_X_U
+    Time: 0, Value: 333/16
+    Time: 1, Value: 333/16
+Parameter: AFX_POS_Y_U
+    Time: 0, Value: 555/4
+    Time: 1, Value: 333/2
+Parameter: AFX_SCALE_X_U
+    Time: 0, Value: 128
+    Time: 1, Value: 143
+Parameter: AFX_SCALE_Y_U
+    Time: 0, Value: 128
+    Time: 1, Value: 143
+Parameter: AFX_CROP_LEFT_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_CROP_RIGHT_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_CROP_TOP_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_CROP_BOTTOM_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_BG_H_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_BG_S_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_BG_L_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+
+--- EVENT #4: WW2D_ARC_295_S_AP-MOVIETONE_BM64877.new.01 ---
+Effect: 3DWarp
+Parameter: DVE_FG_KEY_LUM_RANGE_U
+    Time: -45/212, Value: 80
+    Time: 1, Value: 80
+    Time: 73/53, Value: 80
+Parameter: DVE_FG_KEY_SS_GAIN_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_FG_KEY_SS_SOFT_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_BG_H_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_BG_S_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: AFX_YCKEY_FILTERLEVEL
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_BG_L_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_CORNER_PIN_X0_U
+    Time: -45/212, Value: -999/2
+    Time: 1, Value: -999/2
+    Time: 73/53, Value: -999/2
+Parameter: DVE_CORNER_PIN_Y0_U
+    Time: -45/212, Value: 999/2
+    Time: 1, Value: 999/2
+    Time: 73/53, Value: 999/2
+Parameter: DVE_CORNER_PIN_X1_U
+    Time: -45/212, Value: 999/2
+    Time: 1, Value: 999/2
+    Time: 73/53, Value: 999/2
+Parameter: DVE_CORNER_PIN_Y1_U
+    Time: -45/212, Value: 999/2
+    Time: 1, Value: 999/2
+    Time: 73/53, Value: 999/2
+Parameter: DVE_CORNER_PIN_X2_U
+    Time: -45/212, Value: 999/2
+    Time: 1, Value: 999/2
+    Time: 73/53, Value: 999/2
+Parameter: DVE_CORNER_PIN_Y2_U
+    Time: -45/212, Value: -999/2
+    Time: 1, Value: -999/2
+    Time: 73/53, Value: -999/2
+Parameter: DVE_CORNER_PIN_X3_U
+    Time: -45/212, Value: -999/2
+    Time: 1, Value: -999/2
+    Time: 73/53, Value: -999/2
+Parameter: DVE_CORNER_PIN_Y3_U
+    Time: -45/212, Value: -999/2
+    Time: 1, Value: -999/2
+    Time: 73/53, Value: -999/2
+Parameter: AFX_YCKEY_SAT
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_DEEP_DEFOCUS_HORIZONTAL_FG_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_DEEP_DEFOCUS_VERTICAL_FG_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_DEEP_DEFOCUS_HORIZONTAL_KEY_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_DEEP_DEFOCUS_VERTICAL_KEY_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_CUSTOM_HIGHLIGHT_H_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_CUSTOM_HIGHLIGHT_S_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_CUSTOM_HIGHLIGHT_L_U
+    Time: -45/212, Value: 255
+    Time: 1, Value: 255
+    Time: 73/53, Value: 255
+Parameter: DVE_CUSTOM_LOWLIGHT_H_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_CUSTOM_LOWLIGHT_S_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_CUSTOM_LOWLIGHT_L_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: AFX_YCKEY_SPILLSAT
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: Vergence
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: AFX_YCKEY_SUPPRESSSHADOW
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: AFX_YCKEY_LUMALUT
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: AFX_YCKEY_SATLINE
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: AFX_YCKEY_OFFSET
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: AFX_YCKEY_SPILLANGLE
+    Time: -45/212, Value: 5
+    Time: 1, Value: 5
+    Time: 73/53, Value: 5
+Parameter: DVE_WARP_RADIUS_U
+    Time: -45/212, Value: 15
+    Time: 1, Value: 15
+    Time: 73/53, Value: 15
+Parameter: DVE_WARP_OFFSET_U
+    Time: -45/212, Value: 50
+    Time: 1, Value: 50
+    Time: 73/53, Value: 50
+Parameter: DVE_WARP_AXIS_ANGLE_U
+    Time: -45/212, Value: 45
+    Time: 1, Value: 45
+    Time: 73/53, Value: 45
+Parameter: DVE_WARP_X_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_WARP_Y_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_WARP_ASPECT_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_WARP_FREQ_U
+    Time: -45/212, Value: 59/100
+    Time: 1, Value: 59/100
+    Time: 73/53, Value: 59/100
+Parameter: DVE_WARP_AMPLT_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_WARP_CURVE_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: AFX_YCKEY_HUEANGLE
+    Time: -45/212, Value: 90
+    Time: 1, Value: 90
+    Time: 73/53, Value: 90
+Parameter: DVE_WARP_SKEW_ANGLE_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_WARP_SKEW_AMPLT_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_POS_X_U
+    Time: -291/212, Value: 111/5
+    Time: -45/212, Value: 0
+    Time: 1, Value: 606011029/10000000
+    Time: 73/53, Value: 0
+Parameter: DVE_POS_Y_U
+    Time: -291/212, Value: 328618421/10000000
+    Time: -45/212, Value: -36
+    Time: 1, Value: -102132353/1250000
+    Time: 73/53, Value: -36
+Parameter: DVE_POS_Z_U
+    Time: -291/212, Value: 0
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: AFX_YCKEY_ALPHASOFT
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_SCALE_X_U
+    Time: -45/212, Value: 134
+    Time: 1, Value: 150
+    Time: 73/53, Value: 134
+Parameter: DVE_SCALE_Y_U
+    Time: -45/212, Value: 134
+    Time: 1, Value: 150
+    Time: 73/53, Value: 134
+Parameter: AFX_YCKEY_SWATCHLUMA
+    Time: -45/212, Value: 50
+    Time: 1, Value: 50
+    Time: 73/53, Value: 50
+Parameter: DVE_ROT_X_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_ROT_Y_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_ROT_Z_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_AXIS_X_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_AXIS_Y_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: AFX_YCKEY_PEAKALPHA
+    Time: -45/212, Value: 10
+    Time: 1, Value: 10
+    Time: 73/53, Value: 10
+Parameter: DVE_AXIS_Z_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_TRGT_X_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_TRGT_Y_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_TRGT_SZE_U
+    Time: -45/212, Value: 100
+    Time: 1, Value: 100
+    Time: 73/53, Value: 100
+Parameter: DVE_PRSP_X_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_PRSP_Y_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_PRSP_Z_U
+    Time: -45/212, Value: 999/4
+    Time: 1, Value: 999/4
+    Time: 73/53, Value: 999/4
+Parameter: DVE_SKEW_X_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_SKEW_Y_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_CROP_LEFT_U
+    Time: -45/212, Value: -999
+    Time: 1, Value: -999
+    Time: 73/53, Value: -999
+Parameter: DVE_CROP_RIGHT_U
+    Time: -45/212, Value: 999
+    Time: 1, Value: 999
+    Time: 73/53, Value: 999
+Parameter: DVE_CROP_TOP_U
+    Time: -45/212, Value: 999
+    Time: 1, Value: 999
+    Time: 73/53, Value: 999
+Parameter: DVE_CROP_BOTTOM_U
+    Time: -45/212, Value: -999
+    Time: 1, Value: -999
+    Time: 73/53, Value: -999
+Parameter: DVE_BORDER_WIDTH_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_BORDER_SOFT_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_BORDER_H_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_BORDER_S_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_BORDER_L_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_HLTE_RADIUS_U
+    Time: -45/212, Value: 50
+    Time: 1, Value: 50
+    Time: 73/53, Value: 50
+Parameter: DVE_HLTE_INTSTY_U
+    Time: -45/212, Value: 50
+    Time: 1, Value: 50
+    Time: 73/53, Value: 50
+Parameter: DVE_HLTE_AXIS_ANGLE_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_HLTE_ASPECT_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_HLTE_X_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_HLTE_Y_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_HLTE_SOFT_U
+    Time: -45/212, Value: 50
+    Time: 1, Value: 50
+    Time: 73/53, Value: 50
+Parameter: DVE_DFCS_HORIZ_U
+    Time: -45/212, Value: 10
+    Time: 1, Value: 10
+    Time: 73/53, Value: 10
+Parameter: DVE_DFCS_VERT_U
+    Time: -45/212, Value: 10
+    Time: 1, Value: 10
+    Time: 73/53, Value: 10
+Parameter: DVE_SHDW_X_U
+    Time: -45/212, Value: 50
+    Time: 1, Value: 50
+    Time: 73/53, Value: 50
+Parameter: DVE_SHDW_Y_U
+    Time: -45/212, Value: -50
+    Time: 1, Value: -50
+    Time: 73/53, Value: -50
+Parameter: DVE_SHDW_OPACITY_U
+    Time: -45/212, Value: 50
+    Time: 1, Value: 50
+    Time: 73/53, Value: 50
+Parameter: DVE_TRAIL_DECAY_U
+    Time: -45/212, Value: 75
+    Time: 1, Value: 75
+    Time: 73/53, Value: 75
+Parameter: DVE_TRAIL_SPKL_ENABLED_U
+    Time: -45/212, Value: False
+    Time: 1, Value: False
+    Time: 73/53, Value: False
+Parameter: DVE_MT_PRIORITY_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_MT_KEY_OPACITY_U
+    Time: -45/212, Value: 100
+    Time: 1, Value: 100
+    Time: 73/53, Value: 100
+Parameter: DVE_WARP_BACKGROUND_LIMIT_TO_VIDEO_LEVELS
+    Time: -45/212, Value: 1
+    Time: 1, Value: 1
+    Time: 73/53, Value: 1
+Parameter: DVE_MT_STAMP_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_MT_CLEAR_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0
+Parameter: DVE_FG_KEY_OPACITY_U
+    Time: -45/212, Value: 100
+    Time: 1, Value: 100
+    Time: 73/53, Value: 100
+Parameter: DVE_FG_KEY_HUE_ANGLE_U
+    Time: -45/212, Value: 155
+    Time: 1, Value: 155
+    Time: 73/53, Value: 155
+Parameter: DVE_FG_KEY_SAT_U
+    Time: -45/212, Value: 255
+    Time: 1, Value: 255
+    Time: 73/53, Value: 255
+Parameter: DVE_FG_KEY_LUM_U
+    Time: -45/212, Value: 255
+    Time: 1, Value: 255
+    Time: 73/53, Value: 255
+Parameter: DVE_FG_KEY_LUM_THRESH_U
+    Time: -45/212, Value: 128
+    Time: 1, Value: 128
+    Time: 73/53, Value: 128
+Parameter: DVE_FG_KEY_LUM_SOFT_U
+    Time: -45/212, Value: 0
+    Time: 1, Value: 0
+    Time: 73/53, Value: 0

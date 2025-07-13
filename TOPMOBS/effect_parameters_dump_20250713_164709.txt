@@ -1,0 +1,3 @@
+==================================================
+Analyzing new OperationGroup:
+  - No animated parameters found in this group.
