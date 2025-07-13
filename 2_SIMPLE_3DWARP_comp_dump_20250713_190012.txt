@@ -1,0 +1,4 @@
+--- EVENT #1: A010C030_120101_ROLR.new.01 ---
+Effect: 3DWarp
+No animated parameters.
+

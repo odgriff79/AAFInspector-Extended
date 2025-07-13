@@ -1,0 +1,22 @@
+--- EVENT #1: A010C030_120101_ROLR.new.01 ---
+Effect: Matte Key
+Parameter: Vergence
+    Time: 0, Value: 0
+Parameter: AFX_POS_X_U
+    Time: 0, Value: 0
+Parameter: AFX_POS_Y_U
+    Time: 0, Value: 0
+Parameter: AFX_SCALE_X_U
+    Time: 0, Value: 90
+Parameter: AFX_SCALE_Y_U
+    Time: 0, Value: 90
+Parameter: AFX_CROP_LEFT_U
+    Time: 0, Value: 0
+Parameter: AFX_CROP_RIGHT_U
+    Time: 0, Value: 0
+Parameter: AFX_CROP_TOP_U
+    Time: 0, Value: 0
+Parameter: AFX_CROP_BOTTOM_U
+    Time: 0, Value: 0
+Parameter: AFX_FG_KEY_OPACITY_U
+    Time: 0, Value: 100
