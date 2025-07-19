@@ -31,54 +31,34 @@ def create_mob_map(node, mob_map=None):
     return mob_map
 
 def find_main_sequence_mob_and_start_tc(root_node):
-    """
-    Finds the main sequence Mob by identifying a slot containing a Sequence object,
-    then finds the starting timecode from the appropriate Timecode slot.
-    """
-    if not isinstance(root_node, list) or root_node[0] != "list" or len(root_node) < 4:
-        return None, 0, False
-    
+    if not isinstance(root_node, list) or root_node[0] != "list" or len(root_node) < 4: return None, 0, False
     all_mobs = root_node[3]
     for mob in all_mobs:
-        if not (isinstance(mob, list) and len(mob) > 3):
-            continue
-            
+        if not (isinstance(mob, list) and len(mob) > 3): continue
         slots_node = next((c for c in mob[3] if isinstance(c, list) and c[0] == "Slots"), None)
-        if not (slots_node and len(slots_node) > 3):
-            continue
-        
-        # Check if any slot in this mob contains a main sequence
-        is_sequence_mob = False
-        for s in slots_node[3]:
-            seg_node = next((c for c in s[3] if c[0] == "Segment"), None)
-            if not (seg_node and len(seg_node) > 3 and seg_node[3]):
-                continue
-            segment_child = seg_node[3][0]
-            if isinstance(segment_child, list) and segment_child[0] == "Sequence":
-                is_sequence_mob = True
-                break
-        
+        if not (slots_node and len(slots_node) > 3): continue
+        is_sequence_mob = any(
+            isinstance(s, list) and len(s) > 3 and
+            isinstance(next((c for c in s[3] if c[0] == "Segment"), None), list) and
+            len(seg_node := next((c for c in s[3] if c[0] == "Segment"), None)) > 3 and
+            seg_node[3] and isinstance(seg_node[3][0], list) and seg_node[3][0][0] == "Sequence"
+            for s in slots_node[3]
+        )
         if is_sequence_mob:
-            # If it's the sequence mob, now find the start timecode from its slots
             start_tc, is_drop = 0, False
             for s in slots_node[3]:
-                seg_node = next((c for c in s[3] if c[0] == "Segment"), None)
-                if (seg_node and len(seg_node) > 3 and seg_node[3] and
-                    isinstance(seg_node[3][0], list) and seg_node[3][0][0] == "Timecode"):
-                    
-                    tc_node = seg_node[3][0]
-                    start_node = next((c for c in tc_node[3] if c[0] == "Start"), None)
-                    drop_node = next((c for c in tc_node[3] if c[0] == "Drop"), None)
-                    
-                    if drop_node and len(drop_node) > 2: is_drop = bool(drop_node[2])
-                    if start_node and len(start_node) > 2:
-                        try:
-                            start_tc = int(start_node[2])
-                            break # Found the timecode, no need to check other slots
-                        except (ValueError, TypeError): continue
-            
+                 if isinstance(s, list) and len(s) > 3:
+                    seg = next((c for c in s[3] if c[0] == "Segment"), None)
+                    if seg and len(seg) > 3 and seg[3] and isinstance(seg[3][0], list) and seg[3][0][0] == "Timecode":
+                        tc_node = seg[3][0]
+                        start_node = next((c for c in tc_node[3] if c[0] == "Start"), None)
+                        drop_node = next((c for c in tc_node[3] if c[0] == "Drop"), None)
+                        if drop_node and len(drop_node) > 2:
+                            is_drop = bool(drop_node[2])
+                        if start_node and len(start_node) > 2:
+                            try: start_tc = int(start_node[2]); break
+                            except (ValueError, TypeError): continue
             return mob, start_tc, is_drop
-
     return None, 0, False
 
 def extract_metadata(mob_node):
@@ -127,6 +107,31 @@ def has_nested_source_clip(node):
         if has_nested_source_clip(child): return True
     return False
 
+def decode_filepath(filepath_node):
+    """
+    Safely decodes a UTF-16LE-encoded Filepath value from an AAF JSON node.
+    """
+    try:
+        value_node = next(
+            (c for c in (filepath_node[3] if len(filepath_node) > 3 else [])
+             if c[0] == "Value" and isinstance(c[2], list)),
+            None
+        )
+        if not value_node:
+            return "Path data not found or in an unexpected format."
+
+        raw_bytes = bytes(b for b in value_node[2] if isinstance(b, int))
+        txt = raw_bytes.decode("utf-16-le", errors="ignore")
+        
+        idx = txt.find('\\')
+        if idx != -1:
+            txt = txt[idx:]
+            
+        cleaned = txt.rstrip('\x00').replace('\\', '/')
+        return cleaned or "(decoded to an empty string)"
+    except Exception as e:
+        return f"An error occurred during decoding: {e}"
+
 def recursive_search(node, timeline_offset=0, edit_rate=25, results=None, dedupe_set=None):
     if results is None: results = []
     if dedupe_set is None: dedupe_set = set()
@@ -158,18 +163,26 @@ def recursive_search(node, timeline_offset=0, edit_rate=25, results=None, dedupe
                 "TimelineEditRate": edit_rate
             })
     elif name == "OperationGroup":
-        # Check if this is an effect on filler by seeing if it lacks a nested source clip.
+        # Helper: deep-find any Filepath under this OperationGroup
+        def find_filepath(subnode):
+            if not isinstance(subnode, list): 
+                return None
+            if subnode[0] == "Filepath":
+                # reuse your decode_filepath on the node itself
+                return decode_filepath(subnode)
+            # else, recurse into its children
+            children = subnode[3] if len(subnode) > 3 else []
+            for c in children:
+                p = find_filepath(c)
+                if p:
+                    return p
+            return None
+
         if not has_nested_source_clip(node):
             length = next((int(c[2]) for c in children if c[0] == "Length"), 0)
-            file_path = "N/A"
-            # Look for the Filepath property and decode its UTF-16LE bytes
-            file_node = next((c for c in children if c[0] == "Filepath"), None)
-            if file_node and len(file_node) > 3:
-                value_node = next((c for c in file_node[3] if c[0] == "Value"), None)
-                if value_node and len(value_node) > 2 and isinstance(value_node[2], list):
-                    raw_bytes = bytes([b for b in value_node[2] if isinstance(b, int)])
-                    file_path = raw_bytes.decode("utf-16-le", errors="ignore").rstrip("\x00")
-            
+            # Deep-search for any nested Filepath
+            file_path = find_filepath(node) or "N/A"
+
             if length > 0:
                  results.append({
                     "MobID":        "PanZoomFiller",

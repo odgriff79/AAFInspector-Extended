@@ -31,54 +31,34 @@ def create_mob_map(node, mob_map=None):
     return mob_map
 
 def find_main_sequence_mob_and_start_tc(root_node):
-    """
-    Finds the main sequence Mob by identifying a slot containing a Sequence object,
-    then finds the starting timecode from the appropriate Timecode slot.
-    """
-    if not isinstance(root_node, list) or root_node[0] != "list" or len(root_node) < 4:
-        return None, 0, False
-    
+    if not isinstance(root_node, list) or root_node[0] != "list" or len(root_node) < 4: return None, 0, False
     all_mobs = root_node[3]
     for mob in all_mobs:
-        if not (isinstance(mob, list) and len(mob) > 3):
-            continue
-            
+        if not (isinstance(mob, list) and len(mob) > 3): continue
         slots_node = next((c for c in mob[3] if isinstance(c, list) and c[0] == "Slots"), None)
-        if not (slots_node and len(slots_node) > 3):
-            continue
-        
-        # Check if any slot in this mob contains a main sequence
-        is_sequence_mob = False
-        for s in slots_node[3]:
-            seg_node = next((c for c in s[3] if c[0] == "Segment"), None)
-            if not (seg_node and len(seg_node) > 3 and seg_node[3]):
-                continue
-            segment_child = seg_node[3][0]
-            if isinstance(segment_child, list) and segment_child[0] == "Sequence":
-                is_sequence_mob = True
-                break
-        
+        if not (slots_node and len(slots_node) > 3): continue
+        is_sequence_mob = any(
+            isinstance(s, list) and len(s) > 3 and
+            isinstance(next((c for c in s[3] if c[0] == "Segment"), None), list) and
+            len(seg_node := next((c for c in s[3] if c[0] == "Segment"), None)) > 3 and
+            seg_node[3] and isinstance(seg_node[3][0], list) and seg_node[3][0][0] == "Sequence"
+            for s in slots_node[3]
+        )
         if is_sequence_mob:
-            # If it's the sequence mob, now find the start timecode from its slots
             start_tc, is_drop = 0, False
             for s in slots_node[3]:
-                seg_node = next((c for c in s[3] if c[0] == "Segment"), None)
-                if (seg_node and len(seg_node) > 3 and seg_node[3] and
-                    isinstance(seg_node[3][0], list) and seg_node[3][0][0] == "Timecode"):
-                    
-                    tc_node = seg_node[3][0]
-                    start_node = next((c for c in tc_node[3] if c[0] == "Start"), None)
-                    drop_node = next((c for c in tc_node[3] if c[0] == "Drop"), None)
-                    
-                    if drop_node and len(drop_node) > 2: is_drop = bool(drop_node[2])
-                    if start_node and len(start_node) > 2:
-                        try:
-                            start_tc = int(start_node[2])
-                            break # Found the timecode, no need to check other slots
-                        except (ValueError, TypeError): continue
-            
+                 if isinstance(s, list) and len(s) > 3:
+                    seg = next((c for c in s[3] if c[0] == "Segment"), None)
+                    if seg and len(seg) > 3 and seg[3] and isinstance(seg[3][0], list) and seg[3][0][0] == "Timecode":
+                        tc_node = seg[3][0]
+                        start_node = next((c for c in tc_node[3] if c[0] == "Start"), None)
+                        drop_node = next((c for c in tc_node[3] if c[0] == "Drop"), None)
+                        if drop_node and len(drop_node) > 2:
+                            is_drop = bool(drop_node[2])
+                        if start_node and len(start_node) > 2:
+                            try: start_tc = int(start_node[2]); break
+                            except (ValueError, TypeError): continue
             return mob, start_tc, is_drop
-
     return None, 0, False
 
 def extract_metadata(mob_node):
@@ -158,7 +138,8 @@ def recursive_search(node, timeline_offset=0, edit_rate=25, results=None, dedupe
                 "TimelineEditRate": edit_rate
             })
     elif name == "OperationGroup":
-        # Check if this is an effect on filler by seeing if it lacks a nested source clip.
+        # First, check if this OperationGroup is an effect on filler.
+        # An effect on filler does NOT have a nested SourceClip.
         if not has_nested_source_clip(node):
             length = next((int(c[2]) for c in children if c[0] == "Length"), 0)
             file_path = "N/A"
@@ -170,6 +151,7 @@ def recursive_search(node, timeline_offset=0, edit_rate=25, results=None, dedupe
                     raw_bytes = bytes([b for b in value_node[2] if isinstance(b, int)])
                     file_path = raw_bytes.decode("utf-16-le", errors="ignore").rstrip("\x00")
             
+            # Only add the filler event if it has a duration
             if length > 0:
                  results.append({
                     "MobID":        "PanZoomFiller",
@@ -181,6 +163,7 @@ def recursive_search(node, timeline_offset=0, edit_rate=25, results=None, dedupe
                 })
 
         # ALWAYS recurse into the children to find any nested SourceClips.
+        # This is crucial for effects that are applied ON TOP of clips.
         for c in children:
             recursive_search(c, timeline_offset, edit_rate, results, dedupe_set)
             
@@ -246,9 +229,7 @@ class App:
         self.log_msg("1. Building Mob map..."); mob_map = create_mob_map(self.json_data)
         self.log_msg("2. Finding main sequence..."); 
         sequence_mob, start_tc, is_drop_frame = find_main_sequence_mob_and_start_tc(self.json_data)
-        if not sequence_mob: 
-            self.log_msg("❌ Could not find main sequence.")
-            return
+        if not sequence_mob: self.log_msg("❌ Could not find main sequence."); return
         timeline_rate = 25.0
         slots = next((c for c in sequence_mob[3] if c[0] == "Slots"), None)
         if slots and len(slots) > 3:
@@ -267,7 +248,7 @@ class App:
         self.log_msg("3. Extracting timeline events..."); 
         events = recursive_search(sequence_mob, timeline_offset=start_tc, edit_rate=timeline_rate)
         
-        # De-duplicate events
+        # De-duplicate events that might be found multiple times
         unique_events = []
         seen_keys = set()
         for e in events:
@@ -294,7 +275,7 @@ class App:
                 source_file_name = os.path.basename(file_path) if file_path != "N/A" and file_path else "Effect on Filler"
                 enriched.append({
                     "Event": idx, "Event Name": "Pan & Zoom Effect", "Clip Name": source_file_name,
-                    "Source File Name": source_file_name, "Source File Path": os.path.dirname(file_path).replace("\\", "/") if file_path != "N/A" and file_path else "N/A",
+                    "Source File Name": source_file_name, "Source File Path": os.path.dirname(file_path) if file_path != "N/A" and file_path else "N/A",
                     "DiskLabel": "N/A", "TapeID": "N/A", "SourceMobID": "Effect", "TrackID": "VFX",
                     "Source Clip EditRate": e["TimelineEditRate"],
                     "Timeline Start TC": frames_to_tc(e["TimelineStartFrame"], timeline_rate, is_drop_frame),
@@ -348,7 +329,6 @@ class App:
             if r.get("SourceMobID") == "Effect":
                  self.log_msg(f"Event: {r['Event']} | {r['Event Name']}")
                  self.log_msg(f"  Clip Name: {r['Clip Name']}")
-                 self.log_msg(f"  Source Path: {r['Source File Path']}")
                  self.log_msg(f"  Timeline In: {r['Timeline Start TC']}")
                  self.log_msg(f"  Length: {r['Event Length']} frames")
             else:
