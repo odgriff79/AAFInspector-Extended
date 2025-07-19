@@ -1,0 +1,107 @@
+--- EVENT #1: D007C001_250219NB.new.01 ---
+Effect: Resize
+Parameter: AFX_POS_X_U
+    Time: 0, Value: -137543471/500000
+    Time: 1, Value: 180978281/1000000
+Parameter: AFX_POS_Y_U
+    Time: 0, Value: -3887681/15625
+    Time: 1, Value: 158724651/1000000
+Parameter: AFX_SCALE_X_U
+    Time: 0, Value: 40
+    Time: 1, Value: 60
+Parameter: AFX_SCALE_Y_U
+    Time: 0, Value: 40
+    Time: 1, Value: 60
+Parameter: AFX_CROP_LEFT_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_CROP_RIGHT_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_CROP_TOP_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_CROP_BOTTOM_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_BG_H_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_BG_S_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_BG_L_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+
+--- EVENT #2: D007C001_250219NB.new.01 ---
+Effect: 3DWarp
+Parameter: DVE_POS_X_U
+    Time: 0, Value: -137543471/500000
+    Time: 1, Value: 180978281/1000000
+Parameter: DVE_POS_Y_U
+    Time: 0, Value: 3887681/15625
+    Time: 1, Value: -158724651/1000000
+Parameter: DVE_SCALE_X_U
+    Time: 0, Value: 40
+    Time: 1, Value: 60
+Parameter: DVE_SCALE_Y_U
+    Time: 0, Value: 40
+    Time: 1, Value: 60
+Parameter: DVE_CROP_LEFT_U
+    Time: 0, Value: -999
+    Time: 1, Value: -999
+Parameter: DVE_CROP_RIGHT_U
+    Time: 0, Value: 999
+    Time: 1, Value: 999
+Parameter: DVE_CROP_TOP_U
+    Time: 0, Value: 999
+    Time: 1, Value: 999
+Parameter: DVE_CROP_BOTTOM_U
+    Time: 0, Value: -999
+    Time: 1, Value: -999
+Parameter: DVE_BG_H_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: DVE_BG_S_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: DVE_BG_L_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+
+--- EVENT #3: D007C001_250219NB.new.01 ---
+Effect: Pan and Scan
+Parameter: AFX_POS_X_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_POS_Y_U
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: AFX_SCALE_X_U
+    Time: 0, Value: 150
+    Time: 1, Value: 200
+Parameter: AFX_SCALE_Y_U
+    Time: 0, Value: 150
+    Time: 1, Value: 200
+
+--- EVENT #4: ISS_ARC_122_MST_NASA_MirOverEarthFromSTS-71_1995_JourneyBegins.jpg ---
+Effect: Avid Pan & Zoom
+Parameter: In
+    Time: 0, Value: 2
+    Time: 1, Value: 2
+Parameter: X
+    Time: 0, Value: 0
+    Time: 1, Value: 1001001/20000000
+Parameter: AFX_TRANS_LEN
+    Time: 0, Value: 0
+    Time: 1, Value: 1
+Parameter: Zoom Factor
+    Time: 0, Value: 1
+    Time: 1, Value: 3/2
+Parameter: Out
+    Time: 0, Value: 0
+    Time: 1, Value: 0
+Parameter: Y
+    Time: 0, Value: 0
+    Time: 1, Value: 1001001/10000000
