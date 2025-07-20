@@ -1,0 +1,187 @@
+--- EVENT #1: AVX2 Effect : Resize ---
+Parameter: AFX_POS_X_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: -137543471/500000
+    Keyframe at 10:01:09:23 (901748f) -> Value: 180978281/1000000
+Parameter: AFX_POS_Y_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: -3887681/15625
+    Keyframe at 10:01:09:23 (901748f) -> Value: 158724651/1000000
+Parameter: AFX_SCALE_X_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: 40
+    Keyframe at 10:01:09:23 (901748f) -> Value: 60
+Parameter: AFX_SCALE_Y_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: 40
+    Keyframe at 10:01:09:23 (901748f) -> Value: 60
+Parameter: AFX_CROP_LEFT_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: 0
+    Keyframe at 10:01:09:23 (901748f) -> Value: 0
+Parameter: AFX_CROP_RIGHT_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: 0
+    Keyframe at 10:01:09:23 (901748f) -> Value: 0
+Parameter: AFX_CROP_TOP_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: 0
+    Keyframe at 10:01:09:23 (901748f) -> Value: 0
+Parameter: AFX_CROP_BOTTOM_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: 0
+    Keyframe at 10:01:09:23 (901748f) -> Value: 0
+Parameter: AFX_BG_H_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: 0
+    Keyframe at 10:01:09:23 (901748f) -> Value: 0
+Parameter: AFX_BG_S_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: 0
+    Keyframe at 10:01:09:23 (901748f) -> Value: 0
+Parameter: AFX_BG_L_U
+    Keyframe at 10:01:04:24 (901624f) -> Value: 0
+    Keyframe at 10:01:09:23 (901748f) -> Value: 0
+
+--- EVENT #2: AVX2 Effect : 3DWarp ---
+Parameter: DVE_POS_X_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: -137543471/500000
+    Keyframe at 10:01:14:23 (901873f) -> Value: 180978281/1000000
+Parameter: DVE_POS_Y_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: 3887681/15625
+    Keyframe at 10:01:14:23 (901873f) -> Value: -158724651/1000000
+Parameter: DVE_SCALE_X_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: 40
+    Keyframe at 10:01:14:23 (901873f) -> Value: 60
+Parameter: DVE_SCALE_Y_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: 40
+    Keyframe at 10:01:14:23 (901873f) -> Value: 60
+Parameter: DVE_CROP_LEFT_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: -999
+    Keyframe at 10:01:14:23 (901873f) -> Value: -999
+Parameter: DVE_CROP_RIGHT_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: 999
+    Keyframe at 10:01:14:23 (901873f) -> Value: 999
+Parameter: DVE_CROP_TOP_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: 999
+    Keyframe at 10:01:14:23 (901873f) -> Value: 999
+Parameter: DVE_CROP_BOTTOM_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: -999
+    Keyframe at 10:01:14:23 (901873f) -> Value: -999
+Parameter: DVE_BG_H_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: 0
+    Keyframe at 10:01:14:23 (901873f) -> Value: 0
+Parameter: DVE_BG_S_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: 0
+    Keyframe at 10:01:14:23 (901873f) -> Value: 0
+Parameter: DVE_BG_L_U
+    Keyframe at 10:01:09:24 (901749f) -> Value: 0
+    Keyframe at 10:01:14:23 (901873f) -> Value: 0
+
+--- EVENT #3: Reformat : Pan and Scan ---
+Parameter: AFX_POS_X_U
+    Keyframe at 10:01:14:24 (901874f) -> Value: 0
+    Keyframe at 10:01:19:23 (901998f) -> Value: 0
+Parameter: AFX_POS_Y_U
+    Keyframe at 10:01:14:24 (901874f) -> Value: 0
+    Keyframe at 10:01:19:23 (901998f) -> Value: 0
+Parameter: AFX_SCALE_X_U
+    Keyframe at 10:01:14:24 (901874f) -> Value: 150
+    Keyframe at 10:01:19:23 (901998f) -> Value: 200
+Parameter: AFX_SCALE_Y_U
+    Keyframe at 10:01:14:24 (901874f) -> Value: 150
+    Keyframe at 10:01:19:23 (901998f) -> Value: 200
+
+--- EVENT #4: Image : Avid Pan & Zoom ---
+Parameter: In
+    Keyframe at 10:01:19:24 (901999f) -> Value: 2
+    Keyframe at 10:01:24:23 (902123f) -> Value: 2
+Parameter: X
+    Keyframe at 10:01:19:24 (901999f) -> Value: 0
+    Keyframe at 10:01:24:23 (902123f) -> Value: 1001001/20000000
+Parameter: AFX_TRANS_LEN
+    Keyframe at 10:01:19:24 (901999f) -> Value: 0
+    Keyframe at 10:01:24:23 (902123f) -> Value: 1
+Parameter: Zoom Factor
+    Keyframe at 10:01:19:24 (901999f) -> Value: 1
+    Keyframe at 10:01:24:23 (902123f) -> Value: 3/2
+Parameter: Out
+    Keyframe at 10:01:19:24 (901999f) -> Value: 0
+    Keyframe at 10:01:24:23 (902123f) -> Value: 0
+Parameter: Y
+    Keyframe at 10:01:19:24 (901999f) -> Value: 0
+    Keyframe at 10:01:24:23 (902123f) -> Value: 1001001/10000000
+
+--- EVENT #5: Image : Avid Pan & Zoom ---
+Parameter: In
+    Keyframe at 10:01:24:24 (902124f) -> Value: 2
+    Keyframe at 10:01:29:23 (902248f) -> Value: 2
+Parameter: X
+    Keyframe at 10:01:24:24 (902124f) -> Value: 0
+    Keyframe at 10:01:29:23 (902248f) -> Value: 1001001/20000000
+Parameter: AFX_TRANS_LEN
+    Keyframe at 10:01:24:24 (902124f) -> Value: 0
+    Keyframe at 10:01:29:23 (902248f) -> Value: 1
+Parameter: Zoom Factor
+    Keyframe at 10:01:24:24 (902124f) -> Value: 1
+    Keyframe at 10:01:29:23 (902248f) -> Value: 3/2
+Parameter: Out
+    Keyframe at 10:01:24:24 (902124f) -> Value: 0
+    Keyframe at 10:01:29:23 (902248f) -> Value: 0
+Parameter: Y
+    Keyframe at 10:01:24:24 (902124f) -> Value: 0
+    Keyframe at 10:01:29:23 (902248f) -> Value: 1001001/10000000
+
+--- EVENT #6: 2DMatteKey ---
+Parameter: Vergence
+    Keyframe at 10:01:29:24 (902249f) -> Value: 0
+    Keyframe at 10:01:34:23 (902373f) -> Value: 0
+Parameter: AFX_POS_X_U
+    Keyframe at 10:01:29:24 (902249f) -> Value: 42348913/200000
+    Keyframe at 10:01:34:23 (902373f) -> Value: -333/4
+Parameter: AFX_POS_Y_U
+    Keyframe at 10:01:29:24 (902249f) -> Value: -32173913/125000
+    Keyframe at 10:01:34:23 (902373f) -> Value: -888
+Parameter: AFX_SCALE_X_U
+    Keyframe at 10:01:29:24 (902249f) -> Value: 50
+    Keyframe at 10:01:34:23 (902373f) -> Value: 150
+Parameter: AFX_SCALE_Y_U
+    Keyframe at 10:01:29:24 (902249f) -> Value: 50
+    Keyframe at 10:01:34:23 (902373f) -> Value: 150
+Parameter: AFX_CROP_LEFT_U
+    Keyframe at 10:01:29:24 (902249f) -> Value: 0
+    Keyframe at 10:01:34:23 (902373f) -> Value: 0
+Parameter: AFX_CROP_RIGHT_U
+    Keyframe at 10:01:29:24 (902249f) -> Value: 0
+    Keyframe at 10:01:34:23 (902373f) -> Value: 0
+Parameter: AFX_CROP_TOP_U
+    Keyframe at 10:01:29:24 (902249f) -> Value: 0
+    Keyframe at 10:01:34:23 (902373f) -> Value: 0
+Parameter: AFX_CROP_BOTTOM_U
+    Keyframe at 10:01:29:24 (902249f) -> Value: 0
+    Keyframe at 10:01:34:23 (902373f) -> Value: 0
+Parameter: AFX_FG_KEY_OPACITY_U
+    Keyframe at 10:01:29:24 (902249f) -> Value: 100
+    Keyframe at 10:01:34:23 (902373f) -> Value: 100
+
+--- EVENT #7: AVX2 Effect : 3D MatteKey ---
+Parameter: Vergence
+    Keyframe at 10:01:34:24 (902374f) -> Value: 0
+    Keyframe at 10:01:39:23 (902498f) -> Value: 0
+Parameter: DVE_POS_X_U
+    Keyframe at 10:01:34:24 (902374f) -> Value: 42348913/200000
+    Keyframe at 10:01:39:23 (902498f) -> Value: -333/4
+Parameter: DVE_POS_Y_U
+    Keyframe at 10:01:34:24 (902374f) -> Value: 32173913/125000
+    Keyframe at 10:01:39:23 (902498f) -> Value: 888
+Parameter: DVE_SCALE_X_U
+    Keyframe at 10:01:34:24 (902374f) -> Value: 50
+    Keyframe at 10:01:39:23 (902498f) -> Value: 150
+Parameter: DVE_SCALE_Y_U
+    Keyframe at 10:01:34:24 (902374f) -> Value: 50
+    Keyframe at 10:01:39:23 (902498f) -> Value: 150
+Parameter: DVE_CROP_LEFT_U
+    Keyframe at 10:01:34:24 (902374f) -> Value: -999
+    Keyframe at 10:01:39:23 (902498f) -> Value: -999
+Parameter: DVE_CROP_RIGHT_U
+    Keyframe at 10:01:34:24 (902374f) -> Value: 999
+    Keyframe at 10:01:39:23 (902498f) -> Value: 999
+Parameter: DVE_CROP_TOP_U
+    Keyframe at 10:01:34:24 (902374f) -> Value: 999
+    Keyframe at 10:01:39:23 (902498f) -> Value: 999
+Parameter: DVE_CROP_BOTTOM_U
+    Keyframe at 10:01:34:24 (902374f) -> Value: -999
+    Keyframe at 10:01:39:23 (902498f) -> Value: -999
+Parameter: DVE_FG_KEY_OPACITY_U
+    Keyframe at 10:01:34:24 (902374f) -> Value: 100
+    Keyframe at 10:01:39:23 (902498f) -> Value: 100
