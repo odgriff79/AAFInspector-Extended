@@ -79,7 +79,12 @@ def generate_fcpxml(summary_info, events_data, output_path):
             asset_map[src_path] = asset_id
             asset_name = sanitize_for_xml(event.get("Source File Name"))
             asset = SubElement(resources, 'asset', id=asset_id, name=asset_name, hasVideo='1', format='r0')
-            SubElement(asset, 'media-rep', kind='original-media', src=Path(src_path).as_uri())
+            
+            # --- THIS IS THE FIX for network paths ---
+            media_uri = Path(src_path).as_uri()
+            if media_uri.startswith('file:////'):
+                media_uri = 'file://' + media_uri[len('file:////'):]
+            SubElement(asset, 'media-rep', kind='original-media', src=media_uri)
             asset_id_counter += 1
 
     lib = SubElement(fcpxml, 'library')
@@ -87,7 +92,6 @@ def generate_fcpxml(summary_info, events_data, output_path):
     evt = SubElement(lib, 'event', name=evt_name)
     proj = SubElement(evt, 'project', name=evt_name)
     
-    # Sort events by start time to process them in order
     sorted_events = sorted(events_data, key=lambda x: get_frames_from_tc_string(x.get('Timeline Start TC', '')))
     
     seq_start_frames = get_frames_from_tc_string(sorted_events[0]['Timeline Start TC'])
@@ -139,7 +143,6 @@ def generate_fcpxml(summary_info, events_data, output_path):
                 for kf_x in pos_x_param[1]:
                     y_val = next((kf_y['value'] for kf_y in pos_y_param[1] if kf_y['frame'] == kf_x['frame']), 0)
                     if 'DVE_' in pos_y_param[0]: y_val *= -1
-                    # --- THIS IS THE FIX ---
                     kf_time_relative = kf_x['frame'] - clip_timeline_start_frames
                     kf_time = frames_to_fcpxml_time(kf_time_relative, timeline_rate)
                     SubElement(param_pos, 'keyframe', time=kf_time, value=f"{kf_x['value']} {y_val}", interp='linear')
@@ -149,7 +152,6 @@ def generate_fcpxml(summary_info, events_data, output_path):
                 for kf_x in scale_x_param[1]:
                     is_zoom_factor = 'Zoom Factor' in scale_x_param[0]
                     scale_val = kf_x['value'] if is_zoom_factor else kf_x['value'] / 100.0
-                    # --- THIS IS THE FIX ---
                     kf_time_relative = kf_x['frame'] - clip_timeline_start_frames
                     kf_time = frames_to_fcpxml_time(kf_time_relative, timeline_rate)
                     SubElement(param_scale, 'keyframe', time=kf_time, value=f"{scale_val*100} {scale_val*100}", interp='linear')
@@ -165,7 +167,7 @@ def generate_fcpxml(summary_info, events_data, output_path):
 class App:
     def __init__(self, root):
         self.root = root
-        self.root.title("CSV to FCPXML Converter (v2 FINAL)")
+        self.root.title("FINAL CONVERTER (v3)")
         self.root.geometry("800x600")
         
         tk.Button(root, text="Load SuperEDL CSV File", command=self.load_csv).pack(pady=10)
