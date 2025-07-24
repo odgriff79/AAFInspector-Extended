@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<fcpxml version="1.9"><resources><format id="r0" name="FFVideoFormat1080p25" frameDuration="1/25s" width="1920" height="1080" /></resources><library><event name="Converted_FX_Report"><project name="Converted_FX_Report"><sequence format="r0" duration="0/25s" tcStart="0/25s" tcFormat="NDF"><spine /></sequence></project></event></library></fcpxml>
