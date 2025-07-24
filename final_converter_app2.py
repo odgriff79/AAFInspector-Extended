@@ -1,203 +1,118 @@
-#!/usr/bin/env python3
+import os
+import re
+import csv
 import tkinter as tk
-from tkinter import filedialog, ttk, messagebox, scrolledtext
-import csv, re, json, ast, os
-import xml.etree.ElementTree as ET
-import xml.parsers.expat
-from xml.dom import minidom
-from pathlib import Path
+from tkinter import filedialog, messagebox
+from xml.etree.ElementTree import Element, SubElement, tostring, ElementTree
 
-def tc_to_frames(tc, fps=25):
+# Utility: convert timecode string to frames
+def tc_to_frames(tc, fps):
     try:
-        h, m, s, f = map(int, tc.replace(';',':').split(':'))
-        return ((h*3600 + m*60 + s) * fps) + f
+        h, m, s, f = re.split('[:;]', tc)
+        return (int(h)*3600 + int(m)*60 + int(s))*fps + int(f)
     except:
         return 0
 
-def frames_to_fcpxml_time(frames, rate):
-    return f"{int(frames)}/{int(round(rate))}s"
+# Parse CSV into list of event dicts
+def load_events_from_csv(path):
+    events = []
+    with open(path, newline='', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            events.append(row)
+    return events
 
-def sanitize(text):
-    if not isinstance(text, str):
-        return ''
-    clean = re.sub(r'[\x00-\x1F\x7F-\x9F]', '', text)
-    clean = re.sub(r"[<>&\"'\\]", '', clean)
-    clean = re.sub(r'[^\x20-\x7E]', '', clean)
-    return clean.strip()
+# Extract scale and pos keyframes from "Keyframe Details"
+def parse_keyframes(detail_str, duration_frames):
+    # find all 'KF@...: scale=X, pos=Y'
+    kfs = []
+    for m in re.finditer(r"KF@[^:]+: scale=([0-9.]+), pos=([-0-9.]+)", detail_str):
+        scale = float(m.group(1))
+        pos = float(m.group(2))
+        kfs.append((scale, pos))
+    # Ensure two keyframes: start and end
+    if not kfs:
+        # default linear keys
+        return [(0, 1.0, 0.0), (duration_frames, 1.0, 0.0)]
+    if len(kfs) == 1:
+        return [(0, kfs[0][0], kfs[0][1]), (duration_frames, kfs[0][0], kfs[0][1])]
+    # use first and last
+    return [(0, kfs[0][0], kfs[0][1]), (duration_frames, kfs[-1][0], kfs[-1][1])]
 
-def generate_full_fcpxml(summary, events, output_path, logger=print):
-    fps_str = summary.get('Timeline Edit Rate') or summary.get('Edit Rate') or '25.0'
-    m = re.match(r'([0-9\.]+)', fps_str)
-    fps = float(m.group(1)) if m else 25.0
-    start_tc = summary.get('Timeline Start TC') or summary.get('Start TC') or '00:00:00:00'
-    seq_start = tc_to_frames(start_tc, fps)
-    seq_name = sanitize(summary.get('Timeline Name') or 'Sequence')
-    logger(f"Timeline start {start_tc} → frame {seq_start}, FPS={fps}")
+# Generate FCPXML document
+def generate_full_fcpxml(events, output_path, fps=25.0):
+    # root
+    fcpxml = Element('fcpxml', version="1.8")
+    resources = SubElement(fcpxml, 'resources')
+    library = SubElement(fcpxml, 'library')
+    event_node = SubElement(library, 'event', name="ConvertedSequence")
+    project = SubElement(event_node, 'project', name="ConvertedProject")
+    sequence = SubElement(project, 'sequence', format="r1")
+    spine = SubElement(sequence, 'spine')
 
-    fcpxml = ET.Element('fcpxml', version='1.9')
-    res = ET.SubElement(fcpxml, 'resources')
-    ET.SubElement(res, 'format',
-                  id='r0', name=f'FFVideoFormat{int(fps)}p',
-                  width='1920', height='1080',
-                  frameDuration=f'1/{int(fps)}s')
-
-    asset_map = {}
+    # Add assets
+    asset_ids = {}
     for ev in events:
-        src = ev.get('Source File Path') or ev.get('SourcePath') or ''
-        if src and src not in asset_map:
-            aid = f"r{len(asset_map)+1}"
-            asset_map[src] = aid
-            asset = ET.SubElement(res, 'asset',
-                                  id=aid,
-                                  name=sanitize(Path(src).name),
-                                  hasVideo='1', format='r0')
-            try:
-                p = Path(src)
-                uri = p.as_uri().replace(' ', '%20').replace('&', '%26')
-            except ValueError:
-                uri = 'file://' + src.replace('\\', '/').replace(' ', '%20').replace('&', '%26')
-            ET.SubElement(asset, 'media-rep', kind='original-media', src=uri)
-            logger(f"  Asset {aid}: {uri}")
+        src = ev.get('Source File Path', '') + '/' + ev.get('Source File Name', '')
+        if src not in asset_ids:
+            aid = f"r{len(asset_ids)+1}"
+            asset_ids[src] = aid
+            SubElement(resources, 'asset', id=aid, src=src)
 
-    lib = ET.SubElement(fcpxml, 'library')
-    evt = ET.SubElement(ET.SubElement(lib, 'event', name=seq_name), 'project', name=seq_name)
-    total_dur = sum(int(ev.get('Event Length') or ev.get('EventLength') or 0) for ev in events)
-    seq = ET.SubElement(evt, 'sequence',
-                        format='r0',
-                        duration=frames_to_fcpxml_time(total_dur, fps),
-                        tcStart=frames_to_fcpxml_time(seq_start, fps),
-                        tcFormat='NDF')
-    spine = ET.SubElement(seq, 'spine')
+    # Add clips
+    for ev in events:
+        src = ev.get('Source File Path', '') + '/' + ev.get('Source File Name', '')
+        aid = asset_ids.get(src)
+        if not aid: continue
+        # clip item
+        clip = SubElement(spine, 'clip', name=ev.get('Clip Name',''), duration=f"{int(ev['Event Length'])}/{fps}", start=f"{tc_to_frames(ev['Timeline Start TC'], fps)}/{fps}")
+        clipref = SubElement(clip, 'video', ref=aid)
+        # keyframe metadata
+        details = ev.get('Keyframe Details','')
+        dur = int(ev.get('Event Length',0))
+        kfs = parse_keyframes(details, dur)
+        # Add parameters for scale and position
+        param_scale = SubElement(clipref, 'param', name="scale", keyframeType="linear")
+        param_pos = SubElement(clipref, 'param', name="position", keyframeType="linear")
+        for frame_idx, scale_val, pos_val in kfs:
+            t = frame_idx / fps
+            SubElement(param_scale, 'key', time=f"{t}", value=f"{scale_val}")
+            SubElement(param_pos, 'key', time=f"{t}", value=f"{pos_val}")
 
-    current = seq_start
-    for idx, ev in enumerate(events, start=1):
-        in_tc = ev.get('Timeline Start TC') or ev.get('TimelineStartTC') or start_tc
-        abs_frame = tc_to_frames(in_tc, fps)
-        rel = abs_frame - seq_start
-        dur = int(ev.get('Event Length') or ev.get('EventLength') or 0)
-        logger(f"Event {idx}: abs={abs_frame}, rel={rel}, dur={dur}")
-
-        # Insert gap if there's a leading gap
-        if rel > (current - seq_start):
-            gap_len = rel - (current - seq_start)
-            ET.SubElement(spine, 'gap',
-                          duration=frames_to_fcpxml_time(gap_len, fps),
-                          name=sanitize(ev.get('Clip Name') or ''))
-            logger(f"  Gap {gap_len} frames named '{ev.get('Clip Name')}'")
-
-        src = ev.get('Source File Path') or ev.get('SourcePath') or ''
-        ref = asset_map.get(src)
-        if ref:
-            clip = ET.SubElement(spine, 'asset-clip',
-                                 ref=ref,
-                                 name=sanitize(ev.get('Clip Name') or ''),
-                                 start=frames_to_fcpxml_time(int(ev.get('Source Clip start (frames)') or 0), fps),
-                                 duration=frames_to_fcpxml_time(dur, fps))
-            logger(f"  Clip ref={ref}")
-        else:
-            clip = ET.SubElement(spine, 'gap',
-                                 duration=frames_to_fcpxml_time(dur, fps),
-                                 name=sanitize(ev.get('Clip Name') or ''))
-            logger(f"  Fallback gap named '{ev.get('Clip Name')}'")
-
-        # Handle keyframes for scale and position
-        raw_kf = ev.get('FCPXML_Converted_Keyframes') or ev.get('FCPXMLConvertedKeyframes') or ''
-        kflist = []
-        if raw_kf:
-            try:
-                kflist = json.loads(raw_kf)
-            except json.JSONDecodeError:
-                try:
-                    kflist = ast.literal_eval(raw_kf)
-                    logger("  Parsed keyframes via literal_eval")
-                except Exception as e:
-                    logger(f"  Keyframe parse error: {e}")
-        if kflist:
-            # Create parameters for Scale and Position
-            px = ET.SubElement(clip, 'param', name='ScaleX')
-            py = ET.SubElement(clip, 'param', name='ScaleY')
-            pxi = ET.SubElement(clip, 'param', name='PositionX')
-            pyi = ET.SubElement(clip, 'param', name='PositionY')
-            for k in kflist:
-                t = k.get('FCPXML_Time')
-                sx = k.get('FCPXML_Scale_X', 1)
-                sy = k.get('FCPXML_Scale_Y', 1)
-                px_val = k.get('FCPXML_Position_X', 0)
-                py_val = k.get('FCPXML_Position_Y', 0)
-                ET.SubElement(px, 'keyframe', time=t, value=str(sx), interpolation='linear')
-                ET.SubElement(py, 'keyframe', time=t, value=str(sy), interpolation='linear')
-                ET.SubElement(pxi, 'keyframe', time=t, value=str(px_val), interpolation='linear')
-                ET.SubElement(pyi, 'keyframe', time=t, value=str(py_val), interpolation='linear')
-                logger(f"    KF@{t}: ScaleX={sx}, ScaleY={sy}, PositionX={px_val}, PositionY={py_val}")
-
-        current = abs_frame + dur
-
-    xml_raw = ET.tostring(fcpxml, encoding='unicode')
-    dbg_file = Path.home() / 'fcpxml_debug_raw.xml'
-    dbg_file.write_text(xml_raw, encoding='utf-8')
-    logger(f"Raw XML dumped to {dbg_file}")
-
-    try:
-        pretty = minidom.parseString(xml_raw).toprettyxml(indent='  ')
-    except xml.parsers.expat.ExpatError as err:
-        ln, col = err.lineno, err.offset
-        logger(f"Parse error at {ln}:{col}: {err}")
-        line = xml_raw.splitlines()[ln-1]
-        ctx = line[max(0, col-40):col+40]
-        logger(f"Context: {ctx}")
-        raise
-    Path(output_path).write_text(pretty, encoding='utf-8')
-    logger(f"Written FCPXML to {output_path}")
+    # write XML
+    tree = ElementTree(fcpxml)
+    tree.write(output_path, encoding='utf-8', xml_declaration=True)
 
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title('X_CON CSV → FCPXML')
-        self.geometry('700x500')
+        self.title("Final Converter GUI v2")
+        self.geometry("400x200")
+        tk.Button(self, text="Load CSV Events", command=self.load_csv).pack(pady=10)
+        self.csv_label = tk.Label(self, text="No CSV loaded", fg="grey")
+        self.csv_label.pack()
+        tk.Button(self, text="Export FCPXML", command=self.export_xml, state=tk.DISABLED).pack(pady=10)
         self.events = []
-        self.summary = {}
-
-        top = ttk.Frame(self)
-        top.pack(fill='x', padx=10, pady=5)
-        ttk.Button(top, text='Load CSV', command=self.load_csv).pack(side='left')
-        self.exp = ttk.Button(top, text='Export XML', command=self.export, state='disabled')
-        self.exp.pack(side='left', padx=5)
-        self.lbl = ttk.Label(top, text='No CSV loaded')
-        self.lbl.pack(side='left', padx=10)
-
-        self.log = scrolledtext.ScrolledText(self, font=('Courier New',10))
-        self.log.pack(fill='both', expand=True, padx=10, pady=5)
-
-    def logmsg(self, msg):
-        self.log.insert('end', msg + '\n')
-        self.log.see('end')
 
     def load_csv(self):
-        file_path = filedialog.askopenfilename(filetypes=[('CSV','*.csv')])
-        if not file_path:
-            return
-        self.lbl.config(text=file_path)
-        with open(file_path, newline='', encoding='utf-8') as f:
-            self.events = list(csv.DictReader(f))
-        if self.events:
-            self.summary = self.events[0]
-            self.logmsg(f"Loaded {len(self.events)} events. Keys: {list(self.summary.keys())}")
-            self.exp.config(state='normal')
-        else:
-            self.logmsg('No rows found in CSV.')
+        path = filedialog.askopenfilename(filetypes=[("CSV Files","*.csv")])
+        if not path: return
+        try:
+            self.events = load_events_from_csv(path)
+            self.csv_label.config(text=os.path.basename(path), fg="black")
+            self.csv_path = path
+            self.children['!button2'].config(state=tk.NORMAL)
+        except Exception as e:
+            messagebox.showerror("Error", f"Failed to load CSV:\n{e}")
 
-    def export(self):
-        if not self.events:
-            messagebox.showwarning('No Data','Load a CSV first')
-            return
-        out = filedialog.asksaveasfilename(defaultextension='.fcpxml', filetypes=[('FCPXML','*.fcpxml')])
-        if out:
-            try:
-                generate_full_fcpxml(self.summary, self.events, out, logger=self.logmsg)
-                messagebox.showinfo('Success', f'FCPXML saved to:\n{out}')
-            except Exception as e:
-                self.logmsg(f"Generation error: {e}")
-                messagebox.showerror('Error', str(e))
+    def export_xml(self):
+        path = filedialog.asksaveasfilename(defaultextension=".fcpxml", filetypes=[("FCPXML Files","*.fcpxml")])
+        if not path: return
+        try:
+            generate_full_fcpxml(self.events, path)
+            messagebox.showinfo("Success", f"FCPXML saved to {path}")
+        except Exception as e:
+            messagebox.showerror("Error", str(e))
 
-if __name__=='__main__':
+if __name__ == '__main__':
     App().mainloop()
