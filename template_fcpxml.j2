@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.13">
+  <resources>
+    {% for event in events %}
+    <asset id="r{{ loop.index }}" name="{{ event.ClipName }}" start="0/1s" duration="{{ event.EventLength }}/25s" hasVideo="1" format="r0">
+      <media-rep src="file://{{ event['Source File Path'] | replace(' ', '%20') }}" kind="original-media"/>
+    </asset>
+    {% endfor %}
+    <format id="r0" name="FFVideoFormat1080p25" frameDuration="1/25s" width="1920" height="1080"/>
+  </resources>
+  <library>
+    <event name="SuperEDL FX Export">
+      <project name="SuperEDL FX Export">
+        <sequence format="r0" tcStart="0s" duration="100/25s" tcFormat="NDF">
+          <spine>
+            {% for event in events %}
+            <asset-clip name="{{ event.ClipName }}" offset="{{ event.StartTimeFrames }}/25s" duration="{{ event.EventLength }}/25s" start="0/1s" ref="r{{ loop.index }}" format="r0">
+              <adjust-transform>
+                <param name="scale" value="1 1"/>
+              </adjust-transform>
+            </asset-clip>
+            {% endfor %}
+          </spine>
+        </sequence>
+      </project>
+    </event>
+  </library>
+</fcpxml>
