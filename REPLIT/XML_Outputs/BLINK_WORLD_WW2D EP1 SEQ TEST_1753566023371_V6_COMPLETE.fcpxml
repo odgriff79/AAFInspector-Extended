@@ -1,0 +1,2189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.13">
+  <resources>
+    <format id="r1" name="FFVideoFormat1080p25" frameDuration="1/25s" width="1920" height="1080"/>
+    <format id="r2" name="FFVideoFormat1080p25" frameDuration="1/25s" width="1920" height="1080"/>
+    <format id="r3" name="FFVideoFormatStill" frameDuration="1/25s" width="1920" height="1080"/>
+    <asset id="r4" name="B006_C020_012989_001.mov" format="r2">
+      <media-rep kind="original-media" src="file://file:///nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_01_29/WW2D_20250129_RED B_006/B006_0129OB.RDM/B006_C020_012989.RDC/B006_C020_012989_001.mov"/>
+    </asset>
+    <asset id="r5" name="A004_C020_0430NW_001.R3D" format="r1">
+      <media-rep kind="original-media" src="file://file:///nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_004/A004_04301J/A004_04301J.RDM/A004_C020_0430NW.RDC/A004_C020_0430NW_001.R3D"/>
+    </asset>
+    <asset id="r6" name="A004_C024_04303O_001.R3D" format="r1">
+      <media-rep kind="original-media" src="file://file:///nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_004/A004_04301J/A004_04301J.RDM/A004_C024_04303O.RDC/A004_C024_04303O_001.R3D"/>
+    </asset>
+    <asset id="r7" name="WW2D_ARC_966_M_GETTY_537133695.jpg" format="r3">
+      <media-rep kind="original-media" src="file://file:///ON BLINK WW2D RX01_1/ARCHIVE AND DOWNLOADS/ARCHIVE_2025_04_03_HEINZ LINGE EVA BRAUN/WW2D_ARC_966_M_GETTY_537133695.jpg"/>
+    </asset>
+    <asset id="r8" name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" format="r2">
+      <media-rep kind="original-media" src="file://file:///BLINK_ISS ODYSSEY_S1_CLIENT/BLINK/BLINK_WW2 DECODED_NEARLINE/02_ARCHIVE/2024_10_08/WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4"/>
+    </asset>
+    <asset id="r9" name="A001_C040_0425QP_001.R3D" format="r1">
+      <media-rep kind="original-media" src="file://file:///nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_25/WW2D_250425_RED_A_001/A001_04254D.RDM/A001_C040_0425QP.RDC/A001_C040_0425QP_001.R3D"/>
+    </asset>
+    <asset id="r10" name="A005_C001_0430N3_001.R3D" format="r1">
+      <media-rep kind="original-media" src="file://file:///nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C001_0430N3.RDC/A005_C001_0430N3_001.R3D"/>
+    </asset>
+    <asset id="r11" name="A005_C002_0430TV_001.R3D" format="r1">
+      <media-rep kind="original-media" src="file://file:///nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C002_0430TV.RDC/A005_C002_0430TV_001.R3D"/>
+    </asset>
+    <asset id="r12" name="WW2D_ARC_966_M_GETTY_537133695.jpg䐀䕎" format="r3">
+      <media-rep kind="original-media" src="file://file:////RadiantNexis00/BLINK_WW2 DECODED_CLIENT/ARCHIVE AND DOWNLOADS/ARCHIVE_2025_04_03_HEINZ LINGE EVA BRAUN/WW2D_ARC_966_M_GETTY_537133695.jpg䐀䕎"/>
+    </asset>
+    <asset id="r13" name="90_PERCENT_SAFE+AREA.tif" format="r3">
+      <media-rep kind="original-media" src="file://file:///nearline/BLINK/BLINK_MMIM S2_NEARLINE/05_GFX/90_PERCENT_SAFE+AREA.tif"/>
+    </asset>
+    <asset id="r14" name="resize_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/resize_placeholder.png/resize_placeholder.png"/>
+    </asset>
+    <asset id="r15" name="stabilize_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/stabilize_placeholder.png/stabilize_placeholder.png"/>
+    </asset>
+    <asset id="r16" name="submaster_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/submaster_placeholder.png/submaster_placeholder.png"/>
+    </asset>
+    <asset id="r17" name="3dwarp_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/3dwarp_placeholder.png/3dwarp_placeholder.png"/>
+    </asset>
+    <asset id="r18" name="mask_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/mask_placeholder.png/mask_placeholder.png"/>
+    </asset>
+    <asset id="r19" name="flip_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/flip_placeholder.png/flip_placeholder.png"/>
+    </asset>
+    <asset id="r20" name="animatte_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/animatte_placeholder.png/animatte_placeholder.png"/>
+    </asset>
+    <asset id="r21" name="flip_flop_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/flip_flop_placeholder.png/flip_flop_placeholder.png"/>
+    </asset>
+    <asset id="r22" name="blur_effect_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/blur_effect_placeholder.png/blur_effect_placeholder.png"/>
+    </asset>
+    <asset id="r23" name="paint_effect_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/paint_effect_placeholder.png/paint_effect_placeholder.png"/>
+    </asset>
+    <asset id="r24" name="region_stabilize_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/region_stabilize_placeholder.png/region_stabilize_placeholder.png"/>
+    </asset>
+    <asset id="r25" name="pan_and_scan_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/pan_and_scan_placeholder.png/pan_and_scan_placeholder.png"/>
+    </asset>
+    <asset id="r26" name="pictureinpicture_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/pictureinpicture_placeholder.png/pictureinpicture_placeholder.png"/>
+    </asset>
+    <asset id="r27" name="superimpose_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/superimpose_placeholder.png/superimpose_placeholder.png"/>
+    </asset>
+    <asset id="r28" name="film_grain_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/film_grain_placeholder.png/film_grain_placeholder.png"/>
+    </asset>
+    <asset id="r29" name="spot_color_effect_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/spot_color_effect_placeholder.png/spot_color_effect_placeholder.png"/>
+    </asset>
+    <asset id="r30" name="mattekey_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/mattekey_placeholder.png/mattekey_placeholder.png"/>
+    </asset>
+    <asset id="r31" name="3d_mattekey_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/3d_mattekey_placeholder.png/3d_mattekey_placeholder.png"/>
+    </asset>
+    <asset id="r32" name="luma_key_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/luma_key_placeholder.png/luma_key_placeholder.png"/>
+    </asset>
+    <asset id="r33" name="spectramatte_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/spectramatte_placeholder.png/spectramatte_placeholder.png"/>
+    </asset>
+    <asset id="r34" name="matte_key_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/matte_key_placeholder.png/matte_key_placeholder.png"/>
+    </asset>
+    <asset id="r35" name="rgbkeyer_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/rgbkeyer_placeholder.png/rgbkeyer_placeholder.png"/>
+    </asset>
+    <asset id="r36" name="9_letterbox_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/9_letterbox_placeholder.png/9_letterbox_placeholder.png"/>
+    </asset>
+    <asset id="r37" name="3_sidebar_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/3_sidebar_placeholder.png/3_sidebar_placeholder.png"/>
+    </asset>
+    <asset id="r38" name="subcap_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/subcap_placeholder.png/subcap_placeholder.png"/>
+    </asset>
+    <asset id="r39" name="timecode_burn_in_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/timecode_burn_in_placeholder.png/timecode_burn_in_placeholder.png"/>
+    </asset>
+    <asset id="r40" name="avid_titler__placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/avid_titler__placeholder.png/avid_titler__placeholder.png"/>
+    </asset>
+    <asset id="r41" name="n_a_placeholder.png" format="r3">
+      <media-rep kind="original-media" src="file://file://placeholders/n_a_placeholder.png/n_a_placeholder.png"/>
+    </asset>
+  </resources>
+  <library>
+    <event name="AAF Import V7">
+      <project name="BLINK_WORLD_WW2D EP1 SEQ TEST.Exported.01">
+        <sequence format="r2" duration="8366/25s">
+          <spine>
+            <asset-clip ref="r4" name="B006_C020_012989_001.mov" duration="59/25s" start="0/25s"/>
+            <asset-clip ref="r5" name="A004_C020_0430NW_001.R3D" duration="30/25s" start="0/25s"/>
+            <asset-clip ref="r6" name="A004_C024_04303O_001.R3D" duration="38/25s" start="0/25s"/>
+            <video ref="r7" name="WW2D_ARC_966_M_GETTY_537133695.jpg" duration="367/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Position">
+                    <keyframe time="0/5s" value="20.8125" curve="linear"/>
+                    <keyframe time="5/5s" value="20.8125" curve="linear"/>
+                    <keyframe time="0/5s" value="138.75" curve="linear"/>
+                    <keyframe time="5/5s" value="166.5" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="0/5s" value="128.0" curve="linear"/>
+                    <keyframe time="5/5s" value="143.0" curve="linear"/>
+                    <keyframe time="0/5s" value="128.0" curve="linear"/>
+                    <keyframe time="5/5s" value="143.0" curve="linear"/>
+                  </param>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <asset-clip ref="r8" name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" duration="213/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="-1/5s" value="80.0" curve="linear"/>
+                    <keyframe time="5/5s" value="80.0" curve="linear"/>
+                    <keyframe time="6/5s" value="80.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="5.0" curve="linear"/>
+                    <keyframe time="5/5s" value="5.0" curve="linear"/>
+                    <keyframe time="6/5s" value="5.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="15.0" curve="linear"/>
+                    <keyframe time="5/5s" value="15.0" curve="linear"/>
+                    <keyframe time="6/5s" value="15.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="45.0" curve="linear"/>
+                    <keyframe time="5/5s" value="45.0" curve="linear"/>
+                    <keyframe time="6/5s" value="45.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.59" curve="linear"/>
+                    <keyframe time="5/5s" value="0.59" curve="linear"/>
+                    <keyframe time="6/5s" value="0.59" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="90.0" curve="linear"/>
+                    <keyframe time="5/5s" value="90.0" curve="linear"/>
+                    <keyframe time="6/5s" value="90.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="249.75" curve="linear"/>
+                    <keyframe time="5/5s" value="249.75" curve="linear"/>
+                    <keyframe time="6/5s" value="249.75" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="75.0" curve="linear"/>
+                    <keyframe time="5/5s" value="75.0" curve="linear"/>
+                    <keyframe time="6/5s" value="75.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="6/5s" value="1.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="155.0" curve="linear"/>
+                    <keyframe time="5/5s" value="155.0" curve="linear"/>
+                    <keyframe time="6/5s" value="155.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="128.0" curve="linear"/>
+                    <keyframe time="5/5s" value="128.0" curve="linear"/>
+                    <keyframe time="6/5s" value="128.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                  </param>
+                  <param name="Position">
+                    <keyframe time="-6/5s" value="22.2" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="60.6011029" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-6/5s" value="32.8618421" curve="linear"/>
+                    <keyframe time="-1/5s" value="-36.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-81.7058824" curve="linear"/>
+                    <keyframe time="6/5s" value="-36.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="-1/5s" value="134.0" curve="linear"/>
+                    <keyframe time="5/5s" value="150.0" curve="linear"/>
+                    <keyframe time="6/5s" value="134.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="134.0" curve="linear"/>
+                    <keyframe time="5/5s" value="150.0" curve="linear"/>
+                    <keyframe time="6/5s" value="134.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <asset-clip ref="r9" name="A001_C040_0425QP_001.R3D" duration="78/25s" start="0/25s"/>
+            <asset-clip ref="r10" name="A005_C001_0430N3_001.R3D" duration="67/25s" start="0/25s"/>
+            <asset-clip ref="r11" name="A005_C002_0430TV_001.R3D" duration="116/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <asset-clip ref="r4" name="B006_C020_012989_001.mov" duration="59/25s" start="0/25s"/>
+            <asset-clip ref="r5" name="A004_C020_0430NW_001.R3D" duration="30/25s" start="0/25s"/>
+            <asset-clip ref="r6" name="A004_C024_04303O_001.R3D" duration="38/25s" start="0/25s"/>
+            <asset-clip ref="r12" name="WW2D_ARC_966_M_GETTY_537133695.jpg䐀䕎" duration="367/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.5" curve="linear"/>
+                    <keyframe time="5/5s" value="2.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-0.280701754" curve="linear"/>
+                    <keyframe time="0/5s" value="-0.15015015" curve="linear"/>
+                    <keyframe time="5/5s" value="-0.156729098" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <asset-clip ref="r8" name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" duration="213/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="-1/5s" value="80.0" curve="linear"/>
+                    <keyframe time="5/5s" value="80.0" curve="linear"/>
+                    <keyframe time="6/5s" value="80.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="5.0" curve="linear"/>
+                    <keyframe time="5/5s" value="5.0" curve="linear"/>
+                    <keyframe time="6/5s" value="5.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="15.0" curve="linear"/>
+                    <keyframe time="5/5s" value="15.0" curve="linear"/>
+                    <keyframe time="6/5s" value="15.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="45.0" curve="linear"/>
+                    <keyframe time="5/5s" value="45.0" curve="linear"/>
+                    <keyframe time="6/5s" value="45.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.59" curve="linear"/>
+                    <keyframe time="5/5s" value="0.59" curve="linear"/>
+                    <keyframe time="6/5s" value="0.59" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="90.0" curve="linear"/>
+                    <keyframe time="5/5s" value="90.0" curve="linear"/>
+                    <keyframe time="6/5s" value="90.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="249.75" curve="linear"/>
+                    <keyframe time="5/5s" value="249.75" curve="linear"/>
+                    <keyframe time="6/5s" value="249.75" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="75.0" curve="linear"/>
+                    <keyframe time="5/5s" value="75.0" curve="linear"/>
+                    <keyframe time="6/5s" value="75.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="6/5s" value="1.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="155.0" curve="linear"/>
+                    <keyframe time="5/5s" value="155.0" curve="linear"/>
+                    <keyframe time="6/5s" value="155.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="128.0" curve="linear"/>
+                    <keyframe time="5/5s" value="128.0" curve="linear"/>
+                    <keyframe time="6/5s" value="128.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                  </param>
+                  <param name="Position">
+                    <keyframe time="-6/5s" value="22.2" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="60.6011029" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-6/5s" value="32.8618421" curve="linear"/>
+                    <keyframe time="-1/5s" value="-36.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-81.7058824" curve="linear"/>
+                    <keyframe time="6/5s" value="-36.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="-1/5s" value="134.0" curve="linear"/>
+                    <keyframe time="5/5s" value="150.0" curve="linear"/>
+                    <keyframe time="6/5s" value="134.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="134.0" curve="linear"/>
+                    <keyframe time="5/5s" value="150.0" curve="linear"/>
+                    <keyframe time="6/5s" value="134.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <asset-clip ref="r9" name="A001_C040_0425QP_001.R3D" duration="78/25s" start="0/25s"/>
+            <asset-clip ref="r10" name="A005_C001_0430N3_001.R3D" duration="67/25s" start="0/25s"/>
+            <asset-clip ref="r11" name="A005_C002_0430TV_001.R3D" duration="116/25s" start="0/25s"/>
+            <asset-clip ref="r4" name="B006_C020_012989_001.mov" duration="59/25s" start="0/25s"/>
+            <asset-clip ref="r5" name="A004_C020_0430NW_001.R3D" duration="30/25s" start="0/25s"/>
+            <asset-clip ref="r6" name="A004_C024_04303O_001.R3D" duration="38/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <video ref="r7" name="WW2D_ARC_966_M_GETTY_537133695.jpg" duration="367/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Position">
+                    <keyframe time="0/5s" value="-359.885028" curve="linear"/>
+                    <keyframe time="5/5s" value="-104.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="554.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="0/5s" value="175.0" curve="linear"/>
+                    <keyframe time="5/5s" value="175.0" curve="linear"/>
+                    <keyframe time="0/5s" value="175.0" curve="linear"/>
+                    <keyframe time="5/5s" value="221.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <asset-clip ref="r8" name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" duration="213/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Position">
+                    <keyframe time="0/5s" value="-214.697368" curve="linear"/>
+                    <keyframe time="4/5s" value="-109.53947" curve="linear"/>
+                    <keyframe time="0/5s" value="-272.631579" curve="linear"/>
+                    <keyframe time="4/5s" value="-124.631586" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="0/5s" value="33.5282651" curve="linear"/>
+                    <keyframe time="4/5s" value="131.578947" curve="linear"/>
+                    <keyframe time="0/5s" value="33.5282651" curve="linear"/>
+                    <keyframe time="4/5s" value="131.578947" curve="linear"/>
+                  </param>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="255.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="255.0" curve="linear"/>
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <asset-clip ref="r9" name="A001_C040_0425QP_001.R3D" duration="78/25s" start="0/25s"/>
+            <asset-clip ref="r10" name="A005_C001_0430N3_001.R3D" duration="67/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <asset-clip ref="r11" name="A005_C002_0430TV_001.R3D" duration="116/25s" start="0/25s"/>
+            <video ref="r13" name="90_PERCENT_SAFE+AREA.tif" duration="40/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Position">
+                    <keyframe time="1/5s" value="-398.723684" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="-638.736842" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="1/5s" value="151.754386" curve="linear"/>
+                    <keyframe time="3/5s" value="49.122807" curve="linear"/>
+                    <keyframe time="1/5s" value="151.754386" curve="linear"/>
+                    <keyframe time="3/5s" value="49.122807" curve="linear"/>
+                  </param>
+                  <param name="Transform">
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="3/5s" value="100.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r13" name="90_PERCENT_SAFE+AREA.tif" duration="40/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="3/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="3/5s" value="999.0" curve="linear"/>
+                    <keyframe time="1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="3/5s" value="999.0" curve="linear"/>
+                    <keyframe time="1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="3/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="3/5s" value="100.0" curve="linear"/>
+                  </param>
+                  <param name="Position">
+                    <keyframe time="1/5s" value="-398.723684" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="638.736842" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="1/5s" value="151.754386" curve="linear"/>
+                    <keyframe time="3/5s" value="49.122807" curve="linear"/>
+                    <keyframe time="1/5s" value="151.754386" curve="linear"/>
+                    <keyframe time="3/5s" value="49.122807" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <asset-clip ref="r8" name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" duration="213/25s" start="0/25s"/>
+            <asset-clip ref="r10" name="A005_C001_0430N3_001.R3D" duration="67/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="192.0" curve="linear"/>
+                    <keyframe time="5/5s" value="192.0" curve="linear"/>
+                    <keyframe time="0/5s" value="91.0" curve="linear"/>
+                    <keyframe time="5/5s" value="91.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="5.0" curve="linear"/>
+                    <keyframe time="5/5s" value="5.0" curve="linear"/>
+                    <keyframe time="0/5s" value="90.0" curve="linear"/>
+                    <keyframe time="5/5s" value="90.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="0/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="0/5s" value="119.0" curve="linear"/>
+                    <keyframe time="5/5s" value="119.0" curve="linear"/>
+                  </param>
+                  <param name="Position">
+                    <keyframe time="0/5s" value="-0.236842105" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="-0.101364522" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="0/5s" value="61.0" curve="linear"/>
+                    <keyframe time="5/5s" value="128.0" curve="linear"/>
+                    <keyframe time="0/5s" value="61.0" curve="linear"/>
+                    <keyframe time="5/5s" value="128.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <asset-clip ref="r4" name="B006_C020_012989_001.mov" duration="59/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Position">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="227.842105" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-148.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="46.4912281" curve="linear"/>
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="46.4912281" curve="linear"/>
+                  </param>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <asset-clip ref="r11" name="A005_C002_0430TV_001.R3D" duration="116/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="0/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="20.0" curve="linear"/>
+                    <keyframe time="5/5s" value="20.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.67" curve="linear"/>
+                    <keyframe time="5/5s" value="0.67" curve="linear"/>
+                    <keyframe time="0/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <asset-clip ref="r4" name="B006_C020_012989_001.mov" duration="59/25s" start="0/25s"/>
+            <asset-clip ref="r5" name="A004_C020_0430NW_001.R3D" duration="30/25s" start="0/25s"/>
+            <asset-clip ref="r6" name="A004_C024_04303O_001.R3D" duration="38/25s" start="0/25s"/>
+            <asset-clip ref="r4" name="B006_C020_012989_001.mov" duration="59/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <asset-clip ref="r10" name="A005_C001_0430N3_001.R3D" duration="67/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <video ref="r14" name="resize_placeholder.png" duration="59/25s" start="0/25s"/>
+            <video ref="r15" name="stabilize_placeholder.png" duration="30/25s" start="0/25s"/>
+            <video ref="r16" name="submaster_placeholder.png" duration="38/25s" start="0/25s"/>
+            <video ref="r14" name="resize_placeholder.png" duration="367/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Position">
+                    <keyframe time="0/5s" value="20.8125" curve="linear"/>
+                    <keyframe time="5/5s" value="20.8125" curve="linear"/>
+                    <keyframe time="0/5s" value="138.75" curve="linear"/>
+                    <keyframe time="5/5s" value="166.5" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="0/5s" value="128.0" curve="linear"/>
+                    <keyframe time="5/5s" value="143.0" curve="linear"/>
+                    <keyframe time="0/5s" value="128.0" curve="linear"/>
+                    <keyframe time="5/5s" value="143.0" curve="linear"/>
+                  </param>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r17" name="3dwarp_placeholder.png" duration="213/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="-1/5s" value="80.0" curve="linear"/>
+                    <keyframe time="5/5s" value="80.0" curve="linear"/>
+                    <keyframe time="6/5s" value="80.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="5.0" curve="linear"/>
+                    <keyframe time="5/5s" value="5.0" curve="linear"/>
+                    <keyframe time="6/5s" value="5.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="15.0" curve="linear"/>
+                    <keyframe time="5/5s" value="15.0" curve="linear"/>
+                    <keyframe time="6/5s" value="15.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="45.0" curve="linear"/>
+                    <keyframe time="5/5s" value="45.0" curve="linear"/>
+                    <keyframe time="6/5s" value="45.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.59" curve="linear"/>
+                    <keyframe time="5/5s" value="0.59" curve="linear"/>
+                    <keyframe time="6/5s" value="0.59" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="90.0" curve="linear"/>
+                    <keyframe time="5/5s" value="90.0" curve="linear"/>
+                    <keyframe time="6/5s" value="90.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="249.75" curve="linear"/>
+                    <keyframe time="5/5s" value="249.75" curve="linear"/>
+                    <keyframe time="6/5s" value="249.75" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="75.0" curve="linear"/>
+                    <keyframe time="5/5s" value="75.0" curve="linear"/>
+                    <keyframe time="6/5s" value="75.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="6/5s" value="1.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="155.0" curve="linear"/>
+                    <keyframe time="5/5s" value="155.0" curve="linear"/>
+                    <keyframe time="6/5s" value="155.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="128.0" curve="linear"/>
+                    <keyframe time="5/5s" value="128.0" curve="linear"/>
+                    <keyframe time="6/5s" value="128.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                  </param>
+                  <param name="Position">
+                    <keyframe time="-6/5s" value="22.2" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="60.6011029" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-6/5s" value="32.8618421" curve="linear"/>
+                    <keyframe time="-1/5s" value="-36.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-81.7058824" curve="linear"/>
+                    <keyframe time="6/5s" value="-36.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="-1/5s" value="134.0" curve="linear"/>
+                    <keyframe time="5/5s" value="150.0" curve="linear"/>
+                    <keyframe time="6/5s" value="134.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="134.0" curve="linear"/>
+                    <keyframe time="5/5s" value="150.0" curve="linear"/>
+                    <keyframe time="6/5s" value="134.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r18" name="mask_placeholder.png" duration="78/25s" start="0/25s"/>
+            <video ref="r19" name="flip_placeholder.png" duration="67/25s" start="0/25s"/>
+            <video ref="r20" name="animatte_placeholder.png" duration="116/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r14" name="resize_placeholder.png" duration="59/25s" start="0/25s"/>
+            <video ref="r15" name="stabilize_placeholder.png" duration="30/25s" start="0/25s"/>
+            <video ref="r16" name="submaster_placeholder.png" duration="38/25s" start="0/25s"/>
+            <asset-clip ref="r12" name="WW2D_ARC_966_M_GETTY_537133695.jpg䐀䕎" duration="367/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.5" curve="linear"/>
+                    <keyframe time="5/5s" value="2.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-0.280701754" curve="linear"/>
+                    <keyframe time="0/5s" value="-0.15015015" curve="linear"/>
+                    <keyframe time="5/5s" value="-0.156729098" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </asset-clip>
+            <video ref="r17" name="3dwarp_placeholder.png" duration="213/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="-1/5s" value="80.0" curve="linear"/>
+                    <keyframe time="5/5s" value="80.0" curve="linear"/>
+                    <keyframe time="6/5s" value="80.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="5/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="6/5s" value="-499.5" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="5.0" curve="linear"/>
+                    <keyframe time="5/5s" value="5.0" curve="linear"/>
+                    <keyframe time="6/5s" value="5.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="15.0" curve="linear"/>
+                    <keyframe time="5/5s" value="15.0" curve="linear"/>
+                    <keyframe time="6/5s" value="15.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="45.0" curve="linear"/>
+                    <keyframe time="5/5s" value="45.0" curve="linear"/>
+                    <keyframe time="6/5s" value="45.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.59" curve="linear"/>
+                    <keyframe time="5/5s" value="0.59" curve="linear"/>
+                    <keyframe time="6/5s" value="0.59" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="90.0" curve="linear"/>
+                    <keyframe time="5/5s" value="90.0" curve="linear"/>
+                    <keyframe time="6/5s" value="90.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="249.75" curve="linear"/>
+                    <keyframe time="5/5s" value="249.75" curve="linear"/>
+                    <keyframe time="6/5s" value="249.75" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="6/5s" value="10.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="-50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="6/5s" value="50.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="75.0" curve="linear"/>
+                    <keyframe time="5/5s" value="75.0" curve="linear"/>
+                    <keyframe time="6/5s" value="75.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="6/5s" value="1.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="6/5s" value="100.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="155.0" curve="linear"/>
+                    <keyframe time="5/5s" value="155.0" curve="linear"/>
+                    <keyframe time="6/5s" value="155.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="255.0" curve="linear"/>
+                    <keyframe time="5/5s" value="255.0" curve="linear"/>
+                    <keyframe time="6/5s" value="255.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="128.0" curve="linear"/>
+                    <keyframe time="5/5s" value="128.0" curve="linear"/>
+                    <keyframe time="6/5s" value="128.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                  </param>
+                  <param name="Position">
+                    <keyframe time="-6/5s" value="22.2" curve="linear"/>
+                    <keyframe time="-1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="60.6011029" curve="linear"/>
+                    <keyframe time="6/5s" value="0.0" curve="linear"/>
+                    <keyframe time="-6/5s" value="32.8618421" curve="linear"/>
+                    <keyframe time="-1/5s" value="-36.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-81.7058824" curve="linear"/>
+                    <keyframe time="6/5s" value="-36.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="-1/5s" value="134.0" curve="linear"/>
+                    <keyframe time="5/5s" value="150.0" curve="linear"/>
+                    <keyframe time="6/5s" value="134.0" curve="linear"/>
+                    <keyframe time="-1/5s" value="134.0" curve="linear"/>
+                    <keyframe time="5/5s" value="150.0" curve="linear"/>
+                    <keyframe time="6/5s" value="134.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r18" name="mask_placeholder.png" duration="78/25s" start="0/25s"/>
+            <video ref="r19" name="flip_placeholder.png" duration="67/25s" start="0/25s"/>
+            <video ref="r21" name="flip_flop_placeholder.png" duration="116/25s" start="0/25s"/>
+            <video ref="r22" name="blur_effect_placeholder.png" duration="59/25s" start="0/25s"/>
+            <video ref="r23" name="paint_effect_placeholder.png" duration="30/25s" start="0/25s"/>
+            <video ref="r24" name="region_stabilize_placeholder.png" duration="38/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r25" name="pan_and_scan_placeholder.png" duration="367/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Position">
+                    <keyframe time="0/5s" value="-359.885028" curve="linear"/>
+                    <keyframe time="5/5s" value="-104.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="554.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="0/5s" value="175.0" curve="linear"/>
+                    <keyframe time="5/5s" value="175.0" curve="linear"/>
+                    <keyframe time="0/5s" value="175.0" curve="linear"/>
+                    <keyframe time="5/5s" value="221.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r26" name="pictureinpicture_placeholder.png" duration="213/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Position">
+                    <keyframe time="0/5s" value="-214.697368" curve="linear"/>
+                    <keyframe time="4/5s" value="-109.53947" curve="linear"/>
+                    <keyframe time="0/5s" value="-272.631579" curve="linear"/>
+                    <keyframe time="4/5s" value="-124.631586" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="0/5s" value="33.5282651" curve="linear"/>
+                    <keyframe time="4/5s" value="131.578947" curve="linear"/>
+                    <keyframe time="0/5s" value="33.5282651" curve="linear"/>
+                    <keyframe time="4/5s" value="131.578947" curve="linear"/>
+                  </param>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="255.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="255.0" curve="linear"/>
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r27" name="superimpose_placeholder.png" duration="78/25s" start="0/25s"/>
+            <video ref="r28" name="film_grain_placeholder.png" duration="67/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r29" name="spot_color_effect_placeholder.png" duration="116/25s" start="0/25s"/>
+            <video ref="r30" name="mattekey_placeholder.png" duration="29/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Position">
+                    <keyframe time="1/5s" value="-398.723684" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="-638.736842" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="1/5s" value="151.754386" curve="linear"/>
+                    <keyframe time="3/5s" value="49.122807" curve="linear"/>
+                    <keyframe time="1/5s" value="151.754386" curve="linear"/>
+                    <keyframe time="3/5s" value="49.122807" curve="linear"/>
+                  </param>
+                  <param name="Transform">
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="3/5s" value="100.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r31" name="3d_mattekey_placeholder.png" duration="40/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="1/5s" value="0.0" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="3/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="3/5s" value="999.0" curve="linear"/>
+                    <keyframe time="1/5s" value="999.0" curve="linear"/>
+                    <keyframe time="3/5s" value="999.0" curve="linear"/>
+                    <keyframe time="1/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="3/5s" value="-999.0" curve="linear"/>
+                    <keyframe time="1/5s" value="100.0" curve="linear"/>
+                    <keyframe time="3/5s" value="100.0" curve="linear"/>
+                  </param>
+                  <param name="Position">
+                    <keyframe time="1/5s" value="-398.723684" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                    <keyframe time="1/5s" value="638.736842" curve="linear"/>
+                    <keyframe time="3/5s" value="0.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="1/5s" value="151.754386" curve="linear"/>
+                    <keyframe time="3/5s" value="49.122807" curve="linear"/>
+                    <keyframe time="1/5s" value="151.754386" curve="linear"/>
+                    <keyframe time="3/5s" value="49.122807" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r32" name="luma_key_placeholder.png" duration="213/25s" start="0/25s"/>
+            <video ref="r33" name="spectramatte_placeholder.png" duration="67/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="192.0" curve="linear"/>
+                    <keyframe time="5/5s" value="192.0" curve="linear"/>
+                    <keyframe time="0/5s" value="91.0" curve="linear"/>
+                    <keyframe time="5/5s" value="91.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="5.0" curve="linear"/>
+                    <keyframe time="5/5s" value="5.0" curve="linear"/>
+                    <keyframe time="0/5s" value="90.0" curve="linear"/>
+                    <keyframe time="5/5s" value="90.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="50.0" curve="linear"/>
+                    <keyframe time="5/5s" value="50.0" curve="linear"/>
+                    <keyframe time="0/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="0/5s" value="119.0" curve="linear"/>
+                    <keyframe time="5/5s" value="119.0" curve="linear"/>
+                  </param>
+                  <param name="Position">
+                    <keyframe time="0/5s" value="-0.236842105" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="-0.101364522" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="0/5s" value="61.0" curve="linear"/>
+                    <keyframe time="5/5s" value="128.0" curve="linear"/>
+                    <keyframe time="0/5s" value="61.0" curve="linear"/>
+                    <keyframe time="5/5s" value="128.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r34" name="matte_key_placeholder.png" duration="59/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Position">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="227.842105" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="-148.0" curve="linear"/>
+                  </param>
+                  <param name="Scale">
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="46.4912281" curve="linear"/>
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="46.4912281" curve="linear"/>
+                  </param>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r35" name="rgbkeyer_placeholder.png" duration="116/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="100.0" curve="linear"/>
+                    <keyframe time="5/5s" value="100.0" curve="linear"/>
+                    <keyframe time="0/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="10.0" curve="linear"/>
+                    <keyframe time="5/5s" value="10.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="20.0" curve="linear"/>
+                    <keyframe time="5/5s" value="20.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="0.0" curve="linear"/>
+                    <keyframe time="0/5s" value="0.67" curve="linear"/>
+                    <keyframe time="5/5s" value="0.67" curve="linear"/>
+                    <keyframe time="0/5s" value="1.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r36" name="9_letterbox_placeholder.png" duration="59/25s" start="0/25s"/>
+            <video ref="r36" name="9_letterbox_placeholder.png" duration="30/25s" start="0/25s"/>
+            <video ref="r37" name="3_sidebar_placeholder.png" duration="38/25s" start="0/25s"/>
+            <video ref="r38" name="subcap_placeholder.png" duration="59/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r39" name="timecode_burn_in_placeholder.png" duration="67/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r40" name="avid_titler__placeholder.png" duration="25/25s" start="0/25s">
+              <adjust-conform>
+                <adjust-transform>
+                  <param name="Transform">
+                    <keyframe time="0/5s" value="0.0" curve="linear"/>
+                    <keyframe time="5/5s" value="1.0" curve="linear"/>
+                  </param>
+                </adjust-transform>
+              </adjust-conform>
+            </video>
+            <video ref="r41" name="n_a_placeholder.png" duration="968/25s" start="0/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+            <gap name="Gap" duration="25/25s"/>
+          </spine>
+        </sequence>
+      </project>
+    </event>
+  </library>
+</fcpxml>
