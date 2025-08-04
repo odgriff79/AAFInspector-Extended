@@ -4,8 +4,7 @@ simpleFCPXML.py
 
 A Tkinter GUI that:
   - Parses an AAF-style CSV report with keyframe data.
-  - Generates a structurally correct FCPXML with fully working keyframe animations,
-    correctly handling both timeline-relative and source-relative keyframe data.
+  - Generates a structurally correct FCPXML with fully working keyframe animations.
 """
 import tkinter as tk
 from tkinter import filedialog, messagebox
@@ -50,7 +49,7 @@ def get_filename_for_check(event):
     clip_name = sanitize_string(event.get('Clip Name', '')).strip()
     return clip_name
 
-def parse_keyframe_details(kf_string, clip_start_frames_on_timeline, clip_start_in_source_frames, clip_length_frames):
+def parse_keyframe_details(kf_string, clip_start_frames, clip_length_frames):
     """Parses the Keyframe Details string into a structured dictionary."""
     if not kf_string or "No animated parameters" in kf_string:
         if '-> Value:' not in kf_string:
@@ -69,19 +68,14 @@ def parse_keyframe_details(kf_string, clip_start_frames_on_timeline, clip_start_
         kf_match = re.search(r'Keyframe at .*?\((\d+)f\)\s*->\s*Value:\s*(.*)', line)
         if kf_match and current_param:
             frame, value_str = kf_match.groups()
-            abs_keyframe_frame = int(frame)
+            frame = int(frame)
             value_str = value_str.strip()
             try:
                 value = float(value_str.split('/')[0]) / float(value_str.split('/')[1]) if '/' in value_str else float(value_str)
-                
-                # --- FINAL FIX for Time Calculation ---
-                # This logic now correctly calculates the relative frame within the timeline clip
-                relative_frame = abs_keyframe_frame - clip_start_frames_on_timeline
-                
-                # Ensure the keyframe is within the bounds of the clip on the timeline
-                if 0 <= relative_frame <= clip_length_frames:
+                # --- FIX: More robust relative frame calculation ---
+                relative_frame = max(0, frame - clip_start_frames)
+                if relative_frame <= clip_length_frames:
                     parsed_params[current_param].append({'time': relative_frame, 'value': value})
-
             except (ValueError, ZeroDivisionError):
                 continue
         
@@ -227,8 +221,8 @@ def create_fcpxml():
             full_attrs = base_attrs if is_still else f'{base_attrs} tcFormat="{tc_format}" format="r0"'
             
             f.write(f'                        <{tag} {full_attrs}>\n')
-            
-            keyframes = parse_keyframe_details(event.get('Keyframe Details', ''), event_start_frames, clip_start_in_source_frames, clip_duration_frames)
+
+            keyframes = parse_keyframe_details(event.get('Keyframe Details', ''), event_start_frames, clip_duration_frames)
             
             transform_kfs, crop_kfs, opacity_kfs = {}, {}, {}
             if keyframes:
