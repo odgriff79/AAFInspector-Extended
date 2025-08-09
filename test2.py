@@ -1,28 +1,27 @@
 #!/usr/bin/env python3
 # AAF→Resolve FCPXML Builder (direct, no compressed JSON)
-# v0.7.2 — Mirrors superEDL recursive logic for AAF, correct op→clip binding,
-#           effect naming from Operation/_EFFECT_PLUGIN_*, UTF-16LE Filepath (P&Z),
-#           robust SourceClip→FileSourceMob, safe JSON logs, slot tree dump, verbose trace.
+# v0.7.3 — Mirrors superEDL compressed-JSON traversal, pulls AVX names from plain text,
+#           supports ScopeReference inputs, robust SourceClip→FileSourceMob via UMID/slot fallback,
+#           pseudo-compressed debug dump, verbose trace, safe JSON.
 
 import os, re, json, traceback
 from fractions import Fraction
 from datetime import datetime
 from typing import Dict, List, Optional, Any, Tuple
-
 from dataclasses import dataclass
 
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 
 try:
-    import aaf2  # pyaaf2 tested with 1.4.x
+    import aaf2  # tested with pyaaf2 1.4.x
 except Exception as e:
     raise SystemExit("pyaaf2>=1.4.0 required. pip install pyaaf2") from e
 
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
-APP_NAME = "AAF2ResolveFCPXML_GUI_v0_7_2"
+APP_NAME = "AAF2ResolveFCPXML_GUI_v0_7_3"
 LOG_PATH = os.path.join(os.path.expanduser("~"), "Documents", f"{APP_NAME}_log.txt")
 
 # ---------------- Utilities ----------------
@@ -80,7 +79,6 @@ def frames_to_fractional(frames: int, fps: Fraction) -> str:
     return f"{A}/{B}s"
 
 def df_flag_from_rate(fps: Fraction) -> str:
-    # simple NDF; extend if 30000/1001 DF is needed
     return "NDF"
 
 def json_dump_safe(path: str, data: Any):
@@ -125,7 +123,7 @@ class Event:
     width: int
     height: int
     note: str = ""
-    filler_fx_file: Optional[str] = None  # decoded path for Pan&Zoom on filler (rare)
+    filler_fx_file: Optional[str] = None
 
 @dataclass
 class SequenceInfo:
@@ -145,9 +143,15 @@ class AAFInMemoryExtractor:
         self.slot_scan: List[Dict[str, Any]] = []
         self.traversal_trace: List[str] = []
         self.effects_index: List[Dict[str, Any]] = []
+        # reverse indices (built once)
+        self._mob_by_id = {}
 
     def __enter__(self):
         self.f = aaf2.open(self.path, 'r')
+        try:
+            self._index_all_mobs()
+        except Exception as e:
+            self._trace(f"mob index failed: {e}")
         return self
 
     def __exit__(self, exc_type, exc, tb):
@@ -156,6 +160,46 @@ class AAFInMemoryExtractor:
 
     def _trace(self, msg: str):
         self.traversal_trace.append(msg)
+
+    # ---- reverse index of mobs by UMID/ID ----
+
+    def _mob_uid_of(self, mob) -> Optional[str]:
+        for attr in ("mob_id", "mobID", "id", "mobid", "mob_uid"):
+            try:
+                v = getattr(mob, attr, None)
+                if v: return str(v)
+            except:
+                pass
+        try:
+            # fallback: repr parsing
+            r = repr(mob)
+            m = re.search(r"([0-9a-fA-F-]{16,})", r)
+            if m: return m.group(1)
+        except:
+            pass
+        return None
+
+    def _index_all_mobs(self):
+        try:
+            all_mobs = list(self.f.content.mobs())
+        except Exception:
+            all_mobs = []
+        for m in all_mobs:
+            mid = self._mob_uid_of(m)
+            if mid:
+                self._mob_by_id[mid] = m
+        self._trace(f"mob index: {len(self._mob_by_id)} entries")
+
+    def _lookup_mob_by_umid(self, umid_like: Any):
+        if not umid_like: return None
+        key = str(umid_like)
+        if key in self._mob_by_id:
+            return self._mob_by_id[key]
+        # try relaxed match
+        for k in self._mob_by_id.keys():
+            if key.lower() in k.lower() or k.lower() in key.lower():
+                return self._mob_by_id[k]
+        return None
 
     # ---- Slot helpers / skip rules ----
 
@@ -177,7 +221,6 @@ class AAFInMemoryExtractor:
             return ""
 
     def _should_skip_track(self, slot) -> bool:
-        # mirror your original: skip Data track and A1..A8
         name_u = self._slot_name(slot).upper()
         if starts_with_any(name_u, [f"A{i}" for i in range(1,9)]):
             self._trace(f"skip slot by name '{name_u}' (audio A1..A8)")
@@ -264,12 +307,6 @@ class AAFInMemoryExtractor:
 
     # --- Source resolution (mob chain) ---
 
-    def _is_class(self, mob, name: str) -> bool:
-        try:
-            return aaf_class_name(mob) == name
-        except:
-            return False
-
     def _sourceclip_start_mob(self, src_seg):
         try:
             src = getattr(src_seg, "source", None)
@@ -285,9 +322,10 @@ class AAFInMemoryExtractor:
             chain = [aaf_class_name(cur)] if cur else []
             while cur and id(cur) not in seen:
                 seen.add(id(cur))
-                if self._is_class(cur, "FileSourceMob"):
+                if aaf_class_name(cur) == "FileSourceMob":
                     self._trace("  resolve chain: " + " → ".join(chain))
                     return cur
+                # try hop via first slot's segment.source.mob
                 next_mob = None
                 for slot in getattr(cur, "slots", []) or []:
                     seg = getattr(slot, "segment", None)
@@ -296,22 +334,61 @@ class AAFInMemoryExtractor:
                     if nmob:
                         next_mob = nmob
                         break
-                if next_mob:
-                    cur = next_mob
-                    chain.append(aaf_class_name(cur))
-                    continue
-                self._trace("  resolve chain (terminal): " + " → ".join(chain))
-                return cur
+                if not next_mob:
+                    break
+                cur = next_mob
+                chain.append(aaf_class_name(cur))
+            self._trace("  resolve chain (terminal): " + " → ".join(chain))
+            return cur
         except Exception as e:
             self._trace(f"_resolve_to_filesource failed: {e}")
         return mob
+
+    def _resolve_sourceclip_via_ids(self, src_seg):
+        """
+        Fallback when src_seg.source.mob is missing:
+        read SourceID (UMID) and SourceMobSlotID, look up mob, then walk to FileSourceMob.
+        """
+        umid = None; slot_id = None
+        # Try common property names
+        for nm in ("source_id", "sourceID", "source_mob_id", "sourceMobID", "source"):
+            try:
+                v = getattr(src_seg, nm, None)
+                if v and "id" in lower_str(nm):
+                    umid = str(v)
+            except: pass
+        # brute-force dict-like access
+        try:
+            d = getattr(src_seg, "__dict__", None) or {}
+            for k,v in d.items():
+                if "mob" in lower_str(k) and "id" in lower_str(k):
+                    umid = str(v)
+                if "slot" in lower_str(k) and isinstance(v, int):
+                    slot_id = v
+        except: pass
+        # pyaaf2 properties()
+        try:
+            for p in getattr(src_seg, "properties", []) or []:
+                pn = safe_name(getattr(p, "name", ""))
+                if "SourceID" in pn or "MobID" in pn:
+                    umid = umid or safe_name(getattr(p, "value", None))
+                if "SourceMobSlotID" in pn:
+                    try: slot_id = int(getattr(p, "value", None))
+                    except: pass
+        except: pass
+
+        self._trace(f"  fallback via ids: UMID={umid} slot={slot_id}")
+        mob = self._lookup_mob_by_umid(umid)
+        if not mob:
+            return None
+        return self._resolve_to_filesource(mob)
 
     def _essence_for_sourceclip(self, src_seg):
         try:
             start_mob = self._sourceclip_start_mob(src_seg)
             if not start_mob:
-                self._trace("  SourceClip->source.mob is None")
-                return None
+                self._trace("  SourceClip->source.mob is None; trying UMID/slot fallback")
+                return self._resolve_sourceclip_via_ids(src_seg)
             return self._resolve_to_filesource(start_mob)
         except Exception as e:
             self._trace(f"_essence_for_sourceclip error: {e}")
@@ -322,7 +399,11 @@ class AAFInMemoryExtractor:
             desc = getattr(mob, "descriptor", None)
             if desc and getattr(desc, "locators", None):
                 for loc in desc.locators:
-                    if "NetworkLocator" in safe_name(getattr(loc, "classdef", None).name):
+                    try:
+                        cdef = getattr(getattr(loc, "classdef", None), "name", "")
+                    except:
+                        cdef = ""
+                    if "NetworkLocator" in safe_name(cdef):
                         url = getattr(loc, "url", None) or getattr(loc, "URLString", None)
                         if url:
                             path = url.replace("file://", "")
@@ -418,6 +499,66 @@ class AAFInMemoryExtractor:
         except Exception:
             return None
 
+    def _iter_tagged_values(self, container) -> List[Tuple[str, Any]]:
+        """
+        Mirror your compressed JSON: items where each has children Name/Value props.
+        Works with pyaaf2 vectors/lists or dict-like.
+        Returns list of (name, value) in plain python.
+        """
+        out = []
+        if not container:
+            return out
+        try:
+            # if dict-like
+            if hasattr(container, "keys"):
+                for k in list(container.keys()):
+                    try:
+                        v = container[k]
+                        out.append((safe_name(k), self._to_py(v)))
+                    except:
+                        continue
+                return out
+        except:
+            pass
+        # list/iterable of "tagged value" objects
+        try:
+            for tv in list(container) or []:
+                # common shapes: tv.name / tv.value
+                nm = None; val = None
+                try:
+                    nm = safe_name(getattr(tv, "name", None))
+                except: pass
+                try:
+                    val = getattr(tv, "value", None)
+                except: pass
+                if nm is not None and val is not None:
+                    out.append((nm, self._to_py(val)))
+                    continue
+                # nested properties called "Name"/"Value"
+                try:
+                    props = getattr(tv, "properties", []) or []
+                    nm_candidate = None; val_candidate = None
+                    for p in props:
+                        pn = safe_name(getattr(p, "name", ""))
+                        if pn == "Name":
+                            nm_candidate = self._to_py(getattr(p, "value", None))
+                        elif pn == "Value":
+                            val_candidate = self._to_py(getattr(p, "value", None))
+                    if nm_candidate is not None:
+                        out.append((safe_name(nm_candidate), val_candidate))
+                        continue
+                except:
+                    pass
+                # last resort string repr parsing
+                s = safe_name(tv)
+                m1 = re.search(r"Name[\"']?\s*[:=]\s*[\"']([^\"']+)[\"']", s)
+                m2 = re.search(r"Value[\"']?\s*[:=]\s*[\"']?(.+?)[\"']?(?:,|]|$)", s)
+                if m1:
+                    out.append((m1.group(1), m2.group(1) if m2 else None))
+        except:
+            pass
+        return out
+
     def summarise_op_params(self, op_group) -> Dict[str, Any]:
         out = {
             "effect_name": "Unknown Effect",
@@ -428,61 +569,55 @@ class AAFInMemoryExtractor:
         }
         plugin_class = None
         plugin_name  = None
+        plugin_type  = None
         avid_id_name = None
 
-        # attributes
-        try:
-            attrs = getattr(op_group, "attributes", None)
-            if attrs:
-                for k in list(attrs.keys()):
-                    kv = self._to_py(attrs[k])
-                    out["raw"][f"attr:{k}"] = kv
-                    if str(k) == "_EFFECT_PLUGIN_CLASS":
-                        plugin_class = str(kv)
-                    if str(k) == "_EFFECT_PLUGIN_NAME":
-                        plugin_name = str(kv)
-                    if str(k).lower() == "avideffectid":
-                        avid_id_name = self._decode_avid_effect_id(kv) or avid_id_name
-        except Exception:
-            pass
-
-        # component_attribute_list
+        # component_attribute_list: vector of tagged values in Avid
         try:
             cal = getattr(op_group, "component_attribute_list", None)
-            if cal:
-                for k in list(cal.keys()):
-                    kv = self._to_py(cal[k])
-                    out["raw"][f"cal:{k}"] = kv
-                    ks = str(k)
-                    if ks == "_EFFECT_PLUGIN_CLASS" and not plugin_class:
-                        plugin_class = str(kv)
-                    if ks == "_EFFECT_PLUGIN_NAME" and not plugin_name:
-                        plugin_name = str(kv)
-                    if ks.lower() == "filepath":
-                        pz = self._decode_utf16le_path(kv)
-                        if pz: out["static_params"]["Filepath"] = pz
-                    if ks.lower() == "avideffectid":
-                        avid_id_name = self._decode_avid_effect_id(kv) or avid_id_name
-        except Exception:
-            pass
+            for (k, v) in self._iter_tagged_values(cal):
+                out["raw"][f"cal:{k}"] = v
+                lk = lower_str(k)
+                if k == "_EFFECT_PLUGIN_CLASS": plugin_class = safe_name(v)
+                elif k == "_EFFECT_PLUGIN_NAME": plugin_name  = safe_name(v)
+                elif k == "_EFFECT_PLUGIN_TYPE": plugin_type  = safe_name(v)
+                elif lk == "filepath":
+                    pz = self._decode_utf16le_path(v)
+                    if pz: out["static_params"]["Filepath"] = pz
+                elif lk == "avideffectid":
+                    avid_id_name = self._decode_avid_effect_id(v) or avid_id_name
+        except Exception as e:
+            self._trace(f"component_attribute_list parse error: {e}")
 
-        # parameters (IMPORTANT: many Avids put AvidEffectID here)
+        # attributes: sometimes mirrored there
+        try:
+            attrs = getattr(op_group, "attributes", None)
+            for (k, v) in self._iter_tagged_values(attrs):
+                out["raw"][f"attr:{k}"] = v
+                lk = lower_str(k)
+                if k == "_EFFECT_PLUGIN_CLASS" and not plugin_class: plugin_class = safe_name(v)
+                elif k == "_EFFECT_PLUGIN_NAME" and not plugin_name:  plugin_name  = safe_name(v)
+                elif k == "_EFFECT_PLUGIN_TYPE" and not plugin_type:  plugin_type  = safe_name(v)
+                elif lk == "avideffectid" and not avid_id_name:
+                    avid_id_name = self._decode_avid_effect_id(v) or avid_id_name
+        except Exception as e:
+            self._trace(f"attributes parse error: {e}")
+
+        # parameters (many Avids put AvidEffectID here)
         try:
             params = getattr(op_group, "parameters", None) or []
             for p in params:
                 pname = safe_name(getattr(p, "name", "Param"))
                 is_vary = bool(getattr(p, "is_varying", False))
-                if pname.lower() == "avideffectid":
+                if lower_str(pname) == "avideffectid":
                     kv = self._to_py(getattr(p, "value", None))
                     avid_id_name = self._decode_avid_effect_id(kv) or avid_id_name
                 if is_vary:
                     pts = list(getattr(p, "points", []) or [])
                     rec = []
                     for cp in pts:
-                        t = getattr(cp, "time", None)
-                        v = getattr(cp, "value", None)
-                        if t is None or v is None:
-                            continue
+                        t = getattr(cp, "time", None); v = getattr(cp, "value", None)
+                        if t is None or v is None: continue
                         t_val = self._to_py(t); v_val = self._to_py(v)
                         rec.append({"time": t_val, "value": v_val})
                     if rec: out["animated_params"][pname] = rec
@@ -493,23 +628,117 @@ class AAFInMemoryExtractor:
         except Exception as e:
             self._trace(f"summarise_op_params params error: {e}")
 
-        # operationdef fallback / preferred label
+        # operationdef (human-friendly)
+        opdef_name = None
         try:
             opdef = getattr(op_group, "operationdef", None)
             if opdef and getattr(opdef, "name", None):
                 opdef_name = safe_name(opdef.name)
-                # Preferred: OperationDef human name (e.g., PaintResize_v2)
-                out["effect_name"] = opdef_name
-        except Exception:
-            pass
-        # If plugin info exists, use it to refine label
-        if plugin_name or plugin_class:
-            out["effect_name"] = " : ".join([x for x in [plugin_class, plugin_name] if x])
-        # If we still want extra clarity and have AvidEffectID, append
-        if avid_id_name and avid_id_name not in out["effect_name"]:
-            out["effect_name"] = f"{out['effect_name']} [{avid_id_name}]".strip()
+        except: pass
 
+        # choose label: prefer OperationDef; else plugin class/name/type; append AvidEffectID as cross-check
+        label = opdef_name or " : ".join([x for x in [plugin_class, plugin_name] if x]) or plugin_type or "Unknown Effect"
+        if avid_id_name and avid_id_name not in label:
+            label = f"{label} [{avid_id_name}]"
+        out["effect_name"] = label
         return out
+
+    # ---- Pseudo-compressed snapshot (for diffing with your *_comp.json) ----
+
+    def _pseudo_comp_node(self, node, depth=0, max_depth=4):
+        if depth > max_depth:
+            return ["MAX_DEPTH","Meta",None,[]]
+        cls = aaf_class_name(node)
+        items = []
+        # known child providers
+        for attr in ("components","input_segments","slots"):
+            try:
+                kids = list(getattr(node, attr, []) or [])
+                for k in kids[:128]:
+                    items.append(self._pseudo_comp_node(k, depth+1, max_depth))
+            except:
+                pass
+        # tagged lists
+        try:
+            cal = getattr(node, "component_attribute_list", None)
+            if cal:
+                tvs = []
+                for k,v in self._iter_tagged_values(cal):
+                    tvs.append([k,"Property",self._to_py(v)])
+                items.append(["ComponentAttributeList","StrongRefVectorProperty",None,tvs])
+        except: pass
+        try:
+            attrs = getattr(node, "attributes", None)
+            if attrs:
+                tvs = []
+                for k,v in self._iter_tagged_values(attrs):
+                    tvs.append([k,"Property",self._to_py(v)])
+                items.append(["Attributes","StrongRefVectorProperty",None,tvs])
+        except: pass
+        # basic data_def/edit_rate/length
+        try:
+            dd = getattr(node, "data_def", None)
+            if dd and getattr(dd, "name", None):
+                items.append(["DataDefinition","WeakRefProperty",safe_name(dd)])
+        except: pass
+        try:
+            ln = getattr(node, "length", None)
+            if ln is not None: items.append(["Length","Property",int(ln) if isinstance(ln,int) else safe_name(ln)])
+        except: pass
+        return [safe_name(cls),"ClassDefinition",None,items]
+
+    def write_slots_tree(self, comp_mob, out_base_path: str):
+        # standard tree
+        slots_dump = []
+        for i, slot in enumerate(comp_mob.slots):
+            try:
+                slots_dump.append({
+                    "slot_index": i,
+                    "slot_name": self._slot_name(slot),
+                    "segment_tree": self._shallow_tree(slot.segment, 0, 6)
+                })
+            except Exception as e:
+                slots_dump.append({"slot_index": i, "error": str(e)})
+        json_dump_safe(out_base_path + "_slots_tree.json", slots_dump)
+        # pseudo-compressed for the picture slot only (first non-skipped)
+        try:
+            for i, slot in enumerate(comp_mob.slots):
+                if self._should_skip_track(slot): continue
+                if "picture" not in self._slot_kind(slot.segment): continue
+                pseudo = self._pseudo_comp_node(slot.segment, 0, 4)
+                json_dump_safe(out_base_path + "_slots_pseudocomp.json", pseudo)
+                break
+        except Exception as e:
+            self._trace(f"pseudo_comp dump failed: {e}")
+
+    # ---- Shallow tree for quick glance ----
+
+    def _shallow_tree(self, node, depth=0, max_depth=6):
+        try:
+            if depth > max_depth:
+                return {"type": "MAX_DEPTH"}
+            cls = aaf_class_name(node)
+            kind = self._slot_kind(node)
+            length = getattr(node, "length", None)
+            rate = getattr(node, "edit_rate", None)
+            data_def = safe_name(getattr(getattr(node, "data_def", None), "name", ""))
+
+            out = {
+                "class": cls, "media_kind": kind, "data_def": data_def,
+                "length": int(length) if isinstance(length, int) else safe_name(length),
+                "edit_rate": {"num": getattr(rate,'numerator',None), "den": getattr(rate,'denominator',None)} if rate else None,
+                "children": []
+            }
+            for attr in ("components", "input_segments", "slots"):
+                try:
+                    kids = list(getattr(node, attr, []) or [])
+                    out["children"].append({"attr": attr, "count": len(kids),
+                                            "items": [self._shallow_tree(k, depth+1, max_depth) for k in kids[:200]]})
+                except:
+                    pass
+            return out
+        except Exception as e:
+            return {"error": f"{e}"}
 
     # ---- Event builders / effect parsing ----
 
@@ -519,16 +748,15 @@ class AAFInMemoryExtractor:
         disk_label, tape_id = None, None
         width, height = 1920, 1080
         try:
-            start_mob = self._sourceclip_start_mob(src_seg)
-            if start_mob:
-                self._trace(f"  SourceClip start mob: {aaf_class_name(start_mob)}")
-            essence_mob = self._resolve_to_filesource(start_mob) if start_mob else None
+            essence_mob = self._essence_for_sourceclip(src_seg)
             if essence_mob:
                 self._trace(f"  Resolved to: {aaf_class_name(essence_mob)}")
                 disk_label = self._extract_disklabel(essence_mob)
                 tape_id    = self._extract_tapeid(essence_mob)
                 source_path, source_name = self._get_media_locator(essence_mob)
                 width, height = self._dims_from_descriptor(essence_mob)
+            else:
+                self._trace("  essence resolve = None")
         except Exception as e:
             self._trace(f"source resolution failed: {e}")
         name = safe_name(getattr(src_seg, "name", "")) or source_name or "Clip"
@@ -574,29 +802,29 @@ class AAFInMemoryExtractor:
                         if t is None or v is None: continue
                         tF = self._kf_time_to_frames(self._to_py(t), fps, ev_duration_f)
                         tF = max(0, min(ev_duration_f-1, tF))
-                        if isinstance(v, (list, tuple)) and len(v) >= 2 and "pos" in pname.lower():
+                        if isinstance(v, (list, tuple)) and len(v) >= 2 and "pos" in lower_str(pname):
                             kfs.append(Keyframe(tF, pos_x=float(v[0]), pos_y=float(v[1]),
                                                 scale_x=static_sx, scale_y=static_sy, rotation=static_rot))
                             saw_any = True
-                        elif "scale" in pname.lower() and isinstance(v, (int,float)):
+                        elif "scale" in lower_str(pname) and isinstance(v, (int,float)):
                             kfs.append(Keyframe(tF, pos_x=static_posx, pos_y=static_posy,
                                                 scale_x=float(v), scale_y=static_sy, rotation=static_rot))
                             saw_any = True
-                        elif "rotation" in pname.lower() and isinstance(v,(int,float)):
+                        elif "rotation" in lower_str(pname) and isinstance(v,(int,float)):
                             kfs.append(Keyframe(tF, pos_x=static_posx, pos_y=static_posy,
                                                 scale_x=static_sx, scale_y=static_sy, rotation=float(v)))
                             saw_any = True
                 else:
                     v = getattr(p, "value", None)
                     if v is not None:
-                        if isinstance(v, (list, tuple)) and len(v) >= 2 and "pos" in pname.lower():
+                        if isinstance(v, (list, tuple)) and len(v) >= 2 and "pos" in lower_str(pname):
                             static_posx, static_posy = float(v[0]), float(v[1]); saw_any = True
-                        elif "scale" in pname.lower():
+                        elif "scale" in lower_str(pname):
                             if isinstance(v,(int,float)):
                                 static_sx = static_sy = float(v); saw_any = True
                             elif isinstance(v,(list,tuple)) and len(v)>=2:
                                 static_sx, static_sy = float(v[0]), float(v[1]); saw_any = True
-                        elif "rotation" in pname.lower() and isinstance(v,(int,float)):
+                        elif "rotation" in lower_str(pname) and isinstance(v,(int,float)):
                             static_rot = float(v); saw_any = True
             except:
                 continue
@@ -607,58 +835,45 @@ class AAFInMemoryExtractor:
             kfs = [Keyframe(0), Keyframe(max(0, ev_duration_f-1))]
         return sorted(kfs, key=lambda k: k.time_frames)
 
-    # ---- OperationGroup input binding (mirror SuperEDL intent) ----
+    # ---- OperationGroup input binding ----
+
+    def _gather_inputs(self, op_group) -> Dict[str, Any]:
+        """
+        Read OperationGroup input_segments the same way compressed JSON shows:
+        - sequences with components ScopeReference (bind to slot) and/or SourceClip (real media path).
+        """
+        info = {"scope_refs": [], "sourceclips": []}
+        for attr in ("input_segments","components"):
+            try:
+                segs = list(getattr(op_group, attr, []) or [])
+            except:
+                segs = []
+            for seg in segs:
+                if aaf_class_name(seg) == "Sequence":
+                    for comp in list(getattr(seg, "components", []) or []):
+                        c = aaf_class_name(comp)
+                        if c == "ScopeReference":
+                            # try RelativeSlot
+                            rel = None
+                            try:
+                                for p in getattr(comp, "properties", []) or []:
+                                    if safe_name(getattr(p,"name","")) in ("RelativeScope","RelativeSlot","RelativeTrack"):
+                                        rel = self._to_py(getattr(p, "value", None))
+                            except: pass
+                            info["scope_refs"].append({"relative": rel})
+                        elif c == "SourceClip":
+                            info["sourceclips"].append(comp)
+                elif aaf_class_name(seg) == "SourceClip":
+                    info["sourceclips"].append(seg)
+        return info
 
     def _bind_op_to_prior_source(self, result: List[Event], rec_cursor_f: int) -> Optional[Event]:
-        """Find the nearest preceding SourceClip-derived event on the same timeline (in `result`)."""
         prior = [ev for ev in result if (ev.source_path or ev.source_name) and ev.rec_in_f <= rec_cursor_f]
         if not prior: return None
         prior.sort(key=lambda e: (e.rec_in_f, e.rec_out_f))
         cand = prior[-1]
         self._trace(f"  bind OperationGroup to prior source event '{cand.name}' [{cand.rec_in_f}-{cand.rec_out_f}] path='{cand.source_path}'")
         return cand
-
-    # ---- Slot tree for debugging ----
-
-    def _shallow_tree(self, node, depth=0, max_depth=6):
-        try:
-            if depth > max_depth:
-                return {"type": "MAX_DEPTH"}
-            cls = aaf_class_name(node)
-            kind = self._slot_kind(node)
-            length = getattr(node, "length", None)
-            rate = getattr(node, "edit_rate", None)
-            data_def = safe_name(getattr(getattr(node, "data_def", None), "name", ""))
-
-            out = {
-                "class": cls, "media_kind": kind, "data_def": data_def,
-                "length": int(length) if isinstance(length, int) else safe_name(length),
-                "edit_rate": {"num": getattr(rate,'numerator',None), "den": getattr(rate,'denominator',None)} if rate else None,
-                "children": []
-            }
-            for attr in ("components", "input_segments", "slots"):
-                try:
-                    kids = list(getattr(node, attr, []) or [])
-                    out["children"].append({"attr": attr, "count": len(kids),
-                                            "items": [self._shallow_tree(k, depth+1, max_depth) for k in kids[:200]]})
-                except:
-                    pass
-            return out
-        except Exception as e:
-            return {"error": f"{e}"}
-
-    def write_slots_tree(self, comp_mob, out_base_path: str):
-        slots_dump = []
-        for i, slot in enumerate(comp_mob.slots):
-            try:
-                slots_dump.append({
-                    "slot_index": i,
-                    "slot_name": self._slot_name(slot),
-                    "segment_tree": self._shallow_tree(slot.segment, 0, 6)
-                })
-            except Exception as e:
-                slots_dump.append({"slot_index": i, "error": str(e)})
-        json_dump_safe(out_base_path + "_slots_tree.json", slots_dump)
 
     # ---- Recursive linearizer ----
 
@@ -668,7 +883,7 @@ class AAFInMemoryExtractor:
         data_def = safe_name(getattr(getattr(segment, "data_def", None), "name", ""))
         lnF, rate_s = self._visit_len_and_rate(segment, fps)
         if cname == "ClassDefinition":
-            self._trace("WARN: got meta-class 'ClassDefinition' — check node binding or class_name access.")
+            self._trace("WARN: meta-class 'ClassDefinition' encountered.")
         self._trace(f"visit {cname} kind={mkind} data_def={data_def} lenF={lnF} edit_rate={rate_s} @rec={rec_cursor_f}")
 
         if cname == "Sequence":
@@ -700,53 +915,48 @@ class AAFInMemoryExtractor:
             eff_summary = self.summarise_op_params(segment)
             eff_summary["timeline_rec_in"] = rec_cursor_f
             eff_summary["length_frames_at_seq_rate"] = lnF
-            self.effects_index.append(self._to_py(eff_summary))
-
-            # pyaaf2 sometimes exposes no input_segments; in your test these ops sit on the clip.
-            # Try children first…
-            pic_in = None
+            # also include a tiny pseudo-comp snapshot for this op
             try:
-                for s in list(getattr(segment, "input_segments", []) or []):
-                    if aaf_class_name(s) == "SourceClip":
-                        pic_in = s; break
+                eff_summary["pseudo_comp"] = self._pseudo_comp_node(segment, 0, 2)
             except:
                 pass
-            if not pic_in:
-                try:
-                    for s in list(getattr(segment, "components", []) or []):
-                        if aaf_class_name(s) == "SourceClip":
-                            pic_in = s; break
-                except:
-                    pass
+            self.effects_index.append(self._to_py(eff_summary))
 
-            if pic_in is not None:
-                ev = self._build_event_from_source(pic_in, rec_cursor_f, rec_cursor_f+lnF, fps)
-            else:
-                # Bind to nearest prior source event on the same track (mirrors superEDL behavior for segment FX)
-                prior = self._bind_op_to_prior_source(result, rec_cursor_f)
-                if prior:
+            # inputs: ScopeReference / SourceClip
+            inputs = self._gather_inputs(segment)
+            pic_in = None
+            if inputs["sourceclips"]:
+                pic_in = inputs["sourceclips"][0]
+            if pic_in is None and inputs["scope_refs"]:
+                # scope ref: bind to nearest prior source on same slot
+                cand = self._bind_op_to_prior_source(result, rec_cursor_f)
+                if cand:
                     ev = Event(
-                        name=prior.name,
+                        name=cand.name,
                         rec_in_f=rec_cursor_f, rec_out_f=rec_cursor_f+lnF, duration_f=lnF,
-                        source_path=prior.source_path, source_name=prior.source_name,
+                        source_path=cand.source_path, source_name=cand.source_name,
                         effect_name=None, effect_convertible=True, keyframes=[],
-                        tape_id=prior.tape_id, disk_label=prior.disk_label,
-                        width=prior.width, height=prior.height
+                        tape_id=cand.tape_id, disk_label=cand.disk_label,
+                        width=cand.width, height=cand.height
                     )
                 else:
-                    # true filler FX (rare in your projects)
-                    ev = Event(
-                        name="FX on Filler",
-                        rec_in_f=rec_cursor_f, rec_out_f=rec_cursor_f+lnF, duration_f=lnF,
-                        source_path=None, source_name=None,
-                        effect_name=None, effect_convertible=False, keyframes=[],
-                        tape_id=None, disk_label=None, width=1920, height=1080
-                    )
-                    try:
-                        p = eff_summary.get("static_params", {}).get("Filepath")
-                        if p: ev.filler_fx_file = p
-                    except Exception:
-                        pass
+                    pic_in = None  # fall through to true filler
+            if pic_in is not None:
+                ev = self._build_event_from_source(pic_in, rec_cursor_f, rec_cursor_f+lnF, fps)
+            elif 'ev' not in locals():
+                # true filler FX
+                ev = Event(
+                    name="FX on Filler",
+                    rec_in_f=rec_cursor_f, rec_out_f=rec_cursor_f+lnF, duration_f=lnF,
+                    source_path=None, source_name=None,
+                    effect_name=None, effect_convertible=False, keyframes=[],
+                    tape_id=None, disk_label=None, width=1920, height=1080
+                )
+                try:
+                    p = eff_summary.get("static_params", {}).get("Filepath")
+                    if p: ev.filler_fx_file = p
+                except Exception:
+                    pass
 
             fxname = eff_summary.get("effect_name") or "Unknown Effect"
             ev.effect_name = fxname
@@ -756,7 +966,7 @@ class AAFInMemoryExtractor:
                         f"start={ev.rec_in_f} dur={ev.duration_f} kf={len(ev.keyframes)}")
             result.append(ev)
 
-            # Keep walking to catch nested ops
+            # keep walking to catch nested ops
             for attr in ("components", "input_segments"):
                 for child in list(getattr(segment, attr, []) or []):
                     self._linearize(child, fps, rec_cursor_f, result)
@@ -785,16 +995,6 @@ class AAFInMemoryExtractor:
             )
             self._trace(f"EVENT NonSource '{cname}' start={ev.rec_in_f} dur={ev.duration_f}")
             result.append(ev)
-
-    def _has_nested_sourceclip(self, node) -> bool:
-        try:
-            if aaf_class_name(node) == "SourceClip": return True
-            for attr in ("components", "input_segments"):
-                for c in list(getattr(node, attr, []) or []):
-                    if self._has_nested_sourceclip(c): return True
-        except:
-            pass
-        return False
 
     # ---- Public sequence extraction ----
 
@@ -979,7 +1179,7 @@ def write_debug_jsons(out_fcpxml_path: str, seq: SequenceInfo, extractor: AAFInM
         "start_tc_frames": seq.start_tc_f,
         "dimensions": {"width": seq.width, "height": seq.height},
         "slots_scan": extractor.slot_scan,
-        "traversal_trace_first_200": extractor.traversal_trace[:200],
+        "traversal_trace_first_400": extractor.traversal_trace[:400],
         "events_count": len(seq.events),
     }
     json_dump_safe(seq_dbg_path, seq_dbg)
@@ -1101,38 +1301,43 @@ class App:
                 self._echo(f"Sequence: {getattr(comp, 'name','(unnamed)')}  class={aaf_class_name(comp)}")
                 seq = ex.extract_sequence(comp)
 
-                base = os.path.splitext(out)[0]
-                ex.write_slots_tree(comp, base)
-                self._echo(f"  - slots_tree: {base}_slots_tree.json")
+                                base = os.path.splitext(out)[0]
+                try:
+                    ex.write_slots_tree(comp, base)
+                except Exception as e:
+                    self._echo(f"slots tree dump failed: {e}")
 
-            self._echo(f"Events: {len(seq.events)}  FPS={float(seq.fps)}  Size={seq.width}x{seq.height}")
-            for i, ev in enumerate(seq.events[:25]):
-                self._echo(f"  [{i}] {ev.name} recIn={ev.rec_in_f} recOut={ev.rec_out_f} durF={ev.duration_f} "
-                           f"eff={ev.effect_name} src={ev.source_name or ev.filler_fx_file or 'N/A'}")
+                self._echo(f"Events: {len(seq.events)}  FPS={float(seq.fps):g}  Size={seq.width}x{seq.height}")
 
-            dbg_paths = write_debug_jsons(out, seq, ex)
-            self._echo("Wrote debug files:")
-            for k, p in dbg_paths.items():
-                self._echo(f"  - {k}: {p}")
+                # Build FCPXML
+                try:
+                    builder = FCPXMLBuilder(seq, okp, badp)
+                    tree = builder.build()
+                    xml_text = FCPXMLBuilder.serialize(tree)
+                    with open(out, "w", encoding="utf-8") as f:
+                        f.write(xml_text)
+                    self._echo(f"Wrote {out} ({len(seq.events)} clips) at {datetime.now().isoformat(timespec='seconds')}")
+                except Exception as e:
+                    self._echo(f"FCPXML build/write failed: {e}\n{traceback.format_exc()}")
+                    messagebox.showerror("FCPXML Error", str(e))
+                    return
 
-            self._echo("Building FCPXML...")
-            builder = FCPXMLBuilder(seq, okp, badp)
-            tree = builder.build()
-            xml_text = builder.serialize(tree)
+                # Write debug JSONs
+                try:
+                    dbg = write_debug_jsons(out, seq, ex)
+                    self._echo(f"  - sequence debug: {dbg.get('sequence_debug')}")
+                    self._echo(f"  - events debug:   {dbg.get('events_debug')}")
+                    self._echo(f"  - effects index:  {dbg.get('effects_index')}")
+                    self._echo(f"  - trace:          {dbg.get('trace_txt')}")
+                except Exception as e:
+                    self._echo(f"debug dump failed: {e}")
 
-            with open(out, "w", encoding="utf-8") as f:
-                f.write(xml_text)
-            self._echo(f"OK: wrote {out}")
-
+            messagebox.showinfo("Done", "FCPXML and debug logs created.")
         except Exception as e:
-            tb = traceback.format_exc()
-            self._echo(f"ERROR: {e}\n{tb}")
-            messagebox.showerror("Error", f"{e}\n\nSee log for details.")
-
-def main():
-    log(f"=== {APP_NAME} start ===")
-    root = tk.Tk(); App(root); root.mainloop()
-    log(f"=== {APP_NAME} end ===")
+            self._echo(f"ERROR: {e}\n{traceback.format_exc()}")
+            messagebox.showerror("Error", str(e))
 
 if __name__ == "__main__":
-    main()
+    root = tk.Tk()
+    App(root)
+    root.mainloop()

@@ -1,0 +1,1061 @@
+#!/usr/bin/env python3
+# scan_dump_tool_HYBRID.py — AAF Full Sweep + DeepDump + Super EDL (FX-aware)
+# - Robust SourceClip StartTime (properties-first)
+# - UMID normalization and dual-key mob_map (raw + normalized)
+# - Genuine source resolution: shallow-first (immediate SourceClips) + last-good-with-locators fallback; guarded deep fallback
+# - Broad locator extraction (url/URLString/path/PathName + properties)
+# - Rich FX param capture (animated + static), coalesced at clip rows; filler rows when appropriate
+# - Compressed JSON mirror for diagnostics; deepdump traversal log
+# - GUI wrapper for quick use
+
+import os, re, json, csv, traceback
+import tkinter as tk
+from tkinter import filedialog, messagebox, scrolledtext
+from datetime import datetime
+from fractions import Fraction
+from urllib.parse import urlparse, unquote
+
+# Tested with pyaaf2
+import aaf2
+
+# ==============================================================================
+#                               LOG / UTILITIES
+# ==============================================================================
+
+class DebugLog:
+    def __init__(self, path):
+        self.path = path
+        self._buf = []
+
+    def write(self, line):
+        s = line if line.endswith("\n") else line + "\n"
+        self._buf.append(s)
+        print(s.strip())
+
+    def flush(self):
+        os.makedirs(os.path.dirname(self.path), exist_ok=True)
+        with open(self.path, "w", encoding="utf-8", errors="replace") as f:
+            f.writelines(self._buf)
+
+def aaf_class_name(obj):
+    try:
+        cn = getattr(obj, "class_name", None)
+        if cn:
+            return str(cn)
+    except:
+        pass
+    try:
+        return obj.__class__.__name__
+    except:
+        return "Unknown"
+
+def safe_name(x):
+    try:
+        return str(x)
+    except:
+        return ""
+
+def fraction_to_str(v):
+    try:
+        from aaf2 import rational as _rat
+        if isinstance(v, _rat.AAFRational):
+            return f"{v.numerator}/{v.denominator}"
+    except:
+        pass
+    if isinstance(v, Fraction):
+        return f"{v.numerator}/{v.denominator}"
+    return safe_name(v)
+
+def frames_to_tc(frame_count, fps=25.0, is_drop_frame=False):
+    try:
+        fps = float(fps)
+        if frame_count is None or fps <= 0:
+            return "00:00:00:00"
+        sep = ";" if is_drop_frame else ":"
+        fc = int(frame_count)
+        int_fps = round(fps)
+        h = fc // (3600 * int_fps)
+        m = (fc % (3600 * int_fps)) // (60 * int_fps)
+        s = (fc % (60 * int_fps)) // int_fps
+        f = fc % int_fps
+        return f"{h:02d}:{m:02d}:{s:02d}{sep}{f:02d}"
+    except:
+        return "00:00:00:00"
+
+def decode_locator_url_to_path(url):
+    try:
+        s = safe_name(url)
+        if s.lower().startswith("file://"):
+            return unquote(urlparse(s).path)
+        return s
+    except:
+        return safe_name(url)
+
+# ---------- UMID handling ----------
+def normalize_umid(s: str) -> str:
+    if not s:
+        return ""
+    t = str(s).strip().lower()
+    t = re.sub(r'^urn:smpte:umid:', '', t)
+    t = t.translate(str.maketrans('', '', '{}-_.:'))
+    t = re.sub(r'\s+', '', t)
+    return t
+
+def is_zero_umid(s: str) -> bool:
+    t = normalize_umid(s)
+    return len(t) > 0 and set(t) == {"0"}
+
+def stringify_mobid(val) -> str:
+    """Stringify a pyaaf2 MobID-like value into a URN-ish or readable string."""
+    try:
+        if val is None:
+            return ""
+        for attr in ("urn", "to_urn", "id", "value"):
+            if hasattr(val, attr):
+                v = getattr(val, attr)
+                v = v() if callable(v) else v
+                if v:
+                    return safe_name(v)
+        return safe_name(val)
+    except:
+        return safe_name(val)
+
+# ---------- SourceClip StartTime ----------
+def get_sourceclip_start(src_clip):
+    for cand in ("start_time", "startTime", "StartTime", "start"):
+        if hasattr(src_clip, cand):
+            try:
+                return int(getattr(src_clip, cand) or 0)
+            except:
+                pass
+    try:
+        for p in src_clip.properties():
+            if getattr(p, "name", "") in ("StartTime","start_time","start"):
+                return int(getattr(p, "value", 0) or 0)
+    except:
+        pass
+    return 0
+
+# ==============================================================================
+#                             COMPRESSED JSON (OPTIONAL)
+# ==============================================================================
+
+def compress_node(obj, dbg: DebugLog, depth=0, max_depth=12, max_vec=400, _seen=None):
+    if _seen is None:
+        _seen = set()
+    if depth > max_depth or obj is None:
+        return ["MAX_DEPTH", "Meta", None, []]
+
+    try:
+        oid = id(obj)
+        if oid in _seen:
+            return ["SEEN", "Meta", None, []]
+        _seen.add(oid)
+    except:
+        pass
+
+    nodename = aaf_class_name(obj)
+    node = [nodename, "ClassDefinition", None, []]
+
+    props = []
+    try:
+        if hasattr(obj, "properties"):
+            props = list(obj.properties())
+    except:
+        props = []
+
+    for p in props:
+        pname = safe_name(getattr(p, "name", "Property"))
+        pval = getattr(p, "value", None)
+        pcls = p.__class__.__name__
+
+        if isinstance(pval, (str, int, float, bool)) or pval is None:
+            node[3].append([pname, "Property", fraction_to_str(pval)])
+            continue
+
+        if isinstance(pval, (bytes, bytearray)):
+            node[3].append([pname, "Property", f"<bytes:{len(pval)}>"])
+            continue
+
+        if isinstance(pval, aaf2.core.AAFObject):
+            node[3].append([pname, pcls, None, [compress_node(pval, dbg, depth+1, max_depth, max_vec, _seen)]])
+            continue
+
+        if isinstance(pval, (list, tuple, aaf2.properties.StrongRefVectorProperty, aaf2.properties.WeakRefVectorProperty)):
+            children = []
+            ctr = 0
+            try:
+                iterable = list(pval)
+            except:
+                iterable = []
+            for item in iterable:
+                if ctr >= max_vec:
+                    break
+                ctr += 1
+                if isinstance(item, aaf2.core.AAFObject):
+                    children.append(compress_node(item, dbg, depth+1, max_depth, max_vec, _seen))
+                elif isinstance(item, (str, int, float, bool)) or item is None:
+                    children.append(["Value", "Property", fraction_to_str(item)])
+                elif isinstance(item, (bytes, bytearray)):
+                    children.append(["Value", "Property", f"<bytes:{len(item)}>"])
+                else:
+                    children.append([safe_name(type(item).__name__), "Property", safe_name(item)])
+            vec_label = "StrongRefVectorProperty" if "Strong" in pcls else ("WeakRefVectorProperty" if "Weak" in pcls else "StrongRefVectorProperty")
+            node[3].append([pname, vec_label, None, children])
+            continue
+
+        node[3].append([pname, "Property", safe_name(pval)])
+
+    return node
+
+def write_readme_cipher(path):
+    txt = """Compression Mapping Key / Cipher
+================================
+Node forms:
+- Class/Object: [ <NameOrClass>, "ClassDefinition", null, [ <children...> ] ]
+- Scalar Property: [ <PropName>, "Property", <scalar_value> ]
+- Single Ref Property: [ <PropName>, "StrongRefProperty"|"WeakRefProperty", null, [ <ClassNode> ] ]
+- Vector Ref Property: [ <PropName>, "StrongRefVectorProperty"|"WeakRefVectorProperty", null, [ <ClassNodes...> ] ]
+
+Scope:
+- JSON is the FULL SWEEP: union of toplevel, composition, master, source, storage mobs.
+- Deduplication is by Python object id during recursion.
+
+Notes:
+- Vectors capped to avoid gigantic outputs.
+- AAFRational values printed as "N/D".
+- Byte payloads appear as "<bytes:N>".
+"""
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(txt)
+
+# ==============================================================================
+#                           AAF MODEL HELPERS
+# ==============================================================================
+
+def slot_media_kind(slot):
+    try:
+        segment = slot.segment
+        if hasattr(segment, 'media_kind'):
+            return str(segment.media_kind).lower()
+        if hasattr(segment, 'data_def') and hasattr(segment.data_def, 'name'):
+            return str(segment.data_def.name).lower()
+    except:
+        pass
+    return ""
+
+def comp_length_frames(comp, seq_fps):
+    try:
+        rate = getattr(comp, "edit_rate", None)
+        if rate:
+            r = Fraction(rate.numerator, rate.denominator)
+        else:
+            r = seq_fps
+        ln = getattr(comp, "length", None)
+        if ln is not None:
+            return int(Fraction(ln) * (seq_fps / r))
+    except:
+        pass
+    return 0
+
+def extract_timecode_from_slots(slots, dbg: DebugLog):
+    start_tc_frames = None
+    fps = None
+    drop = False
+    for slot in list(slots) or []:
+        seg = getattr(slot, "segment", None)
+        if aaf_class_name(seg) == "Timecode":
+            start = getattr(seg, "start", None)
+            fps = getattr(seg, "fps", None)
+            drop = bool(getattr(seg, "drop", False))
+            if start is not None:
+                start_tc_frames = int(start)
+                dbg.write("      • Timecode found in TopLevel slot")
+                return start_tc_frames, fps, drop
+        elif aaf_class_name(seg) == "Sequence":
+            try:
+                for c in list(getattr(seg, "components", []) or []):
+                    if aaf_class_name(c) == "Timecode":
+                        start = getattr(c, "start", None)
+                        fps = getattr(c, "fps", None)
+                        drop = bool(getattr(c, "drop", False))
+                        if start is not None:
+                            start_tc_frames = int(start)
+                            dbg.write("      • Timecode found nested in Sequence")
+                            return start_tc_frames, fps, drop
+            except:
+                pass
+    dbg.write("      ⚠ No timecode found (defaulting to 0 @ 25)")
+    return 0, Fraction(25,1), False
+
+def extract_effect_name(op_group):
+    plugin_class = None
+    plugin_name = None
+    try:
+        attrs = getattr(op_group, "component_attribute_list", None)
+        for tv in list(attrs or []):
+            nm = safe_name(getattr(tv, "name", ""))
+            if nm == "_EFFECT_PLUGIN_CLASS":
+                plugin_class = safe_name(getattr(tv, "value", ""))
+            elif nm == "_EFFECT_PLUGIN_NAME":
+                plugin_name = safe_name(getattr(tv, "value", ""))
+    except:
+        pass
+    if plugin_name and plugin_class:
+        return f"{plugin_class} : {plugin_name}"
+    if plugin_name:
+        return plugin_name
+    try:
+        opdef = getattr(op_group, "operationdef", None) or getattr(op_group, "operation", None)
+        if opdef and getattr(opdef, "name", None):
+            nm = safe_name(opdef.name)
+            return nm.replace("_v2","").replace("_2","").replace("_"," ").strip()
+    except:
+        pass
+    return "Unknown Effect"
+
+def extract_fx_params(op_group):
+    animated = {}
+    staticp = {}
+    try:
+        params = list(getattr(op_group, "parameters", []) or [])
+        for p in params:
+            pname = safe_name(getattr(p, "name", "Param"))
+            is_vary = bool(getattr(p, "is_varying", False))
+            if is_vary:
+                pts = list(getattr(p, "points", []) or [])
+                rec = []
+                for cp in pts:
+                    t = getattr(cp, "time", None)
+                    v = getattr(cp, "value", None)
+                    rec.append({"time": fraction_to_str(t), "value": fraction_to_str(v)})
+                if rec:
+                    animated[pname] = rec
+            else:
+                v = getattr(p, "value", None)
+                staticp[pname] = fraction_to_str(v)
+    except:
+        pass
+    return animated, staticp
+
+def gather_inputs(op_group):
+    """Return dict(scope_refs:bool, sourceclips:[SourceClip]) with deeper recursion."""
+    info = {"scope_refs": False, "sourceclips": []}
+
+    def harvest(seg):
+        if seg is None:
+            return
+        cname = aaf_class_name(seg)
+        if cname == "SourceClip":
+            info["sourceclips"].append(seg)
+            return
+        for attr in ("components", "input_segments"):
+            try:
+                for ch in list(getattr(seg, attr, []) or []):
+                    harvest(ch)
+            except:
+                pass
+
+    for attr in ("components", "input_segments"):
+        try:
+            for s in list(getattr(op_group, attr, []) or []):
+                harvest(s)
+        except:
+            pass
+
+    try:
+        for c in list(getattr(op_group, "components", []) or []):
+            if aaf_class_name(c) == "ScopeReference":
+                info["scope_refs"] = True
+                break
+    except:
+        pass
+
+    return info
+
+# ---------- Locator extraction ----------
+def get_locator_string(loc):
+    for fld in ("path", "PathName", "url", "URLString", "UrlString"):
+        if hasattr(loc, fld):
+            v = getattr(loc, fld, None)
+            if v:
+                return safe_name(v)
+    try:
+        for p in loc.properties():
+            nm = safe_name(getattr(p, "name", ""))
+            if nm in ("URLString", "PathName", "path", "url"):
+                v = getattr(p, "value", "")
+                if v:
+                    return safe_name(v)
+    except:
+        pass
+    return ""
+
+def extract_mob_locators_tape_disk(mob, dbg: DebugLog):
+    locs, tape, disk = [], "", ""
+    try:
+        desc = getattr(mob, "descriptor", None)
+        if desc and hasattr(desc, "locators"):
+            for loc in list(desc.locators) or []:
+                raw = get_locator_string(loc)
+                if raw:
+                    dec = decode_locator_url_to_path(raw)
+                    if dec and dec not in locs:
+                        locs.append(dec)
+                        dbg.write(f"        [locator] {dec}")
+    except:
+        pass
+    try:
+        for c in getattr(mob, "user_comments", []) or []:
+            nm = safe_name(getattr(c, "name", ""))
+            if "tape" in nm.lower() and not tape:
+                tape = safe_name(getattr(c, "value", ""))
+    except:
+        pass
+    try:
+        if hasattr(mob, "attributes"):
+            for a in mob.attributes:
+                nm = safe_name(getattr(a, "name", "")).upper()
+                if "DISK" in nm or "DISKLABEL" in nm or "_IMPORTDISKLAB" in nm:
+                    val = safe_name(getattr(a, "value", ""))
+                    if val and not disk:
+                        disk = val
+    except:
+        pass
+    return locs, tape, disk
+
+def is_file_backed_mob(mob):
+    try:
+        if aaf_class_name(mob) == 'FileSourceMob':
+            return True
+        desc = getattr(mob, "descriptor", None)
+        if not desc:
+            return False
+        if hasattr(desc, "locators") and list(desc.locators):
+            return True
+        # treat import-style descriptors as file-backed
+        return aaf_class_name(desc) in ("ImportDescriptor", "CDCIDescriptor", "RGBAEssenceDescriptor")
+    except:
+        return False
+
+# ==============================================================================
+#                       MOB MAP + SOURCE RESOLUTION (HYBRID)
+# ==============================================================================
+
+def build_mob_map(aaf_file, dbg: DebugLog):
+    mob_map = {}
+    dbg.write("Building mob map...")
+    coll = [
+        ("CompositionMobs", aaf_file.content.compositionmobs()),
+        ("MasterMobs",      aaf_file.content.mastermobs()),
+        ("SourceMobs",      aaf_file.content.sourcemobs()),
+    ]
+    for label, it in coll:
+        count = 0
+        for mob in it:
+            try:
+                raw = safe_name(getattr(mob, "mob_id", ""))
+                norm = normalize_umid(raw)
+                if norm: mob_map[norm] = mob
+                if raw:  mob_map[raw]  = mob
+                # also try via properties()
+                try:
+                    for p in mob.properties():
+                        if safe_name(getattr(p, "name", "")).lower() == "mobid":
+                            s = stringify_mobid(getattr(p, "value", None))
+                            if s:
+                                mob_map[normalize_umid(s)] = mob
+                                mob_map[s] = mob
+                            break
+                except:
+                    pass
+                count += 1
+            except Exception as e:
+                dbg.write(f"  WARNING: Could not get MobID for a mob in {label}: {e}")
+        dbg.write(f"  Found {count} mobs in {label}")
+    dbg.write(f"Total mobs in map: {len(mob_map)} (raw+norm keys)")
+    return mob_map
+
+def _preferred_slots(mob):
+    try:
+        slots = list(getattr(mob, "slots", []) or [])
+    except:
+        slots = []
+    def kind(s):
+        try:
+            seg = s.segment
+            if hasattr(seg, "media_kind"):
+                k = str(seg.media_kind).lower()
+            elif hasattr(seg, "data_def") and hasattr(seg.data_def, "name"):
+                k = str(seg.data_def.name).lower()
+            else:
+                k = ""
+        except:
+            k = ""
+        return 0 if ("picture" in k or "video" in k) else 1
+    return sorted(slots, key=kind)
+
+def _iter_immediate_sourceclips(seg):
+    """Yield SourceClip(s) at seg, or immediate children if seg is Sequence/OperationGroup."""
+    if seg is None:
+        return
+    cn = aaf_class_name(seg)
+    if cn == "SourceClip":
+        yield seg
+        return
+    if cn in ("Sequence", "OperationGroup"):
+        for attr in ("components", "input_segments"):
+            try:
+                for ch in list(getattr(seg, attr, []) or []):
+                    if aaf_class_name(ch) == "SourceClip":
+                        yield ch
+            except:
+                pass
+
+def _get_source_id_from_sourceclip(src_clip):
+    try:
+        # Prefer properties() (stable across builds)
+        for p in src_clip.properties():
+            if getattr(p, "name", "") in ("SourceID", "source_id"):
+                return stringify_mobid(getattr(p, "value", None))
+    except:
+        pass
+    if hasattr(src_clip, "source_id"):
+        return stringify_mobid(getattr(src_clip, "source_id"))
+    return None
+
+def resolve_source_hybrid(src_clip, mob_map, dbg: DebugLog = None):
+    """
+    1) Shallow hop per mob: inspect preferred slot.segment; scan all immediate SourceClips; pick first non-zero SourceID.
+       Keep 'last mob with locators/descriptor' as fallback.
+    2) Terminal when is_file_backed_mob(mob) is True.
+    3) If unresolved, perform a guarded deep traversal following SourceClips across components/input_segments.
+    """
+    start_id_raw = _get_source_id_from_sourceclip(src_clip)
+    if not start_id_raw:
+        if dbg: dbg.write("      SourceClip has no SourceID; cannot resolve genuine source.")
+        return None
+
+    cur = mob_map.get(normalize_umid(start_id_raw)) or mob_map.get(start_id_raw)
+    if not cur:
+        if dbg: dbg.write(f"      SourceID {start_id_raw} not found in mob_map.")
+        return None
+
+    visited = set()
+    last_with_loc = cur if is_file_backed_mob(cur) else (cur if getattr(getattr(cur, "descriptor", None), "locators", None) else None)
+
+    # --- SHALLOW ---
+    while cur is not None:
+        cur_id = normalize_umid(getattr(cur, "mob_id", ""))
+        if cur_id in visited:
+            if dbg: dbg.write("      Loop detected; returning last mob with locators (or current).")
+            return last_with_loc or cur
+        visited.add(cur_id)
+
+        if is_file_backed_mob(cur):
+            if dbg: dbg.write("      Reached file-backed source (shallow).")
+            return cur
+        if getattr(getattr(cur, "descriptor", None), "locators", None):
+            last_with_loc = cur
+
+        next_id = None
+        for slot in _preferred_slots(cur):
+            seg = getattr(slot, "segment", None)
+            for sc in _iter_immediate_sourceclips(seg):
+                sid = _get_source_id_from_sourceclip(sc)
+                if sid and not is_zero_umid(sid):
+                    next_id = sid
+                    break
+            if next_id:
+                break
+
+        if not next_id:
+            if dbg: dbg.write("      No valid shallow SourceClip hop; returning last-with-locators (or current).")
+            return last_with_loc or cur
+
+        nxt = mob_map.get(normalize_umid(next_id)) or mob_map.get(next_id)
+        if not nxt:
+            if dbg: dbg.write(f"      Next mob {next_id} missing; returning last-with-locators (or current).")
+            return last_with_loc or cur
+
+        cur = nxt
+
+    # --- DEEP (fallback) ---
+    if dbg: dbg.write("      Falling back to deep traversal.")
+    def deep_follow(mob, seen):
+        if mob in seen:
+            return None
+        seen.add(mob)
+        if is_file_backed_mob(mob):
+            return mob
+        for slot in getattr(mob, "slots", []) or []:
+            seg = getattr(slot, "segment", None)
+            def walk(segm):
+                if segm is None:
+                    return None
+                cn = aaf_class_name(segm)
+                if cn == "SourceClip":
+                    sid = _get_source_id_from_sourceclip(segm)
+                    if sid and not is_zero_umid(sid):
+                        return mob_map.get(normalize_umid(sid)) or mob_map.get(sid)
+                    return None
+                for attr in ("components", "input_segments"):
+                    for ch in list(getattr(segm, attr, []) or []):
+                        res = walk(ch)
+                        if res:
+                            return res
+                return None
+            nxt = walk(seg)
+            if nxt:
+                if is_file_backed_mob(nxt):
+                    return nxt
+                return deep_follow(nxt, seen)
+        return None
+
+    seen = set()
+    res = deep_follow(cur, seen)
+    return res or last_with_loc or cur
+
+# ==============================================================================
+#                         DEEPDUMP (for debugging)
+# ==============================================================================
+
+def deepdump_sequence(seq_mob, out_txt_path, dbg: DebugLog):
+    with open(out_txt_path, "a", encoding="utf-8") as f:
+        def w(line):
+            f.write(line + "\n")
+
+        name = safe_name(getattr(seq_mob, "name", "(unnamed)"))
+        slots = getattr(seq_mob, "slots", []) or []
+        start_tc, fps, drop = extract_timecode_from_slots(slots, dbg)
+        fpsF = Fraction(getattr(fps, "numerator", 25), getattr(fps, "denominator", 1))
+
+        w(f"Sequence: {name}")
+        try:
+            erate = getattr(slots[0], "edit_rate", None)
+            er_str = fraction_to_str(erate) if erate else "25/1"
+            try:
+                fps_float = float(Fraction(er_str)) if "/" in er_str else float(er_str)
+            except:
+                fps_float = 25.0
+            w(f"Edit Rate: {er_str}  (≈ {fps_float} fps)")
+        except:
+            w("Edit Rate: 25  (≈ 25.0 fps)")
+        w(f"Start TC: {frames_to_tc(start_tc, float(fpsF), drop)}  ({start_tc} frames)")
+        w("")
+
+        def visit(node, rec):
+            cname = aaf_class_name(node)
+            ln = comp_length_frames(node, fpsF)
+            w(f"  visit {cname} @rec={rec} lenF={ln}")
+            if cname == "Sequence":
+                comps = list(getattr(node, "components", []) or [])
+                cur = rec
+                for comp in comps:
+                    cl = comp_length_frames(comp, fpsF)
+                    visit(comp, cur)
+                    cur += cl
+                return
+            if cname == "SourceClip":
+                w(f"    SOURCE 'SourceClip' rec=[{rec}-{rec+ln}) dur={ln}")
+                return
+            if cname == "OperationGroup":
+                eff_name = extract_effect_name(node)
+                w(f"    FX '{eff_name}' rec=[{rec}-{rec+ln}) dur={ln}")
+                anim, stat = extract_fx_params(node)
+                for k, v in stat.items():
+                    w(f"      static: {k} = {v}")
+                for k, lst in anim.items():
+                    w(f"      anim: {k} ({len(lst)} kfs)")
+                for attr in ("components", "input_segments"):
+                    for ch in list(getattr(node, attr, []) or []):
+                        visit(ch, rec)
+                return
+            progressed = False
+            for attr in ("components", "input_segments"):
+                kids = list(getattr(node, attr, []) or [])
+                if kids:
+                    cur = rec
+                    for ch in kids:
+                        cl = comp_length_frames(ch, fpsF)
+                        visit(ch, cur)
+                        cur += cl
+                    progressed = True
+            if not progressed:
+                return
+
+        for idx, slot in enumerate(slots):
+            kind = slot_media_kind(slot)
+            seg = getattr(slot, "segment", None)
+            w(f"Slot[{idx}] media_kind={kind.capitalize() or 'Unknown'}  segment={aaf_class_name(seg)}")
+            if "sound" in kind or "data" in kind:
+                continue
+            visit(seg, start_tc)
+            w("")
+
+# ==============================================================================
+#                         SUPER EDL CSV (sequence-focused)
+# ==============================================================================
+
+def super_edl_from_sequence(seq_mob, mob_map, out_csv_path, dbg: DebugLog):
+    dbg.write(f"\n--- Starting Super EDL for Sequence: {safe_name(seq_mob.name)} ---")
+    name = safe_name(getattr(seq_mob, "name", "(unnamed)"))
+    slots = list(seq_mob.slots)
+    start_tc, fps, drop = extract_timecode_from_slots(slots, dbg)
+    fpsF = Fraction(getattr(fps, "numerator", 25), getattr(fps, "denominator", 1))
+    seq_rate = float(fpsF)
+
+    events = []
+    fx_by_rec_in = {}
+
+    def record_fx(rec_in, op_group):
+        eff_name = extract_effect_name(op_group)
+        anim, stat = extract_fx_params(op_group)
+        keyframe_details_lines = []
+        if anim:
+            keyframe_details_lines.append('--- Animated Parameters ---')
+            for pname, pts in anim.items():
+                keyframe_details_lines.append(f"  - {pname} ({len(pts)} keyframes)")
+                for kp in pts:
+                    keyframe_details_lines.append(f"    Time: {kp['time']} -> Value: {kp['value']}")
+        if stat:
+            if keyframe_details_lines: keyframe_details_lines.append("")
+            keyframe_details_lines.append('--- Static Parameters ---')
+            for pname, val in stat.items():
+                keyframe_details_lines.append(f"  - {pname}: {val}")
+        fx_by_rec_in.setdefault(rec_in, []).append({
+            "name": eff_name,
+            "keyframe_details": "\n".join(keyframe_details_lines) if keyframe_details_lines else "No effect data found."
+        })
+        dbg.write(f"    Recorded FX '{eff_name}' at record frame {rec_in}")
+
+    def visit(node, rec, track_id_counter):
+        cname = aaf_class_name(node)
+        ln = comp_length_frames(node, fpsF)
+        dbg.write(f"  [visit] Track={track_id_counter}, Type={cname}, Rec_In={rec}, Len={ln}")
+
+        if cname == "Sequence":
+            comps = list(getattr(node, "components", []) or [])
+            cur = rec
+            for comp in comps:
+                cl = comp_length_frames(comp, fpsF)
+                visit(comp, cur, track_id_counter)
+                cur += cl
+            return
+
+        if cname == "OperationGroup":
+            inputs = gather_inputs(node)
+            record_fx(rec, node)
+            is_fx_on_filler = not inputs['sourceclips'] and not inputs['scope_refs']
+            if is_fx_on_filler:
+                effect_name = extract_effect_name(node)
+                events.append({
+                    "Event": len(events) + 1, "Event Name": f"{effect_name} on Filler", "Clip Name": "FILLER",
+                    "Source File Name": "FILLER", "Source File Path": "", "DiskLabel": "", "TapeID": "",
+                    "SourceMobID": "FX_ON_FILLER", "TrackID": track_id_counter, "Source Clip EditRate": f"{int(seq_rate)}/1",
+                    "Timeline Start TC": frames_to_tc(rec, seq_rate, drop), "Source Clip start time code": "00:00:00:00",
+                    "Source Clip offset": 0, "StartTime": frames_to_tc(rec, seq_rate, drop),
+                    "End Time": frames_to_tc(rec + ln, seq_rate, drop), "Event Length": ln,
+                    "Source Clip start (frames)": 0, "Source Clip offset (frames)": 0, "StartTime (frames)": rec,
+                    "Effect Name": "; ".join([fx["name"] for fx in fx_by_rec_in.get(rec, [])]) or "N/A",
+                    "Keyframe Details": "\n\n".join([fx["keyframe_details"] for fx in fx_by_rec_in.get(rec, [])]) or "No effect data found.",
+                    "Orig Source Clip length": ln,
+                })
+            else:
+                for attr in ("components", "input_segments"):
+                    for ch in list(getattr(node, attr, []) or []):
+                        visit(ch, rec, track_id_counter)
+            return
+
+        if cname == "SourceClip":
+            source_mob_id = _get_source_id_from_sourceclip(node)
+            resolved_mob = resolve_source_hybrid(node, mob_map, dbg)
+
+            locs, tape, disk = ([], "", "")
+            orig_length = 0
+            stored_w = stored_h = aspect = ""
+
+            if resolved_mob:
+                locs, tape, disk = extract_mob_locators_tape_disk(resolved_mob, dbg)
+                descriptor = getattr(resolved_mob, 'descriptor', None)
+                try:
+                    if descriptor and getattr(descriptor, "length", None) is not None:
+                        orig_length = int(getattr(descriptor, "length"))
+                except:
+                    orig_length = 0
+                # Optional geometry metadata (if present)
+                if descriptor:
+                    stored_w = safe_name(getattr(descriptor, "stored_width", ""))
+                    stored_h = safe_name(getattr(descriptor, "stored_height", ""))
+                    aspect   = fraction_to_str(getattr(descriptor, "image_aspect_ratio", ""))
+
+            else:
+                dbg.write(f"    WARNING: Could not resolve genuine source. MobID: {source_mob_id}")
+
+            off = get_sourceclip_start(node)
+
+            url_path = locs[0] if locs else ""
+            src_fname = os.path.basename(url_path) if url_path else "N/A"
+            src_dir = os.path.dirname(url_path) if url_path else "N/A"
+
+            source_clip_edit_rate_frac = getattr(node, 'edit_rate', fpsF)
+            try:
+                source_clip_edit_rate_val = float(source_clip_edit_rate_frac)
+            except:
+                source_clip_edit_rate_val = float(fpsF)
+            source_clip_edit_rate_str = fraction_to_str(source_clip_edit_rate_frac)
+
+            events.append({
+                "Event": len(events) + 1, "Event Name": src_fname, "Clip Name": src_fname,
+                "Source File Name": src_fname, "Source File Path": src_dir, "DiskLabel": disk, "TapeID": tape,
+                "SourceMobID": source_mob_id or "",
+                "TrackID": track_id_counter, "Source Clip EditRate": source_clip_edit_rate_str,
+                "Timeline Start TC": frames_to_tc(rec, seq_rate, drop),
+                "Source Clip start time code": frames_to_tc(off, source_clip_edit_rate_val),
+                "Source Clip offset": off, "StartTime": frames_to_tc(rec, seq_rate, drop),
+                "End Time": frames_to_tc(rec + ln, seq_rate, drop), "Event Length": ln,
+                "Source Clip start (frames)": off, "Source Clip offset (frames)": off, "StartTime (frames)": rec,
+                "Effect Name": "; ".join([fx["name"] for fx in fx_by_rec_in.get(rec, [])]) or "N/A",
+                "Keyframe Details": "\n\n".join([fx["keyframe_details"] for fx in fx_by_rec_in.get(rec, [])]) or "No effect data found.",
+                "Orig Source Clip length": orig_length,
+                "Descriptor StoredWidth": stored_w,
+                "Descriptor StoredHeight": stored_h,
+                "Descriptor Aspect": aspect,
+            })
+            return
+
+        # Generic recursion
+        for attr in ("components", "input_segments"):
+            kids = list(getattr(node, attr, []) or [])
+            if kids:
+                cur = rec
+                for ch in kids:
+                    cl = comp_length_frames(ch, fpsF)
+                    visit(ch, cur, track_id_counter)
+                    cur += cl
+
+    # Walk picture tracks only
+    track_id_counter = 1
+    for slot in slots:
+        if "picture" in slot_media_kind(slot):
+            dbg.write(f"\nProcessing Track {track_id_counter} (SlotID: {slot.slot_id})...")
+            seg = getattr(slot, "segment", None)
+            visit(seg, start_tc, track_id_counter)
+        track_id_counter += 1
+
+    # Unique sources by resolved file path/name; fallback to UMID
+    resolved_keys = set()
+    for e in events:
+        key = None
+        fn = e.get("Source File Name")
+        fp = e.get("Source File Path")
+        if fn and fp and fn != "N/A" and fp != "N/A":
+            key = (fn, fp)
+        elif e.get("SourceMobID"):
+            key = ("UMID", normalize_umid(e["SourceMobID"]))
+        if key:
+            resolved_keys.add(key)
+
+    total_len = sum(e.get("Event Length", 0) for e in events)
+
+    with open(out_csv_path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        # Summary
+        w.writerow(["Timeline Name", name])
+        w.writerow(["Timeline Edit Rate", f"{float(seq_rate)} (DF)" if drop else f"{float(seq_rate)} (NDF)"])
+        w.writerow(["Timeline Start", frames_to_tc(start_tc, seq_rate, drop)])
+        w.writerow(["Timeline Length", f"{frames_to_tc(total_len, seq_rate, drop)} ({total_len} frames)"])
+        w.writerow(["Total number of EDL events found", len(events)])
+        w.writerow(["Total number of unique sources", len(resolved_keys)])
+        w.writerow([])
+
+        if events:
+            hdr = [
+                "Event","Event Name","Clip Name","Source File Name","Source File Path",
+                "DiskLabel","TapeID","SourceMobID","TrackID","Source Clip EditRate",
+                "Timeline Start TC","Source Clip start time code","Source Clip offset",
+                "StartTime","End Time","Event Length",
+                "Source Clip start (frames)","Source Clip offset (frames)","StartTime (frames)",
+                "Effect Name","Keyframe Details","Orig Source Clip length",
+                "Descriptor StoredWidth","Descriptor StoredHeight","Descriptor Aspect"
+            ]
+            w.writerow(hdr)
+            for e in sorted(events, key=lambda x: x['StartTime (frames)']):
+                w.writerow([e.get(h, "") for h in hdr])
+
+    dbg.write(f"--- Finished Super EDL for Sequence: {name} ---")
+
+# ==============================================================================
+#                            FULL SWEEP + DRIVER
+# ==============================================================================
+
+def full_compressed_sweep(aaf, dbg: DebugLog, out_json_path):
+    dbg.write("[sweep] toplevel count=%s" % len(list(aaf.content.toplevel())))
+    roots = []
+    try:
+        for m in list(aaf.content.toplevel()) or []:
+            dbg.write(f"[compress] toplevel: {aaf_class_name(m)} '{getattr(m,'name','')}'")
+            roots.append(compress_node(m, dbg))
+    except Exception as e:
+        dbg.write(f"[compress] toplevel error: {e}")
+
+    out = ["list", "list", None, roots]
+    with open(out_json_path, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2)
+
+def mob_metadata_table(aaf, dbg: DebugLog):
+    rows = []
+    def add_row(m):
+        tape = ""
+        disk = ""
+        loc_count = 0
+        try:
+            desc = getattr(m, "descriptor", None)
+            if desc:
+                for loc in getattr(desc, "locators", []) or []:
+                    # try multiple fields
+                    url = get_locator_string(loc)
+                    if url:
+                        loc_count += 1
+                        if dbg:
+                            dbg.write(f"Found locator: {url}")
+        except:
+            pass
+        try:
+            for c in getattr(m, "user_comments", []) or []:
+                if "tape" in safe_name(getattr(c, "name", "")).lower():
+                    tape = safe_name(getattr(c, "value", "")) or tape
+        except:
+            pass
+        try:
+            if hasattr(m, "attributes"):
+                for a in m.attributes:
+                    nm = safe_name(getattr(a, "name", "")).upper()
+                    if "DISK" in nm or "DISKLABEL" in nm or "_IMPORTDISKLAB" in nm:
+                        disk = safe_name(getattr(a, "value", "")) or disk
+        except:
+            pass
+        rows.append([safe_name(getattr(m, "name", "")), aaf_class_name(m), tape, disk, loc_count])
+
+    for it in (aaf.content.compositionmobs(), aaf.content.mastermobs(), aaf.content.sourcemobs()):
+        try:
+            for m in list(it) or []:
+                add_row(m)
+        except:
+            pass
+    return rows
+
+def run_scan(aaf_path):
+    base_dir = os.path.dirname(aaf_path)
+    base_name = os.path.splitext(os.path.basename(aaf_path))[0]
+    dbg_path = os.path.join(base_dir, f"{base_name}_FULL_debug.txt")
+    deepdump_path = os.path.join(base_dir, f"{base_name}_FULL_deepdump.txt")
+    readme_path = os.path.join(base_dir, f"{base_name}_README_mapping.txt")
+    json_path = os.path.join(base_dir, f"{base_name}_FULL_compressed.json")
+
+    dbg = DebugLog(dbg_path)
+    try:
+        print(f"Opening AAF: {aaf_path}")
+        with aaf2.open(aaf_path, 'r') as f:
+            print("Building FULL compressed JSON sweep (this can be large)...")
+            full_compressed_sweep(f, dbg, json_path)
+            print(f"  • Wrote: {json_path}")
+
+            print("Traversing all Top-Level sequences...")
+            tops = list(f.content.toplevel()) or []
+            with open(deepdump_path, "w", encoding="utf-8") as txt:
+                txt.write(f"Top-Level Composition Mobs: {len(tops)}\n\n")
+            for i, mob in enumerate(tops):
+                seq_name = safe_name(getattr(mob, "name", "(unnamed)"))
+                with open(deepdump_path, "a", encoding="utf-8") as txt:
+                    txt.write(f"=== Sequence [{i}] '{seq_name}' ===\n")
+                deepdump_sequence(mob, deepdump_path, dbg)
+                with open(deepdump_path, "a", encoding="utf-8") as txt:
+                    txt.write("\n")
+
+            print("Sweeping per-mob metadata table...")
+            rows = mob_metadata_table(f, dbg)
+            with open(deepdump_path, "a", encoding="utf-8") as txt:
+                txt.write("=== Mob Metadata Sweep (name | class | TapeID | DiskLabel | Locator count) ===\n")
+                for r in rows:
+                    txt.write(" | ".join(safe_name(x) for x in r) + "\n")
+
+            print("Writing readme/cipher...")
+            write_readme_cipher(readme_path)
+
+            print(f"  • Wrote: {deepdump_path}")
+            print(f"  • Wrote: {readme_path}")
+            print(f"  • Wrote: {dbg_path}")
+
+    except Exception as e:
+        dbg.write(f"\nFATAL: {e}\n{traceback.format_exc()}")
+        raise
+    finally:
+        dbg.flush()
+
+# ==============================================================================
+#                                  GUI
+# ==============================================================================
+
+class App:
+    def __init__(self, root):
+        self.root = root
+        root.title("AAF Full Sweep + DeepDump + CSV")
+        self.aaf_path = tk.StringVar()
+        self.log = scrolledtext.ScrolledText(root, wrap=tk.WORD, height=18, width=120, font=("Consolas", 10))
+        frm = tk.Frame(root)
+        frm.pack(padx=10, pady=10, fill="x")
+        tk.Label(frm, text="AAF file:").grid(row=0, column=0, sticky="w")
+        tk.Entry(frm, textvariable=self.aaf_path, width=80).grid(row=0, column=1, padx=6)
+        tk.Button(frm, text="Browse", command=self.browse).grid(row=0, column=2)
+        tk.Button(frm, text="Run Scan", command=self.run).grid(row=1, column=1, pady=8, sticky="e")
+        self.log.pack(padx=10, pady=8, fill="both", expand=True)
+
+    def browse(self):
+        p = filedialog.askopenfilename(title="Select AAF", filetypes=[("AAF files","*.aaf"),("All files","*.*")])
+        if p:
+            self.aaf_path.set(p)
+
+    def run(self):
+        path = self.aaf_path.get().strip()
+        if not path or not os.path.exists(path):
+            messagebox.showerror("Error", "Select a valid .aaf file.")
+            return
+        try:
+            self.log.delete("1.0","end")
+            self._echo(f"Opening AAF: {path}")
+
+            # Full diagnostics (compressed JSON, deepdump, metadata sweep)
+            run_scan(path)
+
+            # Build Super EDL CSV from top-level composition mobs
+            with aaf2.open(path, 'r') as f:
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                dbg_super_edl = DebugLog(os.path.join(os.path.dirname(path), f"super_edl_fx_{timestamp}.debug.txt"))
+
+                mob_map = build_mob_map(f, dbg_super_edl)
+
+                toplevel_comps = [mob for mob in f.content.toplevel() if aaf_class_name(mob) == 'CompositionMob']
+                self._echo(f"Found {len(toplevel_comps)} Top-Level Composition Mob(s) to process for SuperEDL.")
+
+                for mob in toplevel_comps:
+                    name = safe_name(getattr(mob, "name", "Sequence"))
+                    out_csv = os.path.join(os.path.dirname(path), f"{name}_super_edl_fx_{timestamp}.csv")
+                    self._echo(f"Writing Super EDL CSV: {out_csv}")
+                    super_edl_from_sequence(mob, mob_map, out_csv, dbg_super_edl)
+
+                dbg_super_edl.flush()
+
+            self._echo("Done.")
+            messagebox.showinfo("Done", "Scan complete. Check the folder for all output files.")
+        except Exception as e:
+            self._echo(f"ERROR: {e}\n{traceback.format_exc()}")
+            messagebox.showerror("Error", f"{e}\n\nSee console/log for details.")
+
+    def _echo(self, s):
+        self.log.insert("end", s + "\n"); self.log.see("end"); self.root.update_idletasks()
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    App(root)
+    root.mainloop()

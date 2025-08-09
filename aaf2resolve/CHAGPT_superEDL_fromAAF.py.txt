@@ -1,0 +1,351 @@
+import tkinter as tk
+from tkinter import filedialog, messagebox, scrolledtext
+import aaf2
+from urllib.parse import unquote, urlparse
+import os
+
+# -------------------- Logging --------------------
+
+def debug(msg):
+    print(f"[DEBUG] {msg}")
+    if hasattr(debug, "log_widget") and debug.log_widget:
+        debug.log_widget.insert(tk.END, f"[DEBUG] {msg}\n")
+        debug.log_widget.see(tk.END)
+
+# -------------------- Helpers --------------------
+
+def is_picture_slot(slot) -> bool:
+    try:
+        dd = getattr(slot, "data_def", None)
+        name = (getattr(dd, "name", "") or "").lower()
+        return "picture" in name or name == "picture"
+    except Exception:
+        return False
+
+def sourceclip_target_mobid(sc):
+    """
+    Return the referenced mob UMID for a SourceClip, robust across pyaaf2 variants.
+    Tries: sc.source_id -> sc.source_mob.mob_id -> sc.mob_id
+    """
+    v = getattr(sc, "source_id", None)
+    if v:
+        return v
+    sm = getattr(sc, "source_mob", None)
+    if sm is not None:
+        mid = getattr(sm, "mob_id", None)
+        if mid:
+            return mid
+    v = getattr(sc, "mob_id", None)
+    if v:
+        return v
+    return None
+
+def get_tc_anchor(slot):
+    """Return (timeline_start_frames, fps_float, is_dropframe) for this slot."""
+    start, drop = 0, False
+    try:
+        fps = float(getattr(slot, "edit_rate", 25.0))
+    except Exception:
+        fps = 25.0
+    seg = getattr(slot, "segment", None)
+    if seg and seg.class_name == "Timecode":
+        start = int(getattr(seg, "start", 0) or 0)
+        drop = bool(getattr(seg, "drop", False))
+    elif seg and seg.class_name == "Sequence":
+        for c in seg.components:
+            if c.class_name == "Timecode":
+                start = int(getattr(c, "start", 0) or 0)
+                drop = bool(getattr(c, "drop", False))
+                break
+    return start, fps, drop
+
+# -------------------- Locator / Metadata --------------------
+
+def _mob_locators(mob):
+    desc = getattr(mob, "descriptor", None) or getattr(mob, "essence_descriptor", None)
+    if not desc:
+        return []
+    return list(getattr(desc, "locators", []) or [])
+
+def _locator_url(locator):
+    for attr in ("url", "URLString", "path"):
+        if hasattr(locator, attr):
+            v = getattr(locator, attr)
+            if v:
+                return str(v)
+    return ""
+
+def _url_to_path(url):
+    try:
+        p = unquote(urlparse(url).path)
+        return p.replace("\\", "/")
+    except Exception:
+        return ""
+
+def _looks_like_camera_original(path_like: str) -> bool:
+    """Prefer non-Avid managed locations; allow camera MXF but avoid Avid/OMFI folders."""
+    if not path_like:
+        return False
+    low = path_like.lower()
+    if "avid mediafiles" in low or "omfi mediafiles" in low:
+        return False
+    # Accept typical camera/container extensions (still allow others if path is clean)
+    ext = os.path.splitext(low)[1]
+    if ext in (".mp4", ".mov", ".mxf", ".mkv", ".braw", ".r3d"):
+        return True
+    return True
+
+def extract_locator_path(mob):
+    """Return best path from mob's locators (no UI/output changes)."""
+    best = ""
+    try:
+        for loc in _mob_locators(mob):
+            url = _locator_url(loc)
+            path_like = _url_to_path(url)
+            if _looks_like_camera_original(path_like):
+                debug(f"Locator URL found: {path_like}")
+                return path_like or (url or "No locator")
+            if not best and (path_like or url):
+                best = path_like or url
+    except Exception as e:
+        debug(f"Locator extraction error: {e}")
+    return best or "No locator"
+
+def extract_metadata(mob):
+    """
+    Read TapeID / DiskLabel (_IMPORTDISKLAB) from user_comments/attributes TaggedValues.
+    """
+    tape_id = ""
+    disk_label = ""
+    try:
+        for tv in getattr(mob, "user_comments", []) or []:
+            name = (getattr(tv, "name", "") or "").strip().lower()
+            value = (getattr(tv, "value", "") or "").strip()
+            if not tape_id and "tape" in name:
+                tape_id = value
+            if not disk_label and "disk" in name:
+                disk_label = value
+    except Exception as e:
+        debug(f"user_comments extraction error: {e}")
+
+    try:
+        for tv in getattr(mob, "attributes", []) or []:
+            name = (getattr(tv, "name", "") or "").strip().lower()
+            value = (getattr(tv, "value", "") or "").strip()
+            if not tape_id and "tape" in name:
+                tape_id = value
+            if not disk_label and ("disk" in name or "label" in name or "_importdisklab" in name):
+                disk_label = value
+    except Exception as e:
+        debug(f"attributes extraction error: {e}")
+
+    return tape_id, disk_label
+
+# -------------------- Mob map / Resolution --------------------
+
+def build_mob_map(aaf_file):
+    mob_map = {}
+    for mob in aaf_file.content.mobs:
+        mob_map[mob.mob_id] = mob
+        debug(f"Mob added: {getattr(mob,'name','')} (MobID: {mob.mob_id})")
+    return mob_map
+
+def resolve_genuine_source(mob_id, mob_map):
+    """
+    Follow SourceClip chains; prefer a node that has a camera-original style locator.
+    Falls back to deepest reachable mob if no better candidate found.
+    """
+    if not mob_id:
+        return None
+
+    visited = set()
+    best_mob = None
+    current_id = mob_id
+    depth = 0
+
+    while current_id and current_id not in visited and depth < 16:
+        visited.add(current_id)
+        mob = mob_map.get(current_id)
+        if not mob:
+            break
+
+        # Check locator quality
+        loc_path = extract_locator_path(mob)
+        if _looks_like_camera_original(_url_to_path(loc_path)):
+            best_mob = mob
+
+        # Step deeper to next SourceClip target if any
+        next_id = None
+        try:
+            for slot in getattr(mob, "slots", []) or []:
+                seg = slot.segment
+                if isinstance(seg, aaf2.components.SourceClip):
+                    nid = sourceclip_target_mobid(seg)
+                    if nid:
+                        next_id = nid
+                        break
+                elif isinstance(seg, aaf2.components.Sequence):
+                    for comp in seg.components:
+                        if isinstance(comp, aaf2.components.SourceClip):
+                            nid = sourceclip_target_mobid(comp)
+                            if nid:
+                                next_id = nid
+                                break
+                        if hasattr(comp, "inputs"):
+                            for inp in comp.inputs or []:
+                                if isinstance(inp, aaf2.components.SourceClip):
+                                    nid = sourceclip_target_mobid(inp)
+                                    if nid:
+                                        next_id = nid
+                                        break
+                        if next_id:
+                            break
+                elif hasattr(seg, "inputs"):
+                    for inp in seg.inputs or []:
+                        if isinstance(inp, aaf2.components.SourceClip):
+                            nid = sourceclip_target_mobid(inp)
+                            if nid:
+                                next_id = nid
+                                break
+                if next_id:
+                    break
+        except Exception as e:
+            debug(f"resolve_genuine_source error: {e}")
+            next_id = None
+
+        if not next_id:
+            if best_mob is None:
+                best_mob = mob
+            break
+
+        current_id = next_id
+        depth += 1
+
+    return best_mob
+
+# -------------------- Timeline traversal --------------------
+
+def recursive_timeline_traverse(seg, mob_map, timeline_offset=0, results=None):
+    """
+    Collect SourceClip occurrences as dicts:
+      { 'MobID', 'TimelineOffset', 'SourceOffset', 'Length' }
+    """
+    if results is None:
+        results = []
+    try:
+        if isinstance(seg, aaf2.components.Sequence):
+            local = timeline_offset
+            for comp in seg.components:
+                recursive_timeline_traverse(comp, mob_map, local, results)
+                try:
+                    local += int(getattr(comp, "length", 0) or 0)
+                except Exception:
+                    pass
+
+        elif isinstance(seg, aaf2.components.SourceClip):
+            mobid = sourceclip_target_mobid(seg)
+            offset = int(getattr(seg, "start_time", getattr(seg, "start", 0)) or 0)
+            length = int(getattr(seg, "length", 0) or 0)
+            results.append({
+                "MobID": mobid,
+                "TimelineOffset": int(timeline_offset),
+                "SourceOffset": offset,
+                "Length": length
+            })
+
+        else:
+            if hasattr(seg, "inputs"):
+                for input_seg in seg.inputs or []:
+                    recursive_timeline_traverse(input_seg, mob_map, timeline_offset, results)
+            # length handling is done by the Sequence branch
+    except Exception as e:
+        debug(f"recursive_timeline_traverse error: {e}")
+    return results
+
+# -------------------- Extraction (UI uses this) --------------------
+
+def extract_source_clips(top_mob, mob_map):
+    results = []
+    if not getattr(top_mob, "slots", None):
+        return results
+
+    seen = set()  # de-dupe (MobID, TimelineOffset, SourceOffset, Length)
+
+    for slot in top_mob.slots:
+        if not is_picture_slot(slot):
+            continue
+        tc_start, fps, is_df = get_tc_anchor(slot)
+        seg = slot.segment
+        events = recursive_timeline_traverse(seg, mob_map, timeline_offset=tc_start)
+        for e in events:
+            key = (e["MobID"], e["TimelineOffset"], e["SourceOffset"], e["Length"])
+            if key in seen:
+                continue
+            seen.add(key)
+
+            resolved = resolve_genuine_source(e["MobID"], mob_map)
+            if resolved:
+                name = getattr(resolved, "name", "Unnamed")
+                mobid = str(getattr(resolved, "mob_id", "N/A"))
+                path = extract_locator_path(resolved)
+                tape_id, disk_label = extract_metadata(resolved)
+                results.append(
+                    f"{name} | {mobid} | {path} | TapeID: {tape_id} | DiskLabel: {disk_label} | TimelineOffset: {e['TimelineOffset']}"
+                )
+    return results
+
+# -------------------- GUI --------------------
+
+def browse_file():
+    path = filedialog.askopenfilename(filetypes=[("AAF files", "*.aaf")])
+    if not path:
+        return
+    result_box.delete(0, tk.END)
+    debug.log_widget.delete(1.0, tk.END)
+    debug(f"Selected file: {path}")
+    try:
+        with aaf2.open(path) as f:
+            debug("AAF file opened.")
+            mob_map = build_mob_map(f)
+
+            # Prefer CompositionMob; fall back to any mob with a picture Sequence
+            from aaf2.mobs import CompositionMob
+            top_comps = [mob for mob in f.content.mobs if isinstance(mob, CompositionMob)]
+            if not top_comps:
+                debug("No CompositionMob found. Falling back to picture Sequence mobs.")
+                for mob in f.content.mobs:
+                    try:
+                        for s in getattr(mob, "slots", []) or []:
+                            if is_picture_slot(s) and getattr(s, "segment", None) and s.segment.class_name == "Sequence":
+                                top_comps.append(mob)
+                                break
+                    except Exception:
+                        pass
+
+            if not top_comps:
+                debug("No picture Sequence candidates found.")
+                messagebox.showerror("Error", "No top-level CompositionMob or picture Sequence found in AAF.")
+                return
+
+            top_mob = top_comps[0]
+            debug(f"Using top-level mob: {getattr(top_mob, 'name', 'Unnamed')}  ({getattr(top_mob,'class_name','')})")
+
+            clips = extract_source_clips(top_mob, mob_map)
+            if not clips:
+                result_box.insert(tk.END, "[No SourceClip events found on picture tracks]")
+            for line in clips:
+                result_box.insert(tk.END, line)
+                debug(line)
+
+    except Exception as e:
+        messagebox.showerror("Error", f"Failed to parse AAF:\n{e}")
+        debug(f"Exception: {e}")
+
+root = tk.Tk()
+root.title("Simple AAF SourceClip Inspector")
+tk.Button(root, text="Select AAF File", command=browse_file).pack(pady=10)
+result_box = tk.Listbox(root, width=140, height=20)
+result_box.pack(padx=10, pady=10)
+debug.log_widget = scrolledtext.ScrolledText(root, wrap=tk.WORD, height=10, font=("Courier", 9))
+debug.log_widget.pack(padx=10, pady=5, fill=tk.BOTH, expand=False)
+root.mainloop()
