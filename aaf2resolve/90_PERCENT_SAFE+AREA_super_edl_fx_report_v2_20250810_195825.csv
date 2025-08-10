@@ -1,0 +1,2 @@
+Event,Event Name,Clip Name,Source File Name,Source File Path,DiskLabel,TapeID,SourceMobID,TrackID,Source Clip EditRate,Timeline Start TC,Source Clip start time code,Source Clip offset,StartTime,End Time,Event Length,Source Clip start (frames),Source Clip offset (frames),StartTime (frames),Effect Name,Keyframe Details,Orig Source Clip length
+1,N/A,N/A,N/A,N/A,N/A,N/A,urn:smpte:umid:00000000.00000000.00000000.00000000.00000000.00000000.00000000.00000000,N/A,25.0,00:00:00:00,N/A,00:00:00:00,00:00:00:00,00:00:30:00,750,0,0,0,N/A,No effect data.,0
