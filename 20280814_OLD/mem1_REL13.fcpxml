@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.13">
+    <resources>
+        <format name="FFVideoFormat1080p25" frameDuration="1/25s" id="r0" height="1080" width="1920"/>
+        <asset hasVideo="1" name="B006_C020_012989_001.mov" format="r0" start="1635100/25s" duration="3731/25s" id="r2">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_01_29/WW2D_20250129_RED B_006/B006_0129OB.RDM/B006_C020_012989.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A004_C020_0430NW_001.R3D" format="r0" start="1490762/25s" duration="1228/25s" id="r3">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_004/A004_04301J/A004_04301J.RDM/A004_C020_0430NW.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A004_C024_04303O_001.R3D" format="r0" start="1503458/25s" duration="3181/25s" id="r4">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_004/A004_04301J/A004_04301J.RDM/A004_C024_04303O.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="WW2D_ARC_966_M_GETTY_537133695.jpg" format="r0" start="90000/25s" duration="0/25s" id="r5">
+            <media-rep kind="original-media" src="file://localhost/ON BLINK WW2D RX01_1/ARCHIVE AND DOWNLOADS/ARCHIVE_2025_04_03_HEINZ LINGE EVA BRAUN"/>
+        </asset>
+        <asset hasVideo="1" name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" format="r0" start="2159998/25s" duration="0/25s" id="r6">
+            <media-rep kind="original-media" src="file://localhost/BLINK_ISS ODYSSEY_S1_CLIENT/BLINK/BLINK_WW2 DECODED_NEARLINE/02_ARCHIVE/2024_10_08"/>
+        </asset>
+        <asset hasVideo="1" name="A001_C040_0425QP_001.R3D" format="r0" start="1375637/25s" duration="1287/25s" id="r7">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_25/WW2D_250425_RED_A_001/A001_04254D.RDM/A001_C040_0425QP.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A005_C001_0430N3_001.R3D" format="r0" start="1537543/25s" duration="5771/25s" id="r8">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C001_0430N3.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A005_C002_0430TV_001.R3D" format="r0" start="1543660/25s" duration="2390/25s" id="r9">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C002_0430TV.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="B006_C020_012989_001.mov" format="r0" start="1635100/25s" duration="3731/25s" id="r10">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_01_29/WW2D_20250129_RED B_006/B006_0129OB.RDM/B006_C020_012989.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A004_C020_0430NW_001.R3D" format="r0" start="1490762/25s" duration="1228/25s" id="r11">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_004/A004_04301J/A004_04301J.RDM/A004_C020_0430NW.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A004_C024_04303O_001.R3D" format="r0" start="1503458/25s" duration="3181/25s" id="r12">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_004/A004_04301J/A004_04301J.RDM/A004_C024_04303O.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="WW2D_ARC_966_M_GETTY_537133695.jpg" format="r0" start="0/25s" duration="367/25s" id="r13">
+            <media-rep kind="original-media" src="file://localhost//RadiantNexis00/BLINK_WW2 DECODED_CLIENT/ARCHIVE AND DOWNLOADS/ARCHIVE_2025_04_03_HEINZ LINGE EVA BRAUN"/>
+        </asset>
+        <asset hasVideo="1" name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" format="r0" start="2159998/25s" duration="0/25s" id="r14">
+            <media-rep kind="original-media" src="file://localhost/BLINK_ISS ODYSSEY_S1_CLIENT/BLINK/BLINK_WW2 DECODED_NEARLINE/02_ARCHIVE/2024_10_08"/>
+        </asset>
+        <asset hasVideo="1" name="A001_C040_0425QP_001.R3D" format="r0" start="1375637/25s" duration="1287/25s" id="r15">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_25/WW2D_250425_RED_A_001/A001_04254D.RDM/A001_C040_0425QP.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A005_C001_0430N3_001.R3D" format="r0" start="1537543/25s" duration="5771/25s" id="r16">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C001_0430N3.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A005_C002_0430TV_001.R3D" format="r0" start="1543660/25s" duration="2390/25s" id="r17">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C002_0430TV.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="B006_C020_012989_001.mov" format="r0" start="1635100/25s" duration="3731/25s" id="r18">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_01_29/WW2D_20250129_RED B_006/B006_0129OB.RDM/B006_C020_012989.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A004_C020_0430NW_001.R3D" format="r0" start="1490762/25s" duration="1228/25s" id="r19">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_004/A004_04301J/A004_04301J.RDM/A004_C020_0430NW.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A004_C024_04303O_001.R3D" format="r0" start="1503458/25s" duration="3181/25s" id="r20">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_004/A004_04301J/A004_04301J.RDM/A004_C024_04303O.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="WW2D_ARC_966_M_GETTY_537133695.jpg" format="r0" start="90000/25s" duration="0/25s" id="r21">
+            <media-rep kind="original-media" src="file://localhost/ON BLINK WW2D RX01_1/ARCHIVE AND DOWNLOADS/ARCHIVE_2025_04_03_HEINZ LINGE EVA BRAUN"/>
+        </asset>
+        <asset hasVideo="1" name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" format="r0" start="2159998/25s" duration="0/25s" id="r22">
+            <media-rep kind="original-media" src="file://localhost/BLINK_ISS ODYSSEY_S1_CLIENT/BLINK/BLINK_WW2 DECODED_NEARLINE/02_ARCHIVE/2024_10_08"/>
+        </asset>
+        <asset hasVideo="1" name="A001_C040_0425QP_001.R3D" format="r0" start="1375637/25s" duration="1287/25s" id="r23">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_25/WW2D_250425_RED_A_001/A001_04254D.RDM/A001_C040_0425QP.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A005_C001_0430N3_001.R3D" format="r0" start="1537543/25s" duration="5771/25s" id="r24">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C001_0430N3.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A005_C002_0430TV_001.R3D" format="r0" start="1543660/25s" duration="2390/25s" id="r25">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C002_0430TV.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="90_PERCENT_SAFE+AREA.tif" format="r0" start="0/25s" duration="1/25s" id="r26">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_MMIM S2_NEARLINE/05_GFX"/>
+        </asset>
+        <asset hasVideo="1" name="90_PERCENT_SAFE+AREA.tif" format="r0" start="0/25s" duration="1/25s" id="r27">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_MMIM S2_NEARLINE/05_GFX"/>
+        </asset>
+        <asset hasVideo="1" name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" format="r0" start="2159998/25s" duration="0/25s" id="r28">
+            <media-rep kind="original-media" src="file://localhost/BLINK_ISS ODYSSEY_S1_CLIENT/BLINK/BLINK_WW2 DECODED_NEARLINE/02_ARCHIVE/2024_10_08"/>
+        </asset>
+        <asset hasVideo="1" name="A005_C001_0430N3_001.R3D" format="r0" start="1537543/25s" duration="5771/25s" id="r29">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C001_0430N3.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="B006_C020_012989_001.mov" format="r0" start="1635100/25s" duration="3731/25s" id="r30">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_01_29/WW2D_20250129_RED B_006/B006_0129OB.RDM/B006_C020_012989.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A005_C002_0430TV_001.R3D" format="r0" start="1543660/25s" duration="2390/25s" id="r31">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C002_0430TV.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="B006_C020_012989_001.mov" format="r0" start="1635100/25s" duration="3731/25s" id="r32">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_01_29/WW2D_20250129_RED B_006/B006_0129OB.RDM/B006_C020_012989.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A004_C020_0430NW_001.R3D" format="r0" start="1490762/25s" duration="1228/25s" id="r33">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_004/A004_04301J/A004_04301J.RDM/A004_C020_0430NW.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A004_C024_04303O_001.R3D" format="r0" start="1503458/25s" duration="3181/25s" id="r34">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_004/A004_04301J/A004_04301J.RDM/A004_C024_04303O.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="B006_C020_012989_001.mov" format="r0" start="1635100/25s" duration="3731/25s" id="r35">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_01_29/WW2D_20250129_RED B_006/B006_0129OB.RDM/B006_C020_012989.RDC"/>
+        </asset>
+        <asset hasVideo="1" name="A005_C001_0430N3_001.R3D" format="r0" start="1537543/25s" duration="5771/25s" id="r36">
+            <media-rep kind="original-media" src="file://localhost/nearline/BLINK/BLINK_WW2 DECODED_NEARLINE/01_RUSHES/2025_04_30/WW2D_250430_RED_A_005/A005_0430DJ/A005_0430DJ.RDM/A005_C001_0430N3.RDC"/>
+        </asset>
+    </resources>
+    <library>
+        <event name="BLINK_WORLD_WW2D EP1 SEQ TEST.Exported.01">
+            <project name="BLINK_WORLD_WW2D EP1 SEQ TEST.Exported.01">
+                <sequence tcStart="906434/25s" format="r0" tcFormat="NDF" duration="8366/25s">
+                    <spine>
+                        <gap name="Gap" offset="906434/25s" start="906434/25s" duration="750/25s"/>
+                        <video name="B006_C020_012989_001.mov" offset="907184/25s" start="3593/25s" duration="59/25s" enabled="1" ref="r2">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A004_C020_0430NW_001.R3D" offset="907268/25s" start="84/25s" duration="30/25s" enabled="1" ref="r3">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A004_C024_04303O_001.R3D" offset="907323/25s" start="2884/25s" duration="38/25s" enabled="1" ref="r4">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="WW2D_ARC_966_M_GETTY_537133695.jpg" offset="907386/25s" start="240/25s" duration="367/25s" enabled="1" ref="r5">
+                            <adjust-crop mode="trim">
+                                <trim-rect bottom="0" right="0" top="0" left="0">
+                                    <param name="left" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="907386/25s" value="0"/>
+                                            <keyframe time="907752/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                    <param name="right" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="907386/25s" value="0"/>
+                                            <keyframe time="907752/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                    <param name="top" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="907386/25s" value="0"/>
+                                            <keyframe time="907752/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                    <param name="bottom" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="907386/25s" value="0"/>
+                                            <keyframe time="907752/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </trim-rect>
+                            </adjust-crop>
+                            <adjust-transform scale="1.28 1.28" position="39.96 -149.85" anchor="0 0">
+                                <param name="scale" value="1.28 1.28">
+                                    <keyframeAnimation>
+                                        <keyframe time="907386/25s" value="1.28 1.28"/>
+                                        <keyframe time="907752/25s" value="1.43 1.43"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="39.96 -149.85">
+                                    <keyframeAnimation>
+                                        <keyframe time="907386/25s" value="39.96 -149.85"/>
+                                        <keyframe time="907752/25s" value="39.96 -179.82"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="0">
+                                    <keyframeAnimation>
+                                        <keyframe time="907386/25s" value="0"/>
+                                        <keyframe time="907752/25s" value="0"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" offset="907778/25s" start="800/25s" duration="213/25s" enabled="1" ref="r6">
+                            <adjust-transform scale="1.5 1.5" position="116.354 88.242" anchor="0 0">
+                                <param name="scale" value="1.5 1.5">
+                                    <keyframeAnimation>
+                                        <keyframe time="907990/25s" value="1.5 1.5"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="116.354 88.242">
+                                    <keyframeAnimation>
+                                        <keyframe time="907990/25s" value="116.354 88.242"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="155">
+                                    <keyframeAnimation>
+                                        <keyframe time="907990/25s" value="155"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1">
+                                <param name="amount" value="1">
+                                    <keyframeAnimation>
+                                        <keyframe time="907990/25s" value="1"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-blend>
+                        </video>
+                        <video name="A001_C040_0425QP_001.R3D" offset="908016/25s" start="923/25s" duration="78/25s" enabled="1" ref="r7">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A005_C001_0430N3_001.R3D" offset="908119/25s" start="1222/25s" duration="67/25s" enabled="1" ref="r8">
+                            <adjust-transform scale="1 -1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A005_C002_0430TV_001.R3D" offset="908211/25s" start="679/25s" duration="116/25s" enabled="1" ref="r9">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="B006_C020_012989_001.mov" offset="908409/25s" start="3593/25s" duration="59/25s" enabled="1" ref="r10">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A004_C020_0430NW_001.R3D" offset="908493/25s" start="84/25s" duration="30/25s" enabled="1" ref="r11">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A004_C024_04303O_001.R3D" offset="908548/25s" start="2884/25s" duration="38/25s" enabled="1" ref="r12">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="WW2D_ARC_966_M_GETTY_537133695.jpg" offset="908611/25s" start="0/25s" duration="367/25s" enabled="1" ref="r13">
+                            <adjust-transform scale="0.5 0.5" position="0 0" anchor="0 0">
+                                <param name="scale" value="0.5 0.5">
+                                    <keyframeAnimation>
+                                        <keyframe time="908611/25s" value="0.5 0.5"/>
+                                        <keyframe time="908977/25s" value="2 2"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="0 0">
+                                    <keyframeAnimation>
+                                        <keyframe time="908611/25s" value="0 0"/>
+                                        <keyframe time="908977/25s" value="0 0"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="0">
+                                    <keyframeAnimation>
+                                        <keyframe time="908611/25s" value="0"/>
+                                        <keyframe time="908977/25s" value="0"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" offset="909003/25s" start="800/25s" duration="213/25s" enabled="1" ref="r14">
+                            <adjust-transform scale="1.5 1.5" position="116.354 88.242" anchor="0 0">
+                                <param name="scale" value="1.5 1.5">
+                                    <keyframeAnimation>
+                                        <keyframe time="909215/25s" value="1.5 1.5"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="116.354 88.242">
+                                    <keyframeAnimation>
+                                        <keyframe time="909215/25s" value="116.354 88.242"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="155">
+                                    <keyframeAnimation>
+                                        <keyframe time="909215/25s" value="155"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1">
+                                <param name="amount" value="1">
+                                    <keyframeAnimation>
+                                        <keyframe time="909215/25s" value="1"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-blend>
+                        </video>
+                        <video name="A001_C040_0425QP_001.R3D" offset="909241/25s" start="923/25s" duration="78/25s" enabled="1" ref="r15">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A005_C001_0430N3_001.R3D" offset="909344/25s" start="1222/25s" duration="67/25s" enabled="1" ref="r16">
+                            <adjust-transform scale="1 -1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A005_C002_0430TV_001.R3D" offset="909436/25s" start="679/25s" duration="116/25s" enabled="1" ref="r17">
+                            <adjust-transform scale="-1 -1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="B006_C020_012989_001.mov" offset="909634/25s" start="3593/25s" duration="59/25s" enabled="1" ref="r18">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A004_C020_0430NW_001.R3D" offset="909718/25s" start="84/25s" duration="30/25s" enabled="1" ref="r19">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A004_C024_04303O_001.R3D" offset="909773/25s" start="2884/25s" duration="38/25s" enabled="1" ref="r20">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                                <param name="scale" value="1 1">
+                                    <keyframeAnimation>
+                                        <keyframe time="909773/25s" value="1 1"/>
+                                        <keyframe time="909810/25s" value="1 1"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="0 0">
+                                    <keyframeAnimation>
+                                        <keyframe time="909773/25s" value="0 0"/>
+                                        <keyframe time="909810/25s" value="0 0"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="0">
+                                    <keyframeAnimation>
+                                        <keyframe time="909773/25s" value="0"/>
+                                        <keyframe time="909810/25s" value="0"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="WW2D_ARC_966_M_GETTY_537133695.jpg" offset="909836/25s" start="240/25s" duration="367/25s" enabled="1" ref="r21">
+                            <adjust-transform scale="1.75 1.75" position="-690.979 -0" anchor="0 0">
+                                <param name="scale" value="1.75 1.75">
+                                    <keyframeAnimation>
+                                        <keyframe time="909836/25s" value="1.75 1.75"/>
+                                        <keyframe time="910202/25s" value="1.75 2.21"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="-690.979 -0">
+                                    <keyframeAnimation>
+                                        <keyframe time="909836/25s" value="-690.979 -0"/>
+                                        <keyframe time="910202/25s" value="-199.68 -598.32"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="0">
+                                    <keyframeAnimation>
+                                        <keyframe time="909836/25s" value="0"/>
+                                        <keyframe time="910202/25s" value="0"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" offset="910228/25s" start="800/25s" duration="213/25s" enabled="1" ref="r22">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A001_C040_0425QP_001.R3D" offset="910466/25s" start="923/25s" duration="78/25s" enabled="1" ref="r23">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A005_C001_0430N3_001.R3D" offset="910569/25s" start="1222/25s" duration="67/25s" enabled="1" ref="r24">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                                <param name="scale" value="1 1">
+                                    <keyframeAnimation>
+                                        <keyframe time="910569/25s" value="1 1"/>
+                                        <keyframe time="910635/25s" value="1 1"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="0 0">
+                                    <keyframeAnimation>
+                                        <keyframe time="910569/25s" value="0 0"/>
+                                        <keyframe time="910635/25s" value="0 0"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="0">
+                                    <keyframeAnimation>
+                                        <keyframe time="910569/25s" value="0"/>
+                                        <keyframe time="910635/25s" value="0"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A005_C002_0430TV_001.R3D" offset="910661/25s" start="679/25s" duration="116/25s" enabled="1" ref="r25">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="90_PERCENT_SAFE+AREA.tif" offset="910806/25s" start="281/25s" duration="40/25s" enabled="1" ref="r26">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="90_PERCENT_SAFE+AREA.tif" offset="910875/25s" start="281/25s" duration="40/25s" enabled="1" ref="r27">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4" offset="910940/25s" start="800/25s" duration="213/25s" enabled="1" ref="r28">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A005_C001_0430N3_001.R3D" offset="911178/25s" start="1222/25s" duration="67/25s" enabled="1" ref="r29">
+                            <adjust-crop mode="trim">
+                                <trim-rect bottom="0" right="0" top="0" left="0">
+                                    <param name="left" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="911178/25s" value="0"/>
+                                            <keyframe time="911244/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                    <param name="right" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="911178/25s" value="0"/>
+                                            <keyframe time="911244/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                    <param name="top" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="911178/25s" value="0"/>
+                                            <keyframe time="911244/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                    <param name="bottom" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="911178/25s" value="0"/>
+                                            <keyframe time="911244/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </trim-rect>
+                            </adjust-crop>
+                            <adjust-transform scale="0.61 0.61" position="-0.455 0.109" anchor="0 0">
+                                <param name="scale" value="0.61 0.61">
+                                    <keyframeAnimation>
+                                        <keyframe time="911178/25s" value="0.61 0.61"/>
+                                        <keyframe time="911244/25s" value="1.28 1.28"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="-0.455 0.109">
+                                    <keyframeAnimation>
+                                        <keyframe time="911178/25s" value="-0.455 0.109"/>
+                                        <keyframe time="911244/25s" value="0 -0"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="90">
+                                    <keyframeAnimation>
+                                        <keyframe time="911178/25s" value="90"/>
+                                        <keyframe time="911244/25s" value="90"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1">
+                                <param name="amount" value="1">
+                                    <keyframeAnimation>
+                                        <keyframe time="911178/25s" value="1"/>
+                                        <keyframe time="911244/25s" value="1"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-blend>
+                        </video>
+                        <video name="B006_C020_012989_001.mov" offset="911327/25s" start="3593/25s" duration="59/25s" enabled="1" ref="r30">
+                            <adjust-crop mode="trim">
+                                <trim-rect bottom="0" right="0" top="0" left="0">
+                                    <param name="left" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="911327/25s" value="0"/>
+                                            <keyframe time="911385/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                    <param name="right" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="911327/25s" value="0"/>
+                                            <keyframe time="911385/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                    <param name="top" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="911327/25s" value="0"/>
+                                            <keyframe time="911385/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                    <param name="bottom" value="0">
+                                        <keyframeAnimation>
+                                            <keyframe time="911327/25s" value="0"/>
+                                            <keyframe time="911385/25s" value="0"/>
+                                        </keyframeAnimation>
+                                    </param>
+                                </trim-rect>
+                            </adjust-crop>
+                            <adjust-transform scale="1 1" position="0 -0" anchor="0 0">
+                                <param name="scale" value="1 1">
+                                    <keyframeAnimation>
+                                        <keyframe time="911327/25s" value="1 1"/>
+                                        <keyframe time="911385/25s" value="0.46 0.46"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="0 -0">
+                                    <keyframeAnimation>
+                                        <keyframe time="911327/25s" value="0 -0"/>
+                                        <keyframe time="911385/25s" value="437.457 159.84"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="0">
+                                    <keyframeAnimation>
+                                        <keyframe time="911327/25s" value="0"/>
+                                        <keyframe time="911385/25s" value="0"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1">
+                                <param name="amount" value="1">
+                                    <keyframeAnimation>
+                                        <keyframe time="911327/25s" value="1"/>
+                                        <keyframe time="911385/25s" value="1"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-blend>
+                        </video>
+                        <video name="A005_C002_0430TV_001.R3D" offset="911411/25s" start="679/25s" duration="116/25s" enabled="1" ref="r31">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                                <param name="scale" value="1 1">
+                                    <keyframeAnimation>
+                                        <keyframe time="911411/25s" value="1 1"/>
+                                        <keyframe time="911526/25s" value="1 1"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="0 0">
+                                    <keyframeAnimation>
+                                        <keyframe time="911411/25s" value="0 0"/>
+                                        <keyframe time="911526/25s" value="0 0"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="0">
+                                    <keyframeAnimation>
+                                        <keyframe time="911411/25s" value="0"/>
+                                        <keyframe time="911526/25s" value="0"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="B006_C020_012989_001.mov" offset="911614/25s" start="3593/25s" duration="59/25s" enabled="1" ref="r32">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A004_C020_0430NW_001.R3D" offset="911698/25s" start="84/25s" duration="30/25s" enabled="1" ref="r33">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A004_C024_04303O_001.R3D" offset="911753/25s" start="2884/25s" duration="38/25s" enabled="1" ref="r34">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="B006_C020_012989_001.mov" offset="911866/25s" start="3593/25s" duration="59/25s" enabled="1" ref="r35">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                                <param name="scale" value="1 1">
+                                    <keyframeAnimation>
+                                        <keyframe time="911866/25s" value="1 1"/>
+                                        <keyframe time="911924/25s" value="1 1"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="0 0">
+                                    <keyframeAnimation>
+                                        <keyframe time="911866/25s" value="0 0"/>
+                                        <keyframe time="911924/25s" value="0 0"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="0">
+                                    <keyframeAnimation>
+                                        <keyframe time="911866/25s" value="0"/>
+                                        <keyframe time="911924/25s" value="0"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                        <video name="A005_C001_0430N3_001.R3D" offset="911950/25s" start="1222/25s" duration="67/25s" enabled="1" ref="r36">
+                            <adjust-transform scale="1 1" position="0 0" anchor="0 0">
+                                <param name="scale" value="1 1">
+                                    <keyframeAnimation>
+                                        <keyframe time="911950/25s" value="1 1"/>
+                                        <keyframe time="912016/25s" value="1 1"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="position" value="0 0">
+                                    <keyframeAnimation>
+                                        <keyframe time="911950/25s" value="0 0"/>
+                                        <keyframe time="912016/25s" value="0 0"/>
+                                    </keyframeAnimation>
+                                </param>
+                                <param name="rotation" value="0">
+                                    <keyframeAnimation>
+                                        <keyframe time="911950/25s" value="0"/>
+                                        <keyframe time="912016/25s" value="0"/>
+                                    </keyframeAnimation>
+                                </param>
+                            </adjust-transform>
+                            <adjust-blend amount="1"/>
+                        </video>
+                    </spine>
+                </sequence>
+            </project>
+        </event>
+    </library>
+</fcpxml>

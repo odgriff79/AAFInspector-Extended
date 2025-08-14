@@ -1,0 +1,224 @@
+TITLE: BLINK_WORLD_WW2D EP1 SEQ TEST.Exported.01_TIMELINE_MARKERS_FROM_CSV
+FCM: NON-DROP FRAME
+
+001  001      V     C        10:04:47:09 10:04:47:10 10:04:47:09 10:04:47:10  
+# offset=10:04:47:09 dur=00:00:02:09
+AVX2 Effect : Resize - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT1 - B006_C020_012989_001.mov |D:1
+
+002  001      V     C        10:04:50:18 10:04:50:19 10:04:50:18 10:04:50:19  
+# offset=10:04:50:18 dur=00:00:01:05
+Image : Stabilize - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT2 - A004_C020_0430NW_001.R3D |D:1
+
+003  001      V     C        10:04:52:23 10:04:52:24 10:04:52:23 10:04:52:24  
+# offset=10:04:52:23 dur=00:00:01:13
+Image : Submaster - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT3 - A004_C024_04303O_001.R3D |D:1
+
+004  001      V     C        10:04:55:11 10:04:55:12 10:04:55:11 10:04:55:12  
+# offset=10:04:55:11 dur=00:00:14:17
+AVX2 Effect : Resize - KEYFRAMES: 16
+KF1 @ 10:04:55:11 (rel 00:00:00:00) AVID: pos=(333/16, 555/4), scale=(128, 128), crop={L:0 R:0 T:0 B:0}
+         FCPXML: position="39.96 -149.85", scale="1.28 1.28", rotation="0", cropL="0", cropR="0", cropT="0", cropB="0"
+KF2 @ 10:05:10:02 (rel 00:00:14:16) AVID: pos=(333/16, 333/2), scale=(143, 143), crop={L:0 R:0 T:0 B:0}
+         FCPXML: position="39.96 -179.82", scale="1.43 1.43", rotation="0", cropL="0", cropR="0", cropT="0", cropB="0"
+|C:ResolveColorBlue |M:EVENT4 - WW2D_ARC_966_M_GETTY_537133695.jpg |D:1
+
+005  001      V     C        10:05:11:03 10:05:11:04 10:05:11:03 10:05:11:04  
+# offset=10:05:11:03 dur=00:00:08:13
+AVX2 Effect : 3DWarp - KEYFRAMES: 6
+KF1 @ 10:05:19:15 (rel 00:00:08:12) AVID: pos=(606011029/10000000, -102132353/1250000), scale=(150, 150), rotation=155, opacity=100
+         FCPXML: position="116.354 88.242", scale="1.5 1.5", rotation="155", opacity="1"
+|C:ResolveColorBlue |M:EVENT5 - WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4 |D:1
+
+006  001      V     C        10:05:20:16 10:05:20:17 10:05:20:16 10:05:20:17  
+# offset=10:05:20:16 dur=00:00:03:03
+Image : Mask - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT6 - A001_C040_0425QP_001.R3D |D:1
+
+007  001      V     C        10:05:24:19 10:05:24:20 10:05:24:19 10:05:24:20  
+# offset=10:05:24:19 dur=00:00:02:17
+# MIRROR: V
+Image : Flip - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT7 - A005_C001_0430N3_001.R3D |D:1
+
+008  001      V     C        10:05:28:11 10:05:28:12 10:05:28:11 10:05:28:12  
+# offset=10:05:28:11 dur=00:00:04:16
+Key : AniMatte - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT8 - A005_C002_0430TV_001.R3D |D:1
+
+009  001      V     C        10:05:36:09 10:05:36:10 10:05:36:09 10:05:36:10  
+# offset=10:05:36:09 dur=00:00:02:09
+AVX2 Effect : Resize - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT9 - B006_C020_012989_001.mov |D:1
+
+010  001      V     C        10:05:39:18 10:05:39:19 10:05:39:18 10:05:39:19  
+# offset=10:05:39:18 dur=00:00:01:05
+Image : Stabilize - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT10 - A004_C020_0430NW_001.R3D |D:1
+
+011  001      V     C        10:05:41:23 10:05:41:24 10:05:41:23 10:05:41:24  
+# offset=10:05:41:23 dur=00:00:01:13
+Image : Submaster - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT11 - A004_C024_04303O_001.R3D |D:1
+
+012  001      V     C        10:05:44:11 10:05:44:12 10:05:44:11 10:05:44:12  
+# offset=10:05:44:11 dur=00:00:14:17
+Image : Avid Pan & Zoom - KEYFRAMES: 4
+KF1 @ 10:05:44:11 (rel 00:00:00:00) AVID: scale=(1/2, 1/2)
+         FCPXML: position="0 0", scale="0.5 0.5", rotation="0"
+KF2 @ 10:05:59:02 (rel 00:00:14:16) AVID: scale=(2, 2)
+         FCPXML: position="0 0", scale="2 2", rotation="0"
+|C:ResolveColorBlue |M:EVENT12 - WW2D_ARC_966_M_GETTY_537133695.jpg |D:1
+
+013  001      V     C        10:06:00:03 10:06:00:04 10:06:00:03 10:06:00:04  
+# offset=10:06:00:03 dur=00:00:08:13
+AVX2 Effect : 3DWarp - KEYFRAMES: 6
+KF1 @ 10:06:08:15 (rel 00:00:08:12) AVID: pos=(606011029/10000000, -102132353/1250000), scale=(150, 150), rotation=155, opacity=100
+         FCPXML: position="116.354 88.242", scale="1.5 1.5", rotation="155", opacity="1"
+|C:ResolveColorBlue |M:EVENT13 - WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4 |D:1
+
+014  001      V     C        10:06:09:16 10:06:09:17 10:06:09:16 10:06:09:17  
+# offset=10:06:09:16 dur=00:00:03:03
+Image : Mask - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT14 - A001_C040_0425QP_001.R3D |D:1
+
+015  001      V     C        10:06:13:19 10:06:13:20 10:06:13:19 10:06:13:20  
+# offset=10:06:13:19 dur=00:00:02:17
+# MIRROR: V
+Image : Flip - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT15 - A005_C001_0430N3_001.R3D |D:1
+
+016  001      V     C        10:06:17:11 10:06:17:12 10:06:17:11 10:06:17:12  
+# offset=10:06:17:11 dur=00:00:04:16
+# MIRROR: H&V
+Image : Flip-Flop - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT16 - A005_C002_0430TV_001.R3D |D:1
+
+017  001      V     C        10:06:25:09 10:06:25:10 10:06:25:09 10:06:25:10  
+# offset=10:06:25:09 dur=00:00:02:09
+Image : Blur Effect - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT17 - B006_C020_012989_001.mov |D:1
+
+018  001      V     C        10:06:28:18 10:06:28:19 10:06:28:18 10:06:28:19  
+# offset=10:06:28:18 dur=00:00:01:05
+Image : Paint Effect - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT18 - A004_C020_0430NW_001.R3D |D:1
+
+019  001      V     C        10:06:30:23 10:06:30:24 10:06:30:23 10:06:30:24  
+# offset=10:06:30:23 dur=00:00:01:13
+Image : Region Stabilize - KEYFRAMES: 0
+KF1 @ 10:06:30:23 (rel 00:00:00:00) AVID: -
+         FCPXML: position="0 0", scale="1 1", rotation="0"
+KF2 @ 10:06:32:10 (rel 00:00:01:12) AVID: -
+         FCPXML: position="0 0", scale="1 1", rotation="0"
+|C:ResolveColorBlue |M:EVENT19 - A004_C024_04303O_001.R3D |D:1
+
+020  001      V     C        10:06:33:11 10:06:33:12 10:06:33:11 10:06:33:12  
+# offset=10:06:33:11 dur=00:00:14:17
+Reformat : Pan and Scan - KEYFRAMES: 8
+KF1 @ 10:06:33:11 (rel 00:00:00:00) AVID: pos=(-89971257/250000, 0), scale=(175, 175)
+         FCPXML: position="-690.979 -0", scale="1.75 1.75", rotation="0"
+KF2 @ 10:06:48:02 (rel 00:00:14:16) AVID: pos=(-104, 554), scale=(175, 221)
+         FCPXML: position="-199.68 -598.32", scale="1.75 2.21", rotation="0"
+|C:ResolveColorBlue |M:EVENT20 - WW2D_ARC_966_M_GETTY_537133695.jpg |D:1
+
+021  001      V     C        10:06:49:03 10:06:49:04 10:06:49:03 10:06:49:04  
+# offset=10:06:49:03 dur=00:00:08:13
+AVX2 Effect : PictureInPicture - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT21 - WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4 |D:1
+
+022  001      V     C        10:06:58:16 10:06:58:17 10:06:58:16 10:06:58:17  
+# offset=10:06:58:16 dur=00:00:03:03
+Blend : Superimpose - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT22 - A001_C040_0425QP_001.R3D |D:1
+
+023  001      V     C        10:07:02:19 10:07:02:20 10:07:02:19 10:07:02:20  
+# offset=10:07:02:19 dur=00:00:02:17
+Illusion FX : Film Grain - KEYFRAMES: 0
+KF1 @ 10:07:02:19 (rel 00:00:00:00) AVID: -
+         FCPXML: position="0 0", scale="1 1", rotation="0"
+KF2 @ 10:07:05:10 (rel 00:00:02:16) AVID: -
+         FCPXML: position="0 0", scale="1 1", rotation="0"
+|C:ResolveColorBlue |M:EVENT23 - A005_C001_0430N3_001.R3D |D:1
+
+024  001      V     C        10:07:06:11 10:07:06:12 10:07:06:11 10:07:06:12  
+# offset=10:07:06:11 dur=00:00:04:16
+Image : Spot Color Effect - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT24 - A005_C002_0430TV_001.R3D |D:1
+
+025  001      V     C        10:07:12:06 10:07:12:07 10:07:12:06 10:07:12:07  
+# offset=10:07:12:06 dur=00:00:01:15
+MatteKey - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT25 - 90_PERCENT_SAFE+AREA.tif |D:1
+
+026  001      V     C        10:07:15:00 10:07:15:01 10:07:15:00 10:07:15:01  
+# offset=10:07:15:00 dur=00:00:01:15
+AVX2 Effect : 3D MatteKey - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT26 - 90_PERCENT_SAFE+AREA.tif |D:1
+
+027  001      V     C        10:07:17:15 10:07:17:16 10:07:17:15 10:07:17:16  
+# offset=10:07:17:15 dur=00:00:08:13
+Key : Luma Key - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT27 - WW2D_ARC_295_S_AP-MOVIETONE_BM64877.mp4 |D:1
+
+028  001      V     C        10:07:27:03 10:07:27:04 10:07:27:03 10:07:27:04  
+# offset=10:07:27:03 dur=00:00:02:17
+Key : SpectraMatte - KEYFRAMES: 20
+KF1 @ 10:07:27:03 (rel 00:00:00:00) AVID: pos=(-47368421/200000000, -50682261/500000000), scale=(61, 61), rotation=90, opacity=100, crop={L:0 R:0 T:0 B:0}
+         FCPXML: position="-0.455 0.109", scale="0.61 0.61", rotation="90", opacity="1", cropL="0", cropR="0", cropT="0", cropB="0"
+KF2 @ 10:07:29:19 (rel 00:00:02:16) AVID: pos=(0, 0), scale=(128, 128), rotation=90, opacity=100, crop={L:0 R:0 T:0 B:0}
+         FCPXML: position="0 -0", scale="1.28 1.28", rotation="90", opacity="1", cropL="0", cropR="0", cropT="0", cropB="0"
+|C:ResolveColorBlue |M:EVENT28 - A005_C001_0430N3_001.R3D |D:1
+
+029  001      V     C        10:07:33:02 10:07:33:03 10:07:33:02 10:07:33:03  
+# offset=10:07:33:02 dur=00:00:02:09
+Key : Matte Key - KEYFRAMES: 18
+KF1 @ 10:07:33:02 (rel 00:00:00:00) AVID: pos=(0, 0), scale=(100, 100), opacity=100, crop={L:0 R:0 T:0 B:0}
+         FCPXML: position="0 -0", scale="1 1", rotation="0", opacity="1", cropL="0", cropR="0", cropT="0", cropB="0"
+KF2 @ 10:07:35:10 (rel 00:00:02:08) AVID: pos=(45568421/200000, -148), scale=(464912281/10000000, 464912281/10000000), opacity=100, crop={L:0 R:0 T:0 B:0}
+         FCPXML: position="437.457 159.84", scale="0.46 0.46", rotation="0", opacity="1", cropL="0", cropR="0", cropT="0", cropB="0"
+|C:ResolveColorBlue |M:EVENT29 - B006_C020_012989_001.mov |D:1
+
+030  001      V     C        10:07:36:11 10:07:36:12 10:07:36:11 10:07:36:12  
+# offset=10:07:36:11 dur=00:00:04:16
+Key : RGBKeyer - KEYFRAMES: 0
+KF1 @ 10:07:36:11 (rel 00:00:00:00) AVID: -
+         FCPXML: position="0 0", scale="1 1", rotation="0"
+KF2 @ 10:07:41:01 (rel 00:00:04:15) AVID: -
+         FCPXML: position="0 0", scale="1 1", rotation="0"
+|C:ResolveColorBlue |M:EVENT30 - A005_C002_0430TV_001.R3D |D:1
+
+031  001      V     C        10:07:44:14 10:07:44:15 10:07:44:14 10:07:44:15  
+# offset=10:07:44:14 dur=00:00:02:09
+Reformat : 14:9 Letterbox - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT31 - B006_C020_012989_001.mov |D:1
+
+032  001      V     C        10:07:47:23 10:07:47:24 10:07:47:23 10:07:47:24  
+# offset=10:07:47:23 dur=00:00:01:05
+Reformat : 16:9 Letterbox - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT32 - A004_C020_0430NW_001.R3D |D:1
+
+033  001      V     C        10:07:50:03 10:07:50:04 10:07:50:03 10:07:50:04  
+# offset=10:07:50:03 dur=00:00:01:13
+Reformat : 4:3 Sidebar - KEYFRAMES: 0
+|C:ResolveColorBlue |M:EVENT33 - A004_C024_04303O_001.R3D |D:1
+
+034  001      V     C        10:07:54:16 10:07:54:17 10:07:54:16 10:07:54:17  
+# offset=10:07:54:16 dur=00:00:02:09
+Generator : SubCap - KEYFRAMES: 0
+KF1 @ 10:07:54:16 (rel 00:00:00:00) AVID: -
+         FCPXML: position="0 0", scale="1 1", rotation="0"
+KF2 @ 10:07:56:24 (rel 00:00:02:08) AVID: -
+         FCPXML: position="0 0", scale="1 1", rotation="0"
+|C:ResolveColorBlue |M:EVENT34 - B006_C020_012989_001.mov |D:1
+
+035  001      V     C        10:07:58:00 10:07:58:01 10:07:58:00 10:07:58:01  
+# offset=10:07:58:00 dur=00:00:02:17
+Generator : Timecode Burn-In - KEYFRAMES: 0
+KF1 @ 10:07:58:00 (rel 00:00:00:00) AVID: -
+         FCPXML: position="0 0", scale="1 1", rotation="0"
+KF2 @ 10:08:00:16 (rel 00:00:02:16) AVID: -
+         FCPXML: position="0 0", scale="1 1", rotation="0"
+|C:ResolveColorBlue |M:EVENT35 - A005_C001_0430N3_001.R3D |D:1
